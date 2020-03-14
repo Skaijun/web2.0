@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "easing": "easing",
+    "form-validation": "form-validation",
     "build": "webpack",
     "start:dev": "webpack-dev-server"
   },
