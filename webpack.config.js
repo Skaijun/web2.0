@@ -15,7 +15,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './index.html')
+      template: path.resolve(__dirname, './html/index.html')
     }),
   ],
   module: {
@@ -36,13 +36,23 @@ module.exports = {
         ]
       },
       {
+        test: /\.(png|jpg|svg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+      {
+        test: /\.(ttf|woff|woff2|eot)$/,
+        use: ['file-loader']
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/env'],
-            plugins: [ '@babel/plugin-proposal-class-properties']
+            plugins: ['@babel/plugin-proposal-class-properties']
           }
         }
       },

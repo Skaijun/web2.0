@@ -397,6 +397,6 @@ var jQblvg  = jQuery.noConflict();
         };
         
         init();
-        delete data;
+        // delete data;
     }
 })(jQblvg);
