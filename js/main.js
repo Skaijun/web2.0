@@ -1,4 +1,6 @@
-import {ContactForms} from './Components/src/form-validation.js';
+// import {ContactForms} from './Components/dev/form-validation';
+import {RenderHTML} from './Components/dev/renderHTML';
+
 // import './Components/src/cloud-zoom.1.0.3.min';
 // import './Components/src/easing';
 // import './Components/src/fliplightbox.min';
@@ -17,6 +19,12 @@ import {ContactForms} from './Components/src/form-validation.js';
 
 // sector clear :)
 
-console.log('Hi1 Webpack');
 
-const contactUsFormsInitialization = new ContactForms();
+
+const webShopDOM = new RenderHTML();
+
+// window.onload = webShopDOM.depictMainPage();
+
+
+
+// const contactUsFormsInitialization = new ContactForms();
