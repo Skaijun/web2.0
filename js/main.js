@@ -1,5 +1,6 @@
 // import {ContactForms} from './Components/dev/form-validation';
 import {RenderHTML} from './Components/dev/renderHTML';
+import { StateDOMHTML } from './Components/dev/StateDOMHTML'
 
 // import './Components/src/cloud-zoom.1.0.3.min';
 // import './Components/src/easing';
@@ -21,7 +22,8 @@ import {RenderHTML} from './Components/dev/renderHTML';
 
 
 
-const webShopDOM = new RenderHTML();
+const webShopDOM = new RenderHTML(document.getElementById('main-container-wrap'));
+window.StateDOMHTML = StateDOMHTML;
 
 // window.onload = webShopDOM.depictMainPage();
 
