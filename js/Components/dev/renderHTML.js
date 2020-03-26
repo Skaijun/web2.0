@@ -1,6 +1,8 @@
-
 import { DOM_STATE_HTML } from './StateDOMHTML'
 import { StateDOMHTML } from './StateDOMHTML'
+import { cslider } from '../src/jquery.cslider'
+import { owlCarousel } from '../src/owl.carousel'
+import { mixitup } from '../src/jquery.mixitup'
 
 export class RenderHTML {
     constructor(selectedHtmlElement) {
@@ -14,8 +16,56 @@ export class RenderHTML {
     depictCurrentPage() {
         if (this.pageState.currPage === 'main-page') {
             this.depictMainPage();
+            $(function () {
+                $('#da-slider').cslider();
+            });
+            $(document).ready(function () {
+                $("#owl-demo").owlCarousel({
+                    items: 4,
+                    lazyLoad: true,
+                    autoPlay: true,
+                    navigation: true,
+                    navigationText: ["", ""],
+                    rewindNav: false,
+                    scrollPerPage: false,
+                    pagination: false,
+                    paginationNumbers: false,
+                });
+            });
         } else if (this.pageState.currPage === 'sale-page') {
             this.depictSalePage();
+            $(function () {
+                var filterList = {
+                    init: function () {
+                        // MixItUp plugin
+                        // http://mixitup.io
+                        $('#portfoliolist').mixitup({
+                            targetSelector: '.portfolio',
+                            filterSelector: '.filter',
+                            effects: ['fade'],
+                            easing: 'snap',
+                            // call the hover effect
+                            onMixEnd: filterList.hoverEffect()
+                        });
+                    },
+
+                    hoverEffect: function () {
+                        // Simple parallax effect
+                        $('#portfoliolist .portfolio').hover(
+                            function () {
+                                $(this).find('.label').stop().animate({ bottom: 0 }, 200, 'easeOutQuad');
+                                $(this).find('img').stop().animate({ top: -30 }, 500, 'easeOutQuad');
+                            },
+                            function () {
+                                $(this).find('.label').stop().animate({ bottom: -40 }, 200, 'easeInQuad');
+                                $(this).find('img').stop().animate({ top: 0 }, 300, 'easeOutQuad');
+                            }
+                        );
+                    }
+                };
+                // Run the show!
+                filterList.init();
+            });
         } else if (this.pageState.currPage === 'handbags-page') {
             this.depictHandbagsPage();
         } else if (this.pageState.currPage === 'accessories-page') {

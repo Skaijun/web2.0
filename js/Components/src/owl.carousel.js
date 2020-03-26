@@ -15,6 +15,7 @@ if ( typeof Object.create !== "function" ) {
 		return new F();
 	};
 }
+
 (function( $, window, document, undefined ) {
 
 	var Carousel = {
