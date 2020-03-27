@@ -45,7 +45,7 @@ export class RenderHTML {
                             effects: ['fade'],
                             easing: 'snap',
                             // call the hover effect
-                            onMixEnd: filterList.hoverEffect()
+                            // onMixEnd: filterList.hoverEffect()
                         });
                     },
 

@@ -687,7 +687,7 @@ ${HEADER_BG}
                     <img src="../images/pic1.jpg" alt="" class="details-page" />
                     <h3>branded shoes</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -697,7 +697,7 @@ ${HEADER_BG}
                     <img src="../images/pic2.jpg" alt="" class="details-page" />
                     <h3>branded t-shirts</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -707,7 +707,7 @@ ${HEADER_BG}
                     <img src="../images/pic3.jpg" alt="" class="details-page" />
                     <h3>branded tees</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -720,7 +720,7 @@ ${HEADER_BG}
                     <img src="../images/pic4.jpg" alt="" class="details-page" />
                     <h3>branded bags</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -730,7 +730,7 @@ ${HEADER_BG}
                     <img src="../images/pic5.jpg" alt="" class="details-page" />
                     <h3>ems women bag</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -740,7 +740,7 @@ ${HEADER_BG}
                     <img src="../images/pic6.jpg" alt="" class="details-page" />
                     <h3>branded cargos</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -786,14 +786,14 @@ ${HEADER_BG}
 			<div class="gallery1">
 					<div class="container">
 					<ul id="filters" class="clearfix">
-						<li><span class="filter active" data-filter="app card icon logo web">All</span></li>
-						<li><span class="filter" data-filter="app card web">men</span></li>
-						<li><span class="filter" data-filter="icon web card">women</span></li>
-						<li><span class="filter" data-filter="web app icon card">Watches</span></li>
-						<li><span class="filter" data-filter="icon app web logo">Accessories</span></li>
+						<li><span class="filter active" data-filter="men women watches accessories">All</span></li>
+						<li><span class="filter" data-filter="men">men</span></li>
+						<li><span class="filter" data-filter="women">women</span></li>
+						<li><span class="filter" data-filter="watches">Watches</span></li>
+						<li><span class="filter" data-filter="accessories">Accessories</span></li>
 					</ul>
 			<div id="portfoliolist">
-			<div class="portfolio logo1" data-cat="logo">
+			<div class="portfolio women" data-cat="women">
 				<div class="portfolio-wrapper">				
 					<a href="" class="details-page">
 						<img src="../images/sale_pic1.jpg"  alt="Image 2" class="details-page"/>
@@ -807,7 +807,7 @@ ${HEADER_BG}
 					</div>
 				</div>
 			</div>				
-			<div class="portfolio app" data-cat="app">
+			<div class="portfolio watches" data-cat="watches">
 				<div class="portfolio-wrapper">			
 					<a href="" class="details-page">
 						<img src="../images/sale_pic2.jpg"  alt="Image 2" class="details-page"/>
@@ -821,7 +821,7 @@ ${HEADER_BG}
 					</div>
 				</div>
 			</div>		
-			<div class="portfolio web" data-cat="web">
+			<div class="portfolio women" data-cat="women">
 				<div class="portfolio-wrapper">						
 					<a href="" class="details-page">
 						<img src="../images/sale_pic3.jpg"  alt="Image 2" class="details-page"/>
@@ -835,7 +835,7 @@ ${HEADER_BG}
 					</div>
 				</div>
 			</div>				
-			<div class="portfolio card" data-cat="card">
+			<div class="portfolio men" data-cat="men">
 				<div class="portfolio-wrapper">			
 					<a href="" class="details-page">
 						<img src="../images/sale_pic4.jpg"  alt="Image 2" class="details-page"/>
@@ -849,7 +849,7 @@ ${HEADER_BG}
 					</div>
 				</div>
 			</div>	
-			<div class="portfolio app" data-cat="app">
+			<div class="portfolio men" data-cat="men">
 				<div class="portfolio-wrapper">
 					<a href="" class="details-page">
 						<img src="../images/sale_pic5.jpg"  alt="Image 2" class="details-page"/>
@@ -863,7 +863,7 @@ ${HEADER_BG}
 					</div>
 				</div>
 			</div>			
-			<div class="portfolio card" data-cat="card">
+			<div class="portfolio watches" data-cat="watches">
 				<div class="portfolio-wrapper">			
 					<a href="" class="details-page">
 						<img src="../images/sale_pic6.jpg"  alt="Image 2" class="details-page"/>
@@ -877,7 +877,7 @@ ${HEADER_BG}
 					</div>
 				</div>
 			</div>	
-			<div class="portfolio web" data-cat="web">
+			<div class="portfolio women" data-cat="women">
 				<div class="portfolio-wrapper">						
 					<a href="" class="details-page">
 						<img src="../images/sale_pic7.jpg"  alt="Image 2" class="details-page"/>
@@ -891,7 +891,7 @@ ${HEADER_BG}
 					</div>
 				</div>
 			</div>				
-			<div class="portfolio card" data-cat="card">
+			<div class="portfolio accessories" data-cat="accessories">
 				<div class="portfolio-wrapper">			
 					<a href="" class="details-page">
 						<img src="../images/sale_pic8.jpg"  alt="Image 2" class="details-page"/>
@@ -905,7 +905,7 @@ ${HEADER_BG}
 					</div>
 				</div>
 			</div>	
-			<div class="portfolio app" data-cat="app">
+			<div class="portfolio accessories" data-cat="accessories">
 				<div class="portfolio-wrapper">
 					<a href="" class="details-page">
 						<img src="../images/sale_pic9.jpg"  alt="Image 2" class="details-page"/>
@@ -919,7 +919,7 @@ ${HEADER_BG}
 					</div>
 				</div>
 			</div>			
-			<div class="portfolio card" data-cat="card">
+			<div class="portfolio accessories" data-cat="accessories">
 				<div class="portfolio-wrapper">			
 					<a href="" class="details-page">
 						<img src="../images/sale_pic10.jpg"  alt="Image 2" class="details-page"/>
@@ -934,7 +934,7 @@ ${HEADER_BG}
 				</div>
 			</div>	
 					
-			<div class="portfolio card" data-cat="card">
+			<div class="portfolio accessories" data-cat="accessories">
 				<div class="portfolio-wrapper">			
 					<a href="" class="details-page">
 						<img src="../images/sale_pic11.jpg"  alt="Image 2" class="details-page"/>
@@ -949,7 +949,7 @@ ${HEADER_BG}
 				</div>
 			</div>	
 			
-			<div class="portfolio logo1" data-cat="logo">
+			<div class="portfolio women" data-cat="women">
 				<div class="portfolio-wrapper">			
 					<a href="" class="details-page">
 						<img src="../images/sale_pic12.jpg"  alt="Image 2" class="details-page"/>
@@ -1013,7 +1013,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic1.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1023,7 +1023,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic2.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299 <span>indulge</span></h4>
+						<h4>$299 <span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1033,7 +1033,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic3.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1046,7 +1046,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic4.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1056,7 +1056,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic5.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1066,7 +1066,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic6.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1117,7 +1117,7 @@ ${HEADER_BG}
                     <img src="../images/pic1.jpg" alt="" class="details-page" />
                     <h3>branded shoes</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -1127,7 +1127,7 @@ ${HEADER_BG}
                     <img src="../images/pic2.jpg" alt="" class="details-page" />
                     <h3>branded t-shirts</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -1137,7 +1137,7 @@ ${HEADER_BG}
                     <img src="../images/pic3.jpg" alt="" class="details-page" />
                     <h3>branded tees</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -1150,7 +1150,7 @@ ${HEADER_BG}
                     <img src="../images/pic4.jpg" alt="" class="details-page" />
                     <h3>branded bags</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -1160,7 +1160,7 @@ ${HEADER_BG}
                     <img src="../images/pic5.jpg" alt="" class="details-page" />
                     <h3>ems women bag</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -1170,7 +1170,7 @@ ${HEADER_BG}
                     <img src="../images/pic6.jpg" alt="" class="details-page" />
                     <h3>branded cargos</h3>
                     <div class="price">
-                        <h4>$300<span>indulge</span></h4>
+                        <h4>$300<span class="details-page">indulge</span></h4>
                     </div>
                     <span class="b_btm"></span>
                 </a>
@@ -1221,7 +1221,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic1.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1231,7 +1231,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic2.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299 <span>indulge</span></h4>
+						<h4>$299 <span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1241,7 +1241,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic3.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1254,7 +1254,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic4.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1264,7 +1264,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic5.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1274,7 +1274,7 @@ ${HEADER_BG}
 					<img src="../images/w_pic6.jpg" alt="" class="details-page"/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$299<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1319,32 +1319,32 @@ ${HEADER_BG}
 		<h2 class="style top">featured shoes</h2>
 		<!-- start grids_of_3 -->
 		<div class="grids_of_3">
-			<div class="grid1_of_3 details-page">
-				<a href="">
-					<img src="../images/shoe_pic1.jpg" alt=""/>
+			<div class="grid1_of_3">
+				<a href="" class="details-page">
+					<img src="../images/shoe_pic1.jpg" alt=""/ class="details-page">
 					<h3>branded shoes</h3>
 					<div class="price">
-						<h4>$499<span>indulge</span></h4>
+						<h4>$499<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
 			</div>
-			<div class="grid1_of_3 details-page">
-				<a href="">
-					<img src="../images/shoe_pic2.jpg" alt=""/>
+			<div class="grid1_of_3">
+				<a href="" class="details-page">
+					<img src="../images/shoe_pic2.jpg" alt=""/ class="details-page">
 					<h3>branded shoes</h3>
 					<div class="price">
-						<h4>$499<span>indulge</span></h4>
+						<h4>$499<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
 			</div>
-			<div class="grid1_of_3 details-page">
-				<a href="">
-					<img src="../images/shoe_pic3.jpg" alt=""/>
+			<div class="grid1_of_3">
+				<a href="" class="details-page">
+					<img src="../images/shoe_pic3.jpg" alt=""/ class="details-page">
 					<h3>branded shoes</h3>
 					<div class="price">
-						<h4>$499<span>indulge</span></h4>
+						<h4>$499<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -1352,32 +1352,32 @@ ${HEADER_BG}
 			<div class="clear"></div>
 		</div>
 		<div class="grids_of_3">
-			<div class="grid1_of_3 details-page">
-				<a href="">
-					<img src="../images/shoe_pic4.jpg" alt=""/>
+			<div class="grid1_of_3">
+				<a href="" class="details-page">
+					<img src="../images/shoe_pic4.jpg" alt=""/ class="details-page">
 					<h3>branded shoes</h3>
 					<div class="price">
-						<h4>$499<span>indulge</span></h4>
+						<h4>$499<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
 			</div>
-			<div class="grid1_of_3 details-page">
-				<a href="">
-					<img src="../images/shoe_pic5.jpg" alt=""/>
+			<div class="grid1_of_3">
+				<a href="" class="details-page">
+					<img src="../images/shoe_pic5.jpg" alt=""/ class="details-page">
 					<h3>branded shoes</h3>
 					<div class="price">
-						<h4>$499<span>indulge</span></h4>
+						<h4>$499<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
 			</div>
-			<div class="grid1_of_3 details-page">
-				<a href="">
-					<img src="../images/shoe_pic6.jpg" alt=""/>
+			<div class="grid1_of_3">
+				<a href="" class="details-page">
+					<img src="../images/shoe_pic6.jpg" alt=""/ class="details-page">
 					<h3>branded shoes</h3>
 					<div class="price">
-						<h4>$499<span>indulge</span></h4>
+						<h4>$499<span class="details-page">indulge</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
