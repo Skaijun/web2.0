@@ -1,6 +1,7 @@
 // import {ContactForms} from './Components/dev/form-validation';
 import { RenderHTML } from './Components/dev/renderHTML';
 import { StateDOMHTML } from './Components/dev/StateDOMHTML'
+// import { ContactForms } from './Components/dev/form-validation'
 import { activateResponsiveMenu } from './Components/src/responsive.menu.js'
 
 // import './Components/src/cloud-zoom.1.0.3.min';
@@ -26,5 +27,3 @@ import { activateResponsiveMenu } from './Components/src/responsive.menu.js'
 const webShopDOM = new RenderHTML(document.body);
 window.onload = activateResponsiveMenu();
 window.StateDOMHTML = StateDOMHTML;
-
-// const contactUsFormsInitialization = new ContactForms();

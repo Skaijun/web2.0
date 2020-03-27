@@ -92,9 +92,10 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_dev_renderHTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 // import {ContactForms} from './Components/dev/form-validation';
 
+ // import { ContactForms } from './Components/dev/form-validation'
 
  // import './Components/src/cloud-zoom.1.0.3.min';
 // import './Components/src/easing';
@@ -115,7 +116,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var webShopDOM = new _Components_dev_renderHTML__WEBPACK_IMPORTED_MODULE_0__["RenderHTML"](document.body);
 window.onload = Object(_Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__["activateResponsiveMenu"])();
-window.StateDOMHTML = _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__["StateDOMHTML"]; // const contactUsFormsInitialization = new ContactForms();
+window.StateDOMHTML = _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__["StateDOMHTML"];
 
 /***/ }),
 /* 1 */
@@ -125,17 +126,19 @@ window.StateDOMHTML = _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__[
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderHTML", function() { return RenderHTML; });
 /* harmony import */ var _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_cslider__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_owl_carousel__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _form_validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_src_owl_carousel__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -160,60 +163,8 @@ function () {
     value: function depictCurrentPage() {
       if (this.pageState.currPage === 'main-page') {
         this.depictMainPage();
-        $(function () {
-          $('#da-slider').cslider();
-        });
-        $(document).ready(function () {
-          $("#owl-demo").owlCarousel({
-            items: 4,
-            lazyLoad: true,
-            autoPlay: true,
-            navigation: true,
-            navigationText: ["", ""],
-            rewindNav: false,
-            scrollPerPage: false,
-            pagination: false,
-            paginationNumbers: false
-          });
-        });
       } else if (this.pageState.currPage === 'sale-page') {
         this.depictSalePage();
-        $(function () {
-          var filterList = {
-            init: function init() {
-              // MixItUp plugin
-              // http://mixitup.io
-              $('#portfoliolist').mixitup({
-                targetSelector: '.portfolio',
-                filterSelector: '.filter',
-                effects: ['fade'],
-                easing: 'snap' // call the hover effect
-                // onMixEnd: filterList.hoverEffect()
-
-              });
-            },
-            hoverEffect: function hoverEffect() {
-              // Simple parallax effect
-              $('#portfoliolist .portfolio').hover(function () {
-                $(this).find('.label').stop().animate({
-                  bottom: 0
-                }, 200, 'easeOutQuad');
-                $(this).find('img').stop().animate({
-                  top: -30
-                }, 500, 'easeOutQuad');
-              }, function () {
-                $(this).find('.label').stop().animate({
-                  bottom: -40
-                }, 200, 'easeInQuad');
-                $(this).find('img').stop().animate({
-                  top: 0
-                }, 300, 'easeOutQuad');
-              });
-            }
-          }; // Run the show!
-
-          filterList.init();
-        });
       } else if (this.pageState.currPage === 'handbags-page') {
         this.depictHandbagsPage();
       } else if (this.pageState.currPage === 'accessories-page') {
@@ -235,12 +186,64 @@ function () {
     value: function depictMainPage() {
       $(this.selectedHtmlElement).empty();
       this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].MAIN_PAGE);
+      $(function () {
+        $('#da-slider').cslider();
+      });
+      $(document).ready(function () {
+        $("#owl-demo").owlCarousel({
+          items: 4,
+          lazyLoad: true,
+          autoPlay: true,
+          navigation: true,
+          navigationText: ["", ""],
+          rewindNav: false,
+          scrollPerPage: false,
+          pagination: false,
+          paginationNumbers: false
+        });
+      });
     }
   }, {
     key: "depictSalePage",
     value: function depictSalePage() {
       $(this.selectedHtmlElement).empty();
       this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].SALE_PAGE_FULL);
+      $(function () {
+        var filterList = {
+          init: function init() {
+            // MixItUp plugin
+            // http://mixitup.io
+            $('#portfoliolist').mixitup({
+              targetSelector: '.portfolio',
+              filterSelector: '.filter',
+              effects: ['fade'],
+              easing: 'snap' // call the hover effect
+              // onMixEnd: filterList.hoverEffect()
+
+            });
+          },
+          hoverEffect: function hoverEffect() {
+            // Simple parallax effect
+            $('#portfoliolist .portfolio').hover(function () {
+              $(this).find('.label').stop().animate({
+                bottom: 0
+              }, 200, 'easeOutQuad');
+              $(this).find('img').stop().animate({
+                top: -30
+              }, 500, 'easeOutQuad');
+            }, function () {
+              $(this).find('.label').stop().animate({
+                bottom: -40
+              }, 200, 'easeInQuad');
+              $(this).find('img').stop().animate({
+                top: 0
+              }, 300, 'easeOutQuad');
+            });
+          }
+        }; // Run the show!
+
+        filterList.init();
+      });
     }
   }, {
     key: "depictHandbagsPage",
@@ -277,6 +280,7 @@ function () {
     value: function depictContactUsPage() {
       $(this.selectedHtmlElement).empty();
       this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].CONTACT_US_PAGE_FULL);
+      var contactUsFormsInitialization = new _form_validation__WEBPACK_IMPORTED_MODULE_1__["ContactForms"]();
     }
   }, {
     key: "depictDetailsPage",
@@ -419,6 +423,199 @@ DOM_STATE_HTML.DETAILS_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_B
 
 /***/ }),
 /* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactForms", function() { return ContactForms; });
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+// import {inputAdjust} from './input_validation';
+// -------------------------------------
+var ContactUsForm = function ContactUsForm(name, email, phone, subject) {
+  _classCallCheck(this, ContactUsForm);
+
+  this.id = new Date();
+  this.name = name;
+  this.email = email;
+  this.phone = phone;
+  this.subject = subject;
+}; // -------------------------------------
+
+
+var ContactForms =
+/*#__PURE__*/
+function () {
+  function ContactForms() {
+    _classCallCheck(this, ContactForms);
+
+    this.forms = [];
+    this.validateInputs = this.validateInputs.bind(this);
+    this.selectDOMElements();
+    this.setEventToDOM();
+  }
+
+  _createClass(ContactForms, [{
+    key: "selectDOMElements",
+    value: function selectDOMElements() {
+      this.contactForm = document.getElementById('user-contact-form');
+      this.contactName = document.getElementById('user-contact-name');
+      this.contactEmail = document.getElementById('user-contact-email');
+      this.contactPhone = document.getElementById('user-contact-phone');
+      this.contactSubject = document.getElementById('user-contact-subject');
+    }
+  }, {
+    key: "setEventToDOM",
+    value: function setEventToDOM() {
+      this.contactForm.addEventListener('submit', this.validateInputs);
+    }
+  }, {
+    key: "validateInputs",
+    value: function validateInputs() {
+      event.preventDefault();
+      var nameValue = this.inputAdjust(this.contactName.value);
+      var emailValue = this.contactEmail.value.trim();
+      var phoneValue = this.contactPhone.value.trim();
+      var subjValue = this.inputAdjust(this.contactSubject.value);
+      var currentForm = {
+        name: '',
+        nameIsValid: false,
+        email: '',
+        emailIsValid: false,
+        phone: '',
+        phoneIsValid: false
+      }; // -------------------------------NAME-----------------------------------------------
+      // let newName = new ValidationName(this.inputAdjust(this.contactName.value));
+
+      if (nameValue === '' || nameValue == null) {
+        this.setErrorFor(this.contactName, 'Please enter your name');
+      } else {
+        this.setSuccessfulFor(this.contactName, 'Correct');
+        currentForm.name = nameValue;
+        currentForm.nameIsValid = true;
+      } // --------------------------------EMAIL----------------------------------------------
+
+
+      var newEmail = new ValidationEmail(emailValue);
+
+      if (emailValue === '' || emailValue == null) {
+        this.setErrorFor(this.contactEmail, 'Please enter your email');
+      } else if (!newEmail.isValid()) {
+        this.setErrorFor(this.contactEmail, 'Invalid email');
+      } else {
+        this.setSuccessfulFor(this.contactEmail, 'Correct');
+        currentForm.email = emailValue;
+        currentForm.emailIsValid = true;
+      } // --------------------------------PHONE----------------------------------------------
+
+
+      var newPhone = new ValidationPhone(phoneValue);
+
+      if (phoneValue === '' || phoneValue == null) {
+        this.setErrorFor(this.contactPhone, 'Please enter your phone number');
+      } else if (!newPhone.isValid()) {
+        this.setErrorFor(this.contactPhone, 'Invalid phone number');
+      } else {
+        this.setSuccessfulFor(this.contactPhone, 'Correct');
+        currentForm.phone = phoneValue;
+        currentForm.phoneIsValid = true;
+      } // -----------------------------FORM-CONFIRM-------------------------------------------
+
+
+      if (currentForm.nameIsValid && currentForm.emailIsValid && currentForm.phoneIsValid) {
+        this.forms.push(new ContactUsForm(currentForm.name, currentForm.email, currentForm.phone, subjValue));
+        this.contactName.value = '';
+        this.contactEmail.value = '';
+        this.contactPhone.value = '';
+        this.contactSubject.value = '';
+        this.contactName.parentElement.classList.remove('successful');
+        this.contactEmail.parentElement.classList.remove('successful');
+        this.contactPhone.parentElement.classList.remove('successful');
+      }
+    }
+  }, {
+    key: "setErrorFor",
+    value: function setErrorFor(input, message) {
+      var inputState = input.parentElement.querySelector('small');
+      inputState.innerText = message;
+      input.parentElement.className = 'form-contact-control wrong';
+    }
+  }, {
+    key: "setSuccessfulFor",
+    value: function setSuccessfulFor(input, message) {
+      var inputState = input.parentElement.querySelector('small');
+      inputState.innerText = message;
+      input.parentElement.className = 'form-contact-control successful';
+    }
+  }, {
+    key: "inputAdjust",
+    value: function inputAdjust(input) {
+      var adjustedInput = input.normalize('NFD').replace(/([.!?]+)(?=\S)/g, "$1 ").trim();
+      return adjustedInput;
+    }
+  }]);
+
+  return ContactForms;
+}(); // -------------------------------------
+// class ValidationName {
+//     constructor(name) {
+//         this.name = name
+//     }
+//     // isValid() {
+//     //     const nameRegExp = //;
+//     //     return nameRegExp.test(this.name);
+//     // }
+// }
+// ------------------------
+
+var ValidationEmail =
+/*#__PURE__*/
+function () {
+  function ValidationEmail(email) {
+    _classCallCheck(this, ValidationEmail);
+
+    this.email = email;
+  }
+
+  _createClass(ValidationEmail, [{
+    key: "isValid",
+    value: function isValid() {
+      var emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return emailRegExp.test(this.email);
+    }
+  }]);
+
+  return ValidationEmail;
+}(); // ------------------------
+
+
+var ValidationPhone =
+/*#__PURE__*/
+function () {
+  function ValidationPhone(phone) {
+    _classCallCheck(this, ValidationPhone);
+
+    this.phone = phone;
+  }
+
+  _createClass(ValidationPhone, [{
+    key: "isValid",
+    value: function isValid() {
+      var phoneRegExp = /^\s*((\+?\s*(\(\s*)?3)?[\s-]*(\(\s*)?8[\s-]*)?(\(\s*)?0[\s\-\(]*[1-9][\s-]*\d(\s*\))?([\s-]*\d){7}\s*$/;
+      return phoneRegExp.test(this.phone);
+    }
+  }]);
+
+  return ValidationPhone;
+}(); // ------------------------
+// const contactUsFormsInitialization = new ContactForms();
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 (function ($, undefined) {
@@ -658,7 +855,7 @@ DOM_STATE_HTML.DETAILS_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_B
 })(jQuery);
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 /*
@@ -2095,7 +2292,7 @@ if (typeof Object.create !== "function") {
 })(jQuery, window, document);
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -2634,7 +2831,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 })(jQuery);
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
