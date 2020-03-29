@@ -92,7 +92,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_dev_renderHTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
+/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
 // import {ContactForms} from './Components/dev/form-validation';
 
  // import { ContactForms } from './Components/dev/form-validation'
@@ -127,11 +127,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderHTML", function() { return RenderHTML; });
 /* harmony import */ var _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _form_validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 /* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
 /* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_src_owl_carousel__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
 /* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -417,7 +417,7 @@ DOM_STATE_HTML.SHOES_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_BG,
 
 DOM_STATE_HTML.SERVICES_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n<div class=\"wrap\">\n\t<div class=\"header_sub\">\n\t\t<div class=\"h_menu\">\n\t\t\t<ul>\n                <li><a href=\"\" class=\"main-page\">Home</a></li> |\n                <li><a href=\"\" class=\"sale-page\">sale</a></li> |\n                <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                <li class=\"active\"><a href=\"\" class=\"services-page\">services</a></li> |\n                <li><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n\t\t\t</ul>\n\t\t</div>\n\t\t").concat(HEADER_MENU_NAV, "\n</div>\n</div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n<div class=\"wrap\">\t\n\t<div class=\"main\">\n\t<!-- start service -->\n\t  <div class=\"service\">\n\t\t<div class=\"ser-main\">\n\t\t\t<h4>Our Services</h4>\n\t\t\t<p class=\"para\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>\n\t\t\t<div class=\"ser-grid\">\n\t\t\t\t<div class=\"ser-grid-list details-page\">\n\t\t\t\t\t<a href=\"\"><img src=\"../images/icon1.png\" alt=\"\"></a>\n\t\t\t\t\t<h5><a href=\"\">24/7 customer support</a></h5>\n\t\t\t\t\t<p class=\"para\">It is a long established fact that a reader will be distracted by the page when looking at its layout.</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ser-grid-list details-page\">\n\t\t\t\t\t<a href=\"\"><img src=\"../images/icon2.png\" alt=\"\"></a>\n\t\t\t\t\t<h5><a href=\"\">hygienic branded</a></h5>\n\t\t\t\t\t<p class=\"para\"> The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ser-grid-list details-page\">\n\t\t\t\t\t<a href=\"\"><img src=\"../images/icon3.png\" alt=\"\"></a>\n\t\t\t\t\t<h5><a href=\"\">safely dispatch</a></h5>\n\t\t\t\t\t<p class=\"para\">It is a long established fact that a reader will be distracted by the page when looking at its layout.</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"clear\"></div>\n\t\t\t</div>\n\t\t\t<div class=\"ser-grid\">\n\t\t\t\t<div class=\"ser-grid-list details-page\">\n\t\t\t\t\t<a href=\"\"><img src=\"../images/icon4.png\" alt=\"\"></a>\n\t\t\t\t\t<h5><a href=\"\">100% look book</a></h5>\n\t\t\t\t\t<p class=\"para\">It is a long established fact that a reader will be distracted by the page when looking at its layout.</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ser-grid-list details-page\">\n\t\t\t\t\t<a href=\"\"><img src=\"../images/icon5.png\" alt=\"\"></a>\n\t\t\t\t\t<h5><a href=\"\">authentic products</a></h5>\n\t\t\t\t\t<p class=\"para\"> The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ser-grid-list details-page\">\n\t\t\t\t\t<a href=\"\"><img src=\"../images/icon6.png\" alt=\"\"></a>\n\t\t\t\t\t<h5><a href=\"\">100% guarantee</a></h5>\n\t\t\t\t\t<p class=\"para\">It is a long established fact that a reader will be distracted by the page when looking at its layout.</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"clear\"></div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"left_sidebar\">\n\t\t\t\t\t<div class=\"sellers\">\n\t\t\t\t\t\t<h4>Best Sellers</h4>\n\t\t\t\t\t\t<div class=\"single-nav\">\n\t\t\t                <ul>\n\t\t\t                   <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\t\t\t                    \n\t\t\t                </ul>\n\t\t\t              </div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"clear\"></div>\n\t\t\t</div>\n\t</div>\n</div>\n</div>\t\t\n").concat(FOOTER_BG, "\n"); // --------------------------------------------------------------------------------
 
-DOM_STATE_HTML.CONTACT_US_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n    <div class=\"wrap\">\n        <div class=\"header_sub\">\n            <div class=\"h_menu\">\n                <ul>\n                    <li><a href=\"\" class=\"main-page\">Home</a></li> |\n                    <li><a href=\"\" class=\"sale-page\">sale</a></li> |\n                    <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                    <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                    <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                    <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                    <li><a href=\"\" class=\"services-page\">services</a></li> |\n                    <li class=\"active\"><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n                </ul>\n            </div>\n\t\t\t").concat(HEADER_MENU_NAV, "\n        </div>\n    </div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n    <div class=\"wrap\">\n        <div class=\"main\">\n            <div class=\"contact\">\n                <div class=\"contact_info\">\n                    <h2>get in touch</h2>\n                    <div class=\"map\">\n                        <iframe width=\"100%\" height=\"250\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\"\n                            marginwidth=\"0\"\n                            src=\"https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed\"></iframe><br><small><a\n                                href=\"https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265\"\n                                style=\"color:#777777;text-align:left;font-size:13px;font-family: 'Source Sans Pro', sans-serif;\">View\n                                Larger Map</a></small>\n                    </div>\n                </div>\n                <div class=\"contact-form\">\n                    <h2>Contact Us</h2>\n                    <form method=\"post\" action=\"contact-post.html\" id=\"user-contact-form\">\n                        <div class=\"form-contact-control\">\n                            <span><label>Name</label></span>\n                            <input name=\"userName\" type=\"text\" id=\"user-contact-name\" class=\"textbox\">\n                            <small>Error message</small>\n                        </div>\n                        <div class=\"form-contact-control\">\n                            <span><label>E-mail</label></span>\n                            <input name=\"userEmail\" type=\"text\" id=\"user-contact-email\" class=\"textbox\">\n                            <small>Error message</small>\n                        </div>\n                        <div class=\"form-contact-control\">\n                            <span><label>Mobile</label></span>\n                            <input name=\"userPhone\" type=\"text\" id=\"user-contact-phone\" class=\"textbox\" placeholder=\"+380...\">\n                            <small>Error message</small>\n                        </div>\n                        <div class=\"form-contact-control\">\n                            <span><label>Subject</label></span>\n                            <textarea name=\"userMsg\" id=\"user-contact-subject\"> </textarea>\n                        </div>\n                        <div>\n                            <span><input type=\"submit\" class=\"user-contact-submit\" value=\"Submit us\"></span>\n                        </div>\n                    </form>\n                </div>\n                <div class=\"clear\"></div>\n            </div>\n        </div>\n    </div>\n</div>\n<!-- start footer -->\n").concat(FOOTER_BG, "\n"); // --------------------------------------------------------------------------------
+DOM_STATE_HTML.CONTACT_US_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n    <div class=\"wrap\">\n        <div class=\"header_sub\">\n            <div class=\"h_menu\">\n                <ul>\n                    <li><a href=\"\" class=\"main-page\">Home</a></li> |\n                    <li><a href=\"\" class=\"sale-page\">sale</a></li> |\n                    <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                    <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                    <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                    <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                    <li><a href=\"\" class=\"services-page\">services</a></li> |\n                    <li class=\"active\"><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n                </ul>\n            </div>\n\t\t\t").concat(HEADER_MENU_NAV, "\n        </div>\n    </div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n    <div class=\"wrap\">\n        <div class=\"main\">\n            <div class=\"contact\">\n                <div class=\"contact_info\">\n                    <h2>get in touch</h2>\n                    <div class=\"map\">\n                        <iframe width=\"100%\" height=\"250\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\"\n                            marginwidth=\"0\"\n                            src=\"https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed\"></iframe><br><small><a\n                                href=\"https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265\"\n                                style=\"color:#777777;text-align:left;font-size:13px;font-family: 'Source Sans Pro', sans-serif;\">View\n                                Larger Map</a></small>\n                    </div>\n                </div>\n                <div class=\"contact-form\">\n                    <h2>Contact Us</h2>\n                    <form method=\"post\" action=\"contact-post.html\" id=\"user-contact-form\">\n                        <div class=\"form-contact-control\">\n                            <span><label>Name</label></span>\n                            <input name=\"userName\" type=\"text\" id=\"user-contact-name\" class=\"textbox\">\n                            <small>Error message</small>\n                        </div>\n                        <div class=\"form-contact-control\">\n                            <span><label>E-mail</label></span>\n                            <input name=\"userEmail\" type=\"text\" id=\"user-contact-email\" class=\"textbox\" style=\"text-transform:lowercase\">\n                            <small>Error message</small>\n                        </div>\n                        <div class=\"form-contact-control\">\n                            <span><label>Mobile</label></span>\n                            <input name=\"userPhone\" type=\"text\" id=\"user-contact-phone\" class=\"textbox\" placeholder=\"+380...\">\n                            <small>Error message</small>\n                        </div>\n                        <div class=\"form-contact-control\">\n                            <span><label>Subject</label></span>\n                            <textarea name=\"userMsg\" id=\"user-contact-subject\"> </textarea>\n                        </div>\n                        <div>\n                            <span><input type=\"submit\" class=\"user-contact-submit\" value=\"Submit us\"></span>\n                        </div>\n                    </form>\n                </div>\n                <div class=\"clear\"></div>\n            </div>\n        </div>\n    </div>\n</div>\n<!-- start footer -->\n").concat(FOOTER_BG, "\n"); // --------------------------------------------------------------------------------
 
 DOM_STATE_HTML.DETAILS_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n<div class=\"wrap\">\n\t<div class=\"header_sub\">\n\t\t<div class=\"h_menu\">\n\t\t\t<ul>\n                <li class=\"active\"><a href=\"\" class=\"main-page\">Home</a></li> |\n                <li><a href=\"\" class=\"sale-page\">sale</a></li> |\n                <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                <li><a href=\"\" class=\"services-page\">services</a></li> |\n                <li><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n\t\t\t</ul>\n\t\t</div>\n\t\t").concat(HEADER_MENU_NAV, "\n</div>\n</div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n<div class=\"wrap\">\t\n\t<div class=\"main\">\n\t<!-- start content -->\n\t<div class=\"single\">\n\t\t\t<!-- start span1_of_1 -->\n\t\t\t<div class=\"left_content\">\n\t\t\t<div class=\"span1_of_1\">\n\t\t\t\t<!-- start product_slider -->\n\t\t\t\t<div class=\"product-view\">\n\t\t\t\t    <div class=\"product-essential\">\n\t\t\t\t        <div class=\"product-img-box\">\n\t\t\t\t    <div class=\"more-views\" style=\"float:left;\">\n\t\t\t\t        <div class=\"more-views-container\">\n\t\t\t\t        <ul>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\"  title=\"\" alt=\"\" /></a>            \n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\"  title=\"\" alt=\"\" /></a>\n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\"  title=\"\" alt=\"\" /></a> \n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\" title=\"\" alt=\"\" /></a>  \n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\" title=\"\" alt=\"\" /></a>\n\t\t\t\t            </li>\n\t\t\t\t          </ul>\n\t\t\t\t        </div>\n\t\t\t\t    </div>\n\t\t\t\t    <div class=\"product-image\"> \n\t\t\t\t        <a class=\"cs-fancybox-thumbs cloud-zoom\" rel=\"adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5\" data-fancybox-group=\"thumb\" href=\"../images/0001-2.jpg\" title=\"Women Shorts\" alt=\"Women Shorts\">\n\t\t\t\t           \t<img src=\"../images/0001-2.jpg\" alt=\"Women Shorts\" title=\"Women Shorts\" />\n\t\t\t\t        </a>\n\t\t\t\t   </div>\n\t\t\t\t\t<script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\">\n\t\t\t\t\t\tvar prodGallery = jQblvg.parseJSON('{\"prod_1\":{\"main\":{\"orig\":\"../images/0001-2.jpg\",\"main\":\"../images/large/0001-2.jpg\",\"thumb\":\"../images/small/0001-2.jpg\",\"label\":\"\"},\"gallery\":{\"item_0\":{\"orig\":\"../images/0001-2.jpg\",\"main\":\"../images/large/0001-2.jpg\",\"thumb\":\"../images/small/0001-2.jpg\",\"label\":\"\"},\"item_1\":{\"orig\":\"../images/0001-1.jpg\",\"main\":\"../images/large/0001-1.jpg\",\"thumb\":\"../images/small/0001-1.jpg\",\"label\":\"\"},\"item_2\":{\"orig\":\"../images/0001-5.jpg\",\"main\":\"../images/large/0001-5.jpg\",\"thumb\":\"../images/small/0001-5.jpg\",\"label\":\"\"},\"item_3\":{\"orig\":\"../images/0001-3.jpg\",\"main\":\"../images/large/0001-3.jpg\",\"thumb\":\"../images/small/0001-3.jpg\",\"label\":\"\"},\"item_4\":{\"orig\":\"../images/0001-4.jpg\",\"main\":\"../images/large/0001-4.jpg\",\"thumb\":\"../images/small/0001-4.jpg\",\"label\":\"\"}},\"type\":\"simple\",\"video\":false}}'),\n\t\t\t\t\t\t    gallery_elmnt = jQblvg('.product-img-box'),\n\t\t\t\t\t\t    galleryObj = new Object(),\n\t\t\t\t\t\t    gallery_conf = new Object();\n\t\t\t\t\t\t    gallery_conf.moreviewitem = '<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\"><img src=\"\" src_main=\"\" width=\"64\" height=\"85\" title=\"\" alt=\"\" /></a>';\n\t\t\t\t\t\t    gallery_conf.animspeed = 200;\n\t\t\t\t\t\tjQblvg(document).ready(function() {\n\t\t\t\t\t\t    galleryObj[1] = new prodViewGalleryForm(prodGallery, 'prod_1', gallery_elmnt, gallery_conf, '.product-image', '.more-views', 'http:');\n\t\t\t\t\t\t        jQblvg('.product-image .cs-fancybox-thumbs').absoluteClick();\n\t\t\t\t\t\t    jQblvg('.cs-fancybox-thumbs').fancybox({ prevEffect : 'none', \n\t\t\t\t\t\t                             nextEffect : 'none',\n\t\t\t\t\t\t                             closeBtn : true,\n\t\t\t\t\t\t                             arrows : true,\n\t\t\t\t\t\t                             nextClick : true, \n\t\t\t\t\t\t                             helpers: {\n\t\t\t\t\t\t                               thumbs : {\n\t\t\t\t\t\t                                   width: 64,\n\t\t\t\t\t\t                                   height: 85,\n\t\t\t\t\t\t                                   position: 'bottom'\n\t\t\t\t\t\t                               }\n\t\t\t\t\t\t                             }\n\t\t\t\t\t\t                             });\n\t\t\t\t\t\t    jQblvg('#wrap').css('z-index', '100');\n\t\t\t\t\t\t            jQblvg('.more-views-container').elScroll({type: 'vertical', elqty: 4, btn_pos: 'border', scroll_speed: 400 });\n\t\t\t\t\t\t        \n\t\t\t\t\t\t});\n\t\t\t\t\t\t\n\t\t\t\t\t\tfunction initGallery(a,b,element) {\n\t\t\t\t\t\t    galleryObj[a] = new prodViewGalleryForm(prods, b, gallery_elmnt, gallery_conf, '.product-image', '.more-views', '');\n\t\t\t\t\t\t};\n\t\t\t\t\t</script>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<!-- end product_slider -->\n\t\t\t</div>\n\t\t\t<!-- start span1_of_1 -->\n\t\t\t<div class=\"span1_of_1_des\">\n\t\t\t\t  <div class=\"desc1\">\n\t\t\t\t\t<h3>Lorem Ipsum is simply dummy text </h3>\n\t\t\t\t\t<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>\n\t\t\t\t\t<h5>Rs. 399 <a href=\"#\">click for offer</a></h5>\n\t\t\t\t\t<div class=\"available\">\n\t\t\t\t\t\t<h4>Available Options :</h4>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Color:\n\t\t\t\t\t\t\t\t<select>\n\t\t\t\t\t\t\t\t<option>Silver</option>\n\t\t\t\t\t\t\t\t<option>Black</option>\n\t\t\t\t\t\t\t\t<option>Dark Black</option>\n\t\t\t\t\t\t\t\t<option>Red</option>\n\t\t\t\t\t\t\t</select></li>\n\t\t\t\t\t\t\t<li>Size:\n\t\t\t\t\t\t\t\t<select>\n\t\t\t\t\t\t\t\t\t<option>L</option>\n\t\t\t\t\t\t\t\t\t<option>XL</option>\n\t\t\t\t\t\t\t\t\t<option>S</option>\n\t\t\t\t\t\t\t\t\t<option>M</option>\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t<li>Quality:\n\t\t\t\t\t\t\t\t<select>\n\t\t\t\t\t\t\t\t\t<option>1</option>\n\t\t\t\t\t\t\t\t\t<option>2</option>\n\t\t\t\t\t\t\t\t\t<option>3</option>\n\t\t\t\t\t\t\t\t\t<option>4</option>\n\t\t\t\t\t\t\t\t\t<option>5</option>\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<div class=\"btn_form\">\n\t\t\t\t\t\t\t<form>\n\t\t\t\t\t\t\t\t<input type=\"submit\" value=\"add to cart\" title=\"\" />\n\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<span class=\"span_right\"><a href=\"#\">login to save in wishlist </a></span>\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"share-desc\">\n\t\t\t\t\t\t<div class=\"share\">\n\t\t\t\t\t\t\t<h4>Share Product :</h4>\n\t\t\t\t\t\t\t<ul class=\"share_nav\">\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/facebook.png\" title=\"facebook\"></a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/twitter.png\" title=\"Twiiter\"></a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/rss.png\" title=\"Rss\"></a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/gpluse.png\" title=\"Google+\"></a></li>\n\t\t\t\t    \t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t</div>\n\t\t\t   \t </div>\n\t\t\t   \t</div>\n\t\t\t   \t<div class=\"clear\"></div>\n\t\t\t   \t<!-- start tabs -->\n\t\t\t\t   \t<section class=\"tabs\">\n\t\t            <input id=\"tab-1\" type=\"radio\" name=\"radio-set\" class=\"tab-selector-1\" checked=\"checked\">\n\t\t\t        <label for=\"tab-1\" class=\"tab-label-1\">overview</label>\n\t\t\t\n\t\t            <input id=\"tab-2\" type=\"radio\" name=\"radio-set\" class=\"tab-selector-2\">\n\t\t\t        <label for=\"tab-2\" class=\"tab-label-2\">consumer electronics</label>\n\t\t\t\n\t\t            <input id=\"tab-3\" type=\"radio\" name=\"radio-set\" class=\"tab-selector-3\">\n\t\t\t        <label for=\"tab-3\" class=\"tab-label-3\">semiconductor</label>\n\t          \n\t\t\t\t    <div class=\"clear-shadow\"></div>\n\t\t\t\t\t\n\t\t\t        <div class=\"content\">\n\t\t\t\t        <div class=\"content-1\">\n\t\t\t\t        \t<p class=\"para top\"><span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t<li>Research</li>\n\t\t\t\t\t\t\t\t<li>Design and Development</li>\n\t\t\t\t\t\t\t\t<li>Porting and Optimization</li>\n\t\t\t\t\t\t\t\t<li>System integration</li>\n\t\t\t\t\t\t\t\t<li>Verification, Validation and Testing</li>\n\t\t\t\t\t\t\t\t<li>Maintenance and Support</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t        <div class=\"content-2\">\n\t\t\t\t\t\t\t<p class=\"para\"><span>WELCOME </span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>\n\t\t\t\t\t\t\t<ul class=\"qua_nav\">\n\t\t\t\t\t\t\t\t<li>Multimedia Systems</li>\n\t\t\t\t\t\t\t\t<li>Digital media adapters</li>\n\t\t\t\t\t\t\t\t<li>Set top boxes for HDTV and IPTV Player applications on various Operating Systems and Hardware Platforms</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t        <div class=\"content-3\">\n\t\t\t\t        \t<p class=\"para top\"><span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t<li>Research</li>\n\t\t\t\t\t\t\t\t<li>Design and Development</li>\n\t\t\t\t\t\t\t\t<li>Porting and Optimization</li>\n\t\t\t\t\t\t\t\t<li>System integration</li>\n\t\t\t\t\t\t\t\t<li>Verification, Validation and Testing</li>\n\t\t\t\t\t\t\t\t<li>Maintenance and Support</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t</div>\n\t\t\t        </div>\n\t\t\t        </section>\n\t\t         \t<!-- end tabs -->\n\t\t\t   \t</div>\n\t\t\t   \t<!-- start sidebar -->\n\t\t\t <div class=\"left_sidebar\">\n\t\t\t\t\t<div class=\"sellers\">\n\t\t\t\t\t\t<h4>Best Sellers</h4>\n\t\t\t\t\t\t<div class=\"single-nav\">\n\t\t\t                <ul>\n\t\t\t                   <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\t\t\t                    \n\t\t\t                </ul>\n\t\t\t              </div>\n\t\t\t\t\t\t  <div class=\"banner-wrap bottom_banner color_link\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"main_link\">\n\t\t\t\t\t\t\t\t<figure><img src=\"../images/delivery.png\" alt=\"\"></figure>\n\t\t\t\t\t\t\t\t<h5><span>Free Shipping</span><br> on orders over $99.</h5><p>This offer is valid on all our store items.</p></a>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <div class=\"brands\">\n\t\t\t\t\t\t\t <h1>Brands</h1>\n\t\t\t\t\t  \t\t <div class=\"field\">\n\t\t\t\t                 <select class=\"select1\">\n\t\t\t\t                   <option>Please Select</option>\n\t\t\t\t\t\t\t\t\t\t<option>Lorem ipsum dolor sit amet</option>\n\t\t\t\t\t\t\t\t\t\t<option>Lorem ipsum dolor sit amet</option>\n\t\t\t\t\t\t\t\t\t\t<option>Lorem ipsum dolor sit amet</option>\n\t\t\t\t                  </select>\n\t\t\t\t            </div>\n\t\t\t    \t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t<!-- end sidebar -->\n          \t    <div class=\"clear\"></div>\n\t       </div>\t\n\t</div>\n </div>\n</div>\n").concat(FOOTER_BG, "\n");
 
@@ -428,14 +428,15 @@ DOM_STATE_HTML.DETAILS_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_B
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactForms", function() { return ContactForms; });
+/* harmony import */ var _utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// import {inputAdjust} from './input_validation';
-// -------------------------------------
+ // -------------------------------------
+
 var ContactUsForm = function ContactUsForm(name, email, phone, subject) {
   _classCallCheck(this, ContactUsForm);
 
@@ -477,10 +478,10 @@ function () {
     key: "validateInputs",
     value: function validateInputs() {
       event.preventDefault();
-      var nameValue = this.inputAdjust(this.contactName.value);
+      var nameValue = _utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].inputAdjust(this.contactName.value);
       var emailValue = this.contactEmail.value.trim();
       var phoneValue = this.contactPhone.value.trim();
-      var subjValue = this.inputAdjust(this.contactSubject.value);
+      var subjValue = _utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].inputAdjust(this.contactSubject.value);
       var currentForm = {
         name: '',
         nameIsValid: false,
@@ -489,10 +490,11 @@ function () {
         phone: '',
         phoneIsValid: false
       }; // -------------------------------NAME-----------------------------------------------
-      // let newName = new ValidationName(this.inputAdjust(this.contactName.value));
 
-      if (nameValue === '' || nameValue == null) {
+      if (_utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].isFieldEmpty(nameValue)) {
         this.setErrorFor(this.contactName, 'Please enter your name');
+      } else if (_utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].isAnyDigits(nameValue)) {
+        this.setErrorFor(this.contactName, 'Please enter only characters');
       } else {
         this.setSuccessfulFor(this.contactName, 'Correct');
         currentForm.name = nameValue;
@@ -500,11 +502,9 @@ function () {
       } // --------------------------------EMAIL----------------------------------------------
 
 
-      var newEmail = new ValidationEmail(emailValue);
-
-      if (emailValue === '' || emailValue == null) {
+      if (_utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].isFieldEmpty(emailValue)) {
         this.setErrorFor(this.contactEmail, 'Please enter your email');
-      } else if (!newEmail.isValid()) {
+      } else if (!_utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].isEmailValid(emailValue)) {
         this.setErrorFor(this.contactEmail, 'Invalid email');
       } else {
         this.setSuccessfulFor(this.contactEmail, 'Correct');
@@ -513,11 +513,9 @@ function () {
       } // --------------------------------PHONE----------------------------------------------
 
 
-      var newPhone = new ValidationPhone(phoneValue);
-
-      if (phoneValue === '' || phoneValue == null) {
+      if (_utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].isFieldEmpty(phoneValue)) {
         this.setErrorFor(this.contactPhone, 'Please enter your phone number');
-      } else if (!newPhone.isValid()) {
+      } else if (!_utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].isPhoneValid(phoneValue)) {
         this.setErrorFor(this.contactPhone, 'Invalid phone number');
       } else {
         this.setSuccessfulFor(this.contactPhone, 'Correct');
@@ -551,71 +549,42 @@ function () {
       inputState.innerText = message;
       input.parentElement.className = 'form-contact-control successful';
     }
-  }, {
-    key: "inputAdjust",
-    value: function inputAdjust(input) {
-      var adjustedInput = input.normalize('NFD').replace(/([.!?]+)(?=\S)/g, "$1 ").trim();
-      return adjustedInput;
-    }
   }]);
 
   return ContactForms;
-}(); // -------------------------------------
-// class ValidationName {
-//     constructor(name) {
-//         this.name = name
-//     }
-//     // isValid() {
-//     //     const nameRegExp = //;
-//     //     return nameRegExp.test(this.name);
-//     // }
-// }
-// ------------------------
-
-var ValidationEmail =
-/*#__PURE__*/
-function () {
-  function ValidationEmail(email) {
-    _classCallCheck(this, ValidationEmail);
-
-    this.email = email;
-  }
-
-  _createClass(ValidationEmail, [{
-    key: "isValid",
-    value: function isValid() {
-      var emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return emailRegExp.test(this.email);
-    }
-  }]);
-
-  return ValidationEmail;
-}(); // ------------------------
-
-
-var ValidationPhone =
-/*#__PURE__*/
-function () {
-  function ValidationPhone(phone) {
-    _classCallCheck(this, ValidationPhone);
-
-    this.phone = phone;
-  }
-
-  _createClass(ValidationPhone, [{
-    key: "isValid",
-    value: function isValid() {
-      var phoneRegExp = /^\s*((\+?\s*(\(\s*)?3)?[\s-]*(\(\s*)?8[\s-]*)?(\(\s*)?0[\s\-\(]*[1-9][\s-]*\d(\s*\))?([\s-]*\d){7}\s*$/;
-      return phoneRegExp.test(this.phone);
-    }
-  }]);
-
-  return ValidationPhone;
-}(); // ------------------------
-// const contactUsFormsInitialization = new ContactForms();
+}();
 
 /***/ }),
 /* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inputChecker", function() { return inputChecker; });
+var inputChecker = {
+  inputAdjust: function inputAdjust(input) {
+    var adjustedInput = input.normalize('NFD').replace(/([.!?]+)(?=\S)/g, "$1 ").trim();
+    return adjustedInput;
+  },
+  isFieldEmpty: function isFieldEmpty(input) {
+    return input === '' || input == null;
+  },
+  isAnyDigits: function isAnyDigits(name) {
+    var nameRegExpDig = /\d/g;
+    return nameRegExpDig.test(name) || !isNaN(name);
+  },
+  isEmailValid: function isEmailValid(email) {
+    var emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailRegExp.test(email);
+  },
+  isPhoneValid: function isPhoneValid(phone) {
+    var phoneRegExp = /^\s*((\+?\s*(\(\s*)?3)?[\s-]*(\(\s*)?8[\s-]*)?(\(\s*)?0[\s\-\(]*[1-9][\s-]*\d(\s*\))?([\s-]*\d){7}\s*$/;
+    return phoneRegExp.test(phone);
+  }
+};
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports) {
 
 (function ($, undefined) {
@@ -855,7 +824,7 @@ function () {
 })(jQuery);
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 /*
@@ -2292,7 +2261,7 @@ if (typeof Object.create !== "function") {
 })(jQuery, window, document);
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -2831,7 +2800,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 })(jQuery);
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

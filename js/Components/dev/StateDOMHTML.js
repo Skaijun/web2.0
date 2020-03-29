@@ -1541,7 +1541,7 @@ ${HEADER_BG}
                         </div>
                         <div class="form-contact-control">
                             <span><label>E-mail</label></span>
-                            <input name="userEmail" type="text" id="user-contact-email" class="textbox">
+                            <input name="userEmail" type="text" id="user-contact-email" class="textbox" style="text-transform:lowercase">
                             <small>Error message</small>
                         </div>
                         <div class="form-contact-control">

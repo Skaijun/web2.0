@@ -1,4 +1,4 @@
-// import {inputAdjust} from './input_validation';
+import { inputChecker } from '../../utils/inputChecker';
 
 // -------------------------------------
 class ContactUsForm {
@@ -9,7 +9,6 @@ class ContactUsForm {
         this.phone = phone
         this.subject = subject
     }
-
 }
 // -------------------------------------
 export class ContactForms {
@@ -34,10 +33,10 @@ export class ContactForms {
 
     validateInputs() {
         event.preventDefault();
-        const nameValue = this.inputAdjust(this.contactName.value);
+        const nameValue = inputChecker.inputAdjust(this.contactName.value);
         const emailValue = this.contactEmail.value.trim();
         const phoneValue = this.contactPhone.value.trim();
-        const subjValue = this.inputAdjust(this.contactSubject.value);
+        const subjValue = inputChecker.inputAdjust(this.contactSubject.value);
         let currentForm = {
             name: '',
             nameIsValid: false,
@@ -48,9 +47,10 @@ export class ContactForms {
         }
 
         // -------------------------------NAME-----------------------------------------------
-        // let newName = new ValidationName(this.inputAdjust(this.contactName.value));
-        if (nameValue === '' || nameValue == null) {
+        if (inputChecker.isFieldEmpty(nameValue)) {
             this.setErrorFor(this.contactName, 'Please enter your name');
+        } else if (inputChecker.isAnyDigits(nameValue)) {
+            this.setErrorFor(this.contactName, 'Please enter only characters');
         } else {
             this.setSuccessfulFor(this.contactName, 'Correct');
             currentForm.name = nameValue;
@@ -58,10 +58,9 @@ export class ContactForms {
         }
 
         // --------------------------------EMAIL----------------------------------------------
-        let newEmail = new ValidationEmail(emailValue);
-        if (emailValue === '' || emailValue == null) {
+        if (inputChecker.isFieldEmpty(emailValue)) {
             this.setErrorFor(this.contactEmail, 'Please enter your email');
-        } else if (!newEmail.isValid()) {
+        } else if (!inputChecker.isEmailValid(emailValue)) {
             this.setErrorFor(this.contactEmail, 'Invalid email');
         } else {
             this.setSuccessfulFor(this.contactEmail, 'Correct');
@@ -70,10 +69,9 @@ export class ContactForms {
         }
 
         // --------------------------------PHONE----------------------------------------------
-        let newPhone = new ValidationPhone(phoneValue);
-        if (phoneValue === '' || phoneValue == null) {
+        if (inputChecker.isFieldEmpty(phoneValue)) {
             this.setErrorFor(this.contactPhone, 'Please enter your phone number');
-        } else if (!newPhone.isValid()) {
+        } else if (!inputChecker.isPhoneValid(phoneValue)) {
             this.setErrorFor(this.contactPhone, 'Invalid phone number');
         } else {
             this.setSuccessfulFor(this.contactPhone, 'Correct');
@@ -106,48 +104,4 @@ export class ContactForms {
         input.parentElement.className = 'form-contact-control successful';
     }
 
-    inputAdjust(input) {
-        let adjustedInput = input
-            .normalize('NFD')
-            .replace(/([.!?]+)(?=\S)/g, "$1 ")
-            .trim();
-        return adjustedInput;
-    }
 }
-
-// -------------------------------------
-// class ValidationName {
-//     constructor(name) {
-//         this.name = name
-//     }
-
-//     // isValid() {
-//     //     const nameRegExp = //;
-//     //     return nameRegExp.test(this.name);
-//     // }
-// }
-// ------------------------
-class ValidationEmail {
-    constructor(email) {
-        this.email = email
-    }
-
-    isValid() {
-        const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return emailRegExp.test(this.email);
-    }
-}
-// ------------------------
-class ValidationPhone {
-    constructor(phone) {
-        this.phone = phone
-    }
-
-    isValid() {
-        const phoneRegExp = /^\s*((\+?\s*(\(\s*)?3)?[\s-]*(\(\s*)?8[\s-]*)?(\(\s*)?0[\s\-\(]*[1-9][\s-]*\d(\s*\))?([\s-]*\d){7}\s*$/;
-        return phoneRegExp.test(this.phone);
-    }
-}
-// ------------------------
-
-// const contactUsFormsInitialization = new ContactForms();
