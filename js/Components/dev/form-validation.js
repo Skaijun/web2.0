@@ -49,7 +49,7 @@ export class ContactForms {
         // -------------------------------NAME-----------------------------------------------
         if (inputChecker.isFieldEmpty(nameValue)) {
             this.setErrorFor(this.contactName, 'Please enter your name');
-        } else if (inputChecker.isAnyDigits(nameValue)) {
+        } else if (inputChecker.isAnyDigitsOrSymbols(nameValue)) {
             this.setErrorFor(this.contactName, 'Please enter only characters');
         } else {
             this.setSuccessfulFor(this.contactName, 'Correct');

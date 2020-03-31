@@ -493,7 +493,7 @@ function () {
 
       if (_utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].isFieldEmpty(nameValue)) {
         this.setErrorFor(this.contactName, 'Please enter your name');
-      } else if (_utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].isAnyDigits(nameValue)) {
+      } else if (_utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__["inputChecker"].isAnyDigitsOrSymbols(nameValue)) {
         this.setErrorFor(this.contactName, 'Please enter only characters');
       } else {
         this.setSuccessfulFor(this.contactName, 'Correct');
@@ -569,9 +569,10 @@ var inputChecker = {
   isFieldEmpty: function isFieldEmpty(input) {
     return input === '' || input == null;
   },
-  isAnyDigits: function isAnyDigits(name) {
+  isAnyDigitsOrSymbols: function isAnyDigitsOrSymbols(name) {
     var nameRegExpDig = /\d/g;
-    return nameRegExpDig.test(name) || !isNaN(name);
+    var nameRegExpSymbols = /\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\"|"|\;|\:/g;
+    return nameRegExpDig.test(name) || !isNaN(name) || nameRegExpSymbols.test(name);
   },
   isEmailValid: function isEmailValid(email) {
     var emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

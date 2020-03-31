@@ -14,9 +14,10 @@ export const inputChecker = {
         return (input === '' || input == null);
     },
 
-    isAnyDigits(name) {
+    isAnyDigitsOrSymbols(name) {
         const nameRegExpDig = /\d/g;
-        return ((nameRegExpDig.test(name)) || (!isNaN(name)));
+        const nameRegExpSymbols = /\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\"|"|\;|\:/g;
+        return ((nameRegExpDig.test(name)) || (!isNaN(name)) || nameRegExpSymbols.test(name));
     },
 
     isEmailValid(email) {
