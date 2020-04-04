@@ -1,6 +1,8 @@
 import { DOM_STATE_HTML } from './StateDOMHTML'
 import { StateDOMHTML } from './StateDOMHTML'
 import { ContactForms } from './form-validation'
+import { renderFeaturedGoods } from '../../goods/goods-featured-loader.js'
+import { renderOwlCarouselGoods } from '../../goods/goods-owl_carousel-loader.js'
 import { cslider } from '../src/jquery.cslider'
 import { owlCarousel } from '../src/owl.carousel'
 import { mixitup } from '../src/jquery.mixitup'
@@ -39,6 +41,8 @@ export class RenderHTML {
     depictMainPage() {
         $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.MAIN_PAGE);
+        renderFeaturedGoods();
+        renderOwlCarouselGoods();
         $(function () {
             $('#da-slider').cslider();
         });
@@ -70,7 +74,7 @@ export class RenderHTML {
                         effects: ['fade'],
                         easing: 'snap',
                         // call the hover effect
-                        // onMixEnd: filterList.hoverEffect()
+                        onMixEnd: filterList.hoverEffect()
                     });
                 },
 
@@ -177,3 +181,7 @@ export class RenderHTML {
     }
 
 }
+
+
+    
+

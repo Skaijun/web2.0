@@ -92,7 +92,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_dev_renderHTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
 // import {ContactForms} from './Components/dev/form-validation';
 
  // import { ContactForms } from './Components/dev/form-validation'
@@ -127,17 +127,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderHTML", function() { return RenderHTML; });
 /* harmony import */ var _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _form_validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
-/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_cslider__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
-/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_src_owl_carousel__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
-/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _goods_goods_featured_loader_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var _goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_cslider__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
+/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_src_owl_carousel__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
+/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_6__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
 
 
 
@@ -186,6 +190,8 @@ function () {
     value: function depictMainPage() {
       $(this.selectedHtmlElement).empty();
       this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].MAIN_PAGE);
+      Object(_goods_goods_featured_loader_js__WEBPACK_IMPORTED_MODULE_2__["renderFeaturedGoods"])();
+      Object(_goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_3__["renderOwlCarouselGoods"])();
       $(function () {
         $('#da-slider').cslider();
       });
@@ -217,9 +223,9 @@ function () {
               targetSelector: '.portfolio',
               filterSelector: '.filter',
               effects: ['fade'],
-              easing: 'snap' // call the hover effect
-              // onMixEnd: filterList.hoverEffect()
-
+              easing: 'snap',
+              // call the hover effect
+              onMixEnd: filterList.hoverEffect()
             });
           },
           hoverEffect: function hoverEffect() {
@@ -387,7 +393,6 @@ function () {
   return StateDOMHTML;
 }();
 var DOM_STATE_HTML = {
-  "MAIN_PAGE_2": '',
   "MAIN_PAGE": '',
   "SALE_PAGE_FULL": '',
   "HANDBAGS_PAGE_FULL": '',
@@ -398,12 +403,11 @@ var DOM_STATE_HTML = {
   "CONTACT_US_PAGE_FULL": '',
   "DETAILS_PAGE_FULL": ''
 };
-DOM_STATE_HTML.MAIN_PAGE_2 = "\n<!-- start header -->\n<div class=\"header_bg\">\n<div class=\"wrap\">\n\t<div class=\"header\">\n\t\t<div class=\"logo\">\n\t\t\t<a href=\"index.html\"><img src=\"../images/logo.png\" alt=\"\"/> </a>\n\t\t</div>\n\t\t<div class=\"h_icon\">\n\t\t<ul class=\"icon1 sub-icon1\">\n\t\t\t<li><a class=\"active-icon c1\" href=\"#\"><i>$300</i></a>\n\t\t\t\t<ul class=\"sub-icon1 list\">\n\t\t\t\t\t<li><h3>shopping cart empty</h3><a href=\"\"></a></li>\n\t\t\t\t\t<li><p>if items in your wishlit are missing, <a href=\"contact.html\">contact us</a> to view them</p></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t</ul>\n\t\t</div>\n\t\t<div class=\"h_search\">\n    \t\t<form>\n    \t\t\t<input type=\"text\" value=\"\">\n    \t\t\t<input type=\"submit\" value=\"\">\n    \t\t</form>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n</div>\n</div>\n<div class=\"header_btm\">\n<div class=\"wrap\">\n\t<div class=\"header_sub\">\n\t\t<div class=\"h_menu\">\n\t\t\t<ul>\n\t\t\t\t<li class=\"active\"><a href=\"index.html\">Home</a></li> |\n\t\t\t\t<li><a href=\"sale.html\">sale</a></li> |\n\t\t\t\t<li><a href=\"handbags.html\">handbags</a></li> |\n\t\t\t\t<li><a href=\"accessories.html\">accessories</a></li> |\n\t\t\t\t<li><a href=\"wallets.html\">wallets</a></li> |\n\t\t\t\t<li><a href=\"sale.html\">sale</a></li> |\n\t\t\t\t<li><a href=\"index.html\">mens store</a></li> |\n\t\t\t\t<li><a href=\"shoes.html\">shoes</a></li> |\n\t\t\t\t<li><a href=\"sale.html\">vintage</a></li> |\n\t\t\t\t<li><a href=\"service.html\">services</a></li> |\n\t\t\t\t<li><a href=\"contact.html\">Contact us</a></li>\n\t\t\t</ul>\n\t\t</div>\n\t\t<div class=\"top-nav\">\n\t          <nav class=\"nav\">\t        \t\n\t    \t    <a href=\"#\" id=\"w3-menu-trigger\"> </a>\n\t                  <ul class=\"nav-list\" style=\"\">\n\t            \t        <li class=\"nav-item\"><a class=\"active\" href=\"index.html\">Home</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a href=\"sale.html\">Sale</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a href=\"handbags.html\">Handbags</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a href=\"accessories.html\">Accessories</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a href=\"shoes.html\">Shoes</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a href=\"service.html\">Services</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a href=\"contact.html\">Contact</a></li>\n\t                 </ul>\n\t           </nav>\n\t             <div class=\"search_box\">\n\t\t\t\t<form>\n\t\t\t\t   <input type=\"text\" value=\"Search\" onfocus=\"this.value = '';\" onblur=\"if (this.value == '') {this.value = 'Search';}\"><input type=\"submit\" value=\"\">\n\t\t\t    </form>\n\t\t\t</div>\n\t          <div class=\"clear\"> </div>\n\t          <script src=\"./Components/src/responsive.menu.js\"></script>\n         </div>\t\t  \n\t<div class=\"clear\"></div>\n</div>\n</div>\n</div>\n<!-- start slider -->\n\t\t\t<div id=\"da-slider\" class=\"da-slider\">\n\t\t\t\t<div class=\"da-slide\">\n\t\t\t\t\t<h2>welcome to aditii</h2>\n\t\t\t\t\t<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>\n\t\t\t\t\t<a href=\"details.html\" class=\"da-link\">shop now</a>\n\t\t\t\t\t<div class=\"da-img\"><img src=\"../images/slider1.png\" alt=\"image01\" /></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"da-slide\">\n\t\t\t\t\t<h2>Easy management</h2>\n\t\t\t\t\t<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>\n\t\t\t\t\t<a href=\"details.html\" class=\"da-link\">shop now</a>\n\t\t\t\t\t<div class=\"da-img\"><img src=\"../images/slider2.png\" alt=\"image01\" /></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"da-slide\">\n\t\t\t\t\t<h2>Revolution</h2>\n\t\t\t\t\t<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>\n\t\t\t\t\t<a href=\"details.html\" class=\"da-link\">shop now</a>\n\t\t\t\t\t<div class=\"da-img\"><img src=\"../images/slider3.png\" alt=\"image01\" /></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"da-slide\">\n\t\t\t\t\t<h2>Quality Control</h2>\n\t\t\t\t\t<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>\n\t\t\t\t\t<a href=\"details.html\" class=\"da-link\">shop now</a>\n\t\t\t\t\t<div class=\"da-img\"><img src=\"../images/slider4.png\" alt=\"image01\" /></div>\n\t\t\t\t</div>\n\t\t\t\t<nav class=\"da-arrows\">\n\t\t\t\t\t<span class=\"da-arrows-prev\"></span>\n\t\t\t\t\t<span class=\"da-arrows-next\"></span>\n\t\t\t\t</nav>\n\t\t\t</div>\n        </div>\n<!----start-cursual---->\n<div class=\"wrap\">\n<!----start-img-cursual---->\n\t<div id=\"owl-demo\" class=\"owl-carousel\">\n\t\t<div class=\"item\" onclick=\"location.href='details.html';\">\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<img class=\"lazyOwl\" data-src=\"../images/c1.jpg\" alt=\"Lazy Owl Image\">\n\t\t\t</div>\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<h4><a href=\"details.html\">branded shoes</a></h4>\n\t\t\t\t<a href=\"details.html\" class=\"btn\">shop</a>\n\t\t\t</div>\n\t\t</div>\t\n\t\t<div class=\"item\" onclick=\"location.href='details.html';\">\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<img class=\"lazyOwl\" data-src=\"../images/c2.jpg\" alt=\"Lazy Owl Image\">\n\t\t\t</div>\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<h4><a href=\"details.html\">branded tees</a></h4>\n\t\t\t\t<a href=\"details.html\" class=\"btn\">shop</a>\n\t\t\t</div>\n\t\t</div>\t\n\t\t<div class=\"item\" onclick=\"location.href='details.html';\">\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<img class=\"lazyOwl\" data-src=\"../images/c3.jpg\" alt=\"Lazy Owl Image\">\n\t\t\t</div>\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<h4><a href=\"details.html\">branded jeens</a></h4>\n\t\t\t\t<a href=\"details.html\" class=\"btn\">shop</a>\n\t\t\t</div>\n\t\t</div>\t\n\t\t<div class=\"item\" onclick=\"location.href='details.html';\">\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<img class=\"lazyOwl\" data-src=\"../images/c2.jpg\" alt=\"Lazy Owl Image\">\n\t\t\t</div>\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<h4><a href=\"details.html\">branded tees</a></h4>\n\t\t\t\t<a href=\"details.html\" class=\"btn\">shop</a>\n\t\t\t</div>\n\t\t</div>\t\n\t\t<div class=\"item\" onclick=\"location.href='details.html';\">\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<img class=\"lazyOwl\" data-src=\"../images/c1.jpg\" alt=\"Lazy Owl Image\">\n\t\t\t</div>\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<h4><a href=\"details.html\">branded shoes</a></h4>\n\t\t\t\t<a href=\"details.html\" class=\"btn\">shop</a>\n\t\t\t</div>\n\t\t</div>\t\n\t\t<div class=\"item\" onclick=\"location.href='details.html';\">\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<img class=\"lazyOwl\" data-src=\"../images/c2.jpg\" alt=\"Lazy Owl Image\">\n\t\t\t</div>\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<h4><a href=\"details.html\">branded tees</a></h4>\n\t\t\t\t<a href=\"details.html\" class=\"btn\">shop</a>\n\t\t\t</div>\n\t\t</div>\t\n\t\t<div class=\"item\" onclick=\"location.href='details.html';\">\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<img class=\"lazyOwl\" data-src=\"../images/c3.jpg\" alt=\"Lazy Owl Image\">\n\t\t\t</div>\n\t\t\t<div class=\"cau_left\">\n\t\t\t\t<h4><a href=\"details.html\">branded jeens</a></h4>\n\t\t\t\t<a href=\"details.html\" class=\"btn\">shop</a>\n\t\t\t</div>\n\t\t</div>\t\n\t</div>\n\t<!----//End-img-cursual---->\n</div>\n<!-- start main1 -->\n<div class=\"main_bg1\">\n<div class=\"wrap\">\t\n\t<div class=\"main1\">\n\t\t<h2>featured products</h2>\n\t</div>\n</div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n<div class=\"wrap\">\t\n\t<div class=\"main\">\n\t\t<!-- start grids_of_3 -->\n\t\t<div class=\"grids_of_3\">\n\t\t\t<div class=\"grid1_of_3\">\n\t\t\t\t<a href=\"details.html\">\n\t\t\t\t\t<img src=\"../images/pic1.jpg\" alt=\"\"/>\n\t\t\t\t\t<h3>branded shoes</h3>\n\t\t\t\t\t<div class=\"price\">\n\t\t\t\t\t\t<h4>$300<span>indulge</span></h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<span class=\"b_btm\"></span>\n\t\t\t\t</a>\n\t\t\t</div>\n\t\t\t<div class=\"grid1_of_3\">\n\t\t\t\t<a href=\"details.html\">\n\t\t\t\t\t<img src=\"../images/pic2.jpg\" alt=\"\"/>\n\t\t\t\t\t<h3>branded t-shirts</h3>\n\t\t\t\t\t<div class=\"price\">\n\t\t\t\t\t\t<h4>$300<span>indulge</span></h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<span class=\"b_btm\"></span>\n\t\t\t\t</a>\n\t\t\t</div>\n\t\t\t<div class=\"grid1_of_3\">\n\t\t\t\t<a href=\"details.html\">\n\t\t\t\t\t<img src=\"../images/pic3.jpg\" alt=\"\"/>\n\t\t\t\t\t<h3>branded tees</h3>\n\t\t\t\t\t<div class=\"price\">\n\t\t\t\t\t\t<h4>$300<span>indulge</span></h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<span class=\"b_btm\"></span>\n\t\t\t\t</a>\n\t\t\t</div>\n\t\t\t<div class=\"clear\"></div>\n\t\t</div>\n\t\t<div class=\"grids_of_3\">\n\t\t\t<div class=\"grid1_of_3\">\n\t\t\t\t<a href=\"details.html\">\n\t\t\t\t\t<img src=\"../images/pic4.jpg\" alt=\"\"/>\n\t\t\t\t\t<h3>branded bags</h3>\n\t\t\t\t\t<div class=\"price\">\n\t\t\t\t\t\t<h4>$300<span>indulge</span></h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<span class=\"b_btm\"></span>\n\t\t\t\t</a>\n\t\t\t</div>\n\t\t\t<div class=\"grid1_of_3\">\n\t\t\t\t<a href=\"details.html\">\n\t\t\t\t\t<img src=\"../images/pic5.jpg\" alt=\"\"/>\n\t\t\t\t\t<h3>ems women bag</h3>\n\t\t\t\t\t<div class=\"price\">\n\t\t\t\t\t\t<h4>$300<span>indulge</span></h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<span class=\"b_btm\"></span>\n\t\t\t\t</a>\n\t\t\t</div>\n\t\t\t<div class=\"grid1_of_3\">\n\t\t\t\t<a href=\"details.html\">\n\t\t\t\t\t<img src=\"../images/pic6.jpg\" alt=\"\"/>\n\t\t\t\t\t<h3>branded cargos</h3>\n\t\t\t\t\t<div class=\"price\">\n\t\t\t\t\t\t<h4>$300<span>indulge</span></h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<span class=\"b_btm\"></span>\n\t\t\t\t</a>\n\t\t\t</div>\n\t\t\t<div class=\"clear\"></div>\n\t\t</div>\t\n\t\t<!-- end grids_of_3 -->\n\t</div>\n</div>\n</div>\t\n<!-- start footer -->\n<div class=\"footer_bg\">\n<div class=\"wrap\">\t\n\t<div class=\"footer\">\n\t\t<!-- start grids_of_4 -->\t\n\t\t<div class=\"grids_of_4\">\n\t\t\t<div class=\"grid1_of_4\">\n\t\t\t\t<h4>featured sale</h4>\n\t\t\t\t<ul class=\"f_nav\">\n\t\t\t\t\t<li><a href=\"\">alexis Hudson</a></li>\n\t\t\t\t\t<li><a href=\"\">american apparel</a></li>\n\t\t\t\t\t<li><a href=\"\">ben sherman</a></li>\n\t\t\t\t\t<li><a href=\"\">big buddha</a></li>\n\t\t\t\t\t<li><a href=\"\">channel</a></li>\n\t\t\t\t\t<li><a href=\"\">christian audigier</a></li>\n\t\t\t\t\t<li><a href=\"\">coach</a></li>\n\t\t\t\t\t<li><a href=\"\">cole haan</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"grid1_of_4\">\n\t\t\t\t<h4>mens store</h4>\n\t\t\t\t<ul class=\"f_nav\">\n\t\t\t\t\t<li><a href=\"\">alexis Hudson</a></li>\n\t\t\t\t\t<li><a href=\"\">american apparel</a></li>\n\t\t\t\t\t<li><a href=\"\">ben sherman</a></li>\n\t\t\t\t\t<li><a href=\"\">big buddha</a></li>\n\t\t\t\t\t<li><a href=\"\">channel</a></li>\n\t\t\t\t\t<li><a href=\"\">christian audigier</a></li>\n\t\t\t\t\t<li><a href=\"\">coach</a></li>\n\t\t\t\t\t<li><a href=\"\">cole haan</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"grid1_of_4\">\n\t\t\t\t<h4>women store</h4>\n\t\t\t\t<ul class=\"f_nav\">\n\t\t\t\t\t<li><a href=\"\">alexis Hudson</a></li>\n\t\t\t\t\t<li><a href=\"\">american apparel</a></li>\n\t\t\t\t\t<li><a href=\"\">ben sherman</a></li>\n\t\t\t\t\t<li><a href=\"\">big buddha</a></li>\n\t\t\t\t\t<li><a href=\"\">channel</a></li>\n\t\t\t\t\t<li><a href=\"\">christian audigier</a></li>\n\t\t\t\t\t<li><a href=\"\">coach</a></li>\n\t\t\t\t\t<li><a href=\"\">cole haan</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"grid1_of_4\">\n\t\t\t\t<h4>quick links</h4>\n\t\t\t\t<ul class=\"f_nav\">\n\t\t\t\t\t<li><a href=\"\">alexis Hudson</a></li>\n\t\t\t\t\t<li><a href=\"\">american apparel</a></li>\n\t\t\t\t\t<li><a href=\"\">ben sherman</a></li>\n\t\t\t\t\t<li><a href=\"\">big buddha</a></li>\n\t\t\t\t\t<li><a href=\"\">channel</a></li>\n\t\t\t\t\t<li><a href=\"\">christian audigier</a></li>\n\t\t\t\t\t<li><a href=\"\">coach</a></li>\n\t\t\t\t\t<li><a href=\"\">cole haan</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"clear\"></div>\n\t\t</div>\n\t</div>\n</div>\n</div>\t\n<!-- start footer -->\n<div class=\"footer_bg1\">\n<div class=\"wrap\">\n\t<div class=\"footer\">\n\t\t<!-- scroll_top_btn -->\n\t    <script type=\"text/javascript\">\n\t\t\t$(document).ready(function() {\n\t\t\t\n\t\t\t\tvar defaults = {\n\t\t  \t\t\tcontainerID: 'toTop', // fading element id\n\t\t\t\t\tcontainerHoverID: 'toTopHover', // fading element hover id\n\t\t\t\t\tscrollSpeed: 1200,\n\t\t\t\t\teasingType: 'linear' \n\t\t \t\t};\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t$().UItoTop({ easingType: 'easeOutQuart' });\n\t\t\t\t\n\t\t\t});\n\t\t</script>\n\t\t <a href=\"#\" id=\"toTop\" style=\"display: block;\"><span id=\"toTopHover\" style=\"opacity: 1;\"></span></a>\n\t\t<!--end scroll_top_btn -->\n\t\t<div class=\"copy\">\n\t\t\t<p class=\"link\">&copy;  All rights reserved | Template by&nbsp;&nbsp;<a href=\"http://w3layouts.com/\"> W3Layouts</a></p>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n</div>\n</div>\n";
 var HEADER_BG = " \n<div class=\"header_bg\">\n <div class=\"wrap\">\n\t<div class=\"header\">\n\t\t<div class=\"logo\">\n\t\t\t<a href=\"\"><img src=\"../images/logo.png\" alt=\"\" class=\"main-page\"/> </a>\n\t\t</div>\n\t\t<div class=\"h_icon\">\n\t\t<ul class=\"icon1 sub-icon1\">\n\t\t\t<li><a class=\"active-icon c1\" href=\"#\"><i>$300</i></a>\n\t\t\t\t<ul class=\"sub-icon1 list\">\n\t\t\t\t\t<li><h3>shopping cart empty</h3><a href=\"\"></a></li>\n\t\t\t\t\t<li><p>if items in your wishlit are missing, <a href=\"\" class=\"contactUs-page\">contact us</a> to view them</p></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t</ul>\n\t\t</div>\n\t\t<div class=\"h_search\">\n    \t\t<form>\n    \t\t\t<input type=\"text\" value=\"\">\n    \t\t\t<input type=\"submit\" value=\"\">\n    \t\t</form>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n </div>\n</div>\n"; // ---------------------------------------------------------
 
 var HEADER_MENU_NAV = "\n\n<div class=\"top-nav\">\n  <nav class=\"nav\">\n\t<a href=\"\" id=\"w3-menu-trigger\"> </a>\n\t<ul class=\"nav-list\">\n\t\t<li class=\"nav-item active\"><a href=\"\" class=\"main-page\">Home</a></li>\n\t\t<li class=\"nav-item\"><a href=\"\" class=\"sale-page\">sale</a></li>\n\t\t<li class=\"nav-item\"><a href=\"\" class=\"handbags-page\">handbags</a></li>\n\t\t<li class=\"nav-item\"><a href=\"\" class=\"accessories-page\">accessories</a></li>\n\t\t<li class=\"nav-item\"><a href=\"\" class=\"wallets-page\">wallets</a></li>\n\t\t<li class=\"nav-item\"><a href=\"\" class=\"shoes-page\">shoes</a></li>\n\t\t<li class=\"nav-item\"><a href=\"\" class=\"services-page\">services</a></li>\n\t\t<li class=\"nav-item\"><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n\t</ul>\n  </nav>\n <div class=\"search_box\">\n\t<form>\n\t\t<input type=\"text\" value=\"Search\" onfocus=\"this.value = '';\"\n\t\t\tonblur=\"if (this.value == '') {this.value = 'Search';}\"><input type=\"submit\" value=\"\">\n\t</form>\n </div>\n <div class=\"clear\"></div>\n</div>\n<div class=\"clear\"></div>\n";
 var FOOTER_BG = "\n<div class=\"footer_bg\">\n    <div class=\"wrap\">\n        <div class=\"footer\">\n            <!-- start grids_of_4 -->\n            <div class=\"grids_of_4\">\n                <div class=\"grid1_of_4\">\n                    <h4>featured sale</h4>\n                    <ul class=\"f_nav\">\n                        <li><a href=\"\">alexis Hudson</a></li>\n                        <li><a href=\"\">american apparel</a></li>\n                        <li><a href=\"\">ben sherman</a></li>\n                        <li><a href=\"\">big buddha</a></li>\n                        <li><a href=\"\">channel</a></li>\n                        <li><a href=\"\">christian audigier</a></li>\n                        <li><a href=\"\">coach</a></li>\n                        <li><a href=\"\">cole haan</a></li>\n                    </ul>\n                </div>\n                <div class=\"grid1_of_4\">\n                    <h4>mens store</h4>\n                    <ul class=\"f_nav\">\n                        <li><a href=\"\">alexis Hudson</a></li>\n                        <li><a href=\"\">american apparel</a></li>\n                        <li><a href=\"\">ben sherman</a></li>\n                        <li><a href=\"\">big buddha</a></li>\n                        <li><a href=\"\">channel</a></li>\n                        <li><a href=\"\">christian audigier</a></li>\n                        <li><a href=\"\">coach</a></li>\n                        <li><a href=\"\">cole haan</a></li>\n                    </ul>\n                </div>\n                <div class=\"grid1_of_4\">\n                    <h4>women store</h4>\n                    <ul class=\"f_nav\">\n                        <li><a href=\"\">alexis Hudson</a></li>\n                        <li><a href=\"\">american apparel</a></li>\n                        <li><a href=\"\">ben sherman</a></li>\n                        <li><a href=\"\">big buddha</a></li>\n                        <li><a href=\"\">channel</a></li>\n                        <li><a href=\"\">christian audigier</a></li>\n                        <li><a href=\"\">coach</a></li>\n                        <li><a href=\"\">cole haan</a></li>\n                    </ul>\n                </div>\n                <div class=\"grid1_of_4\">\n                    <h4>quick links</h4>\n                    <ul class=\"f_nav\">\n                        <li><a href=\"\">alexis Hudson</a></li>\n                        <li><a href=\"\">american apparel</a></li>\n                        <li><a href=\"\">ben sherman</a></li>\n                        <li><a href=\"\">big buddha</a></li>\n                        <li><a href=\"\">channel</a></li>\n                        <li><a href=\"\">christian audigier</a></li>\n                        <li><a href=\"\">coach</a></li>\n                        <li><a href=\"\">cole haan</a></li>\n                    </ul>\n                </div>\n                <div class=\"clear\"></div>\n            </div>\n        </div>\n    </div>\n</div>\n<!-- start footer -->\n<div class=\"footer_bg1\">\n    <div class=\"wrap\">\n        <div class=\"footer\">\n            <!-- scroll_top_btn -->\n            <script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\">\n                $(document).ready(function () {\n\n                    var defaults = {\n                        containerID: 'toTop', // fading element id\n                        containerHoverID: 'toTopHover', // fading element hover id\n                        scrollSpeed: 1200,\n                        easingType: 'linear'\n                    };\n\n\n                    $().UItoTop({ easingType: 'easeOutQuart' });\n\n                });\n            </script>\n            <a href=\"\" id=\"toTop\" style=\"display: block;\"><span id=\"toTopHover\" style=\"opacity: 1;\"></span></a>\n            <!-- end scroll_top_btn -->\n            <div class=\"copy\">\n            <p class=\"link\">&copy; All rights reserved <a href=\"https://github.com/Skaijun/web2.0\"> by OOO \"Anja\n                    & Co.: [Max, Dima];\"</a></p>\n        </div>\n            <div class=\"clear\"></div>\n        </div>\n    </div>\n</div>\n";
-DOM_STATE_HTML.MAIN_PAGE = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n    <div class=\"wrap\">\n        <div class=\"header_sub\">\n            <div class=\"h_menu\">\n                <ul>\n                    <li class=\"active\"><a href=\"\" class=\"main-page\">Home</a></li> |\n                    <li><a href=\"\" class=\"sale-page\">sale</a></li> |\n                    <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                    <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                    <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                    <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                    <li><a href=\"\" class=\"services-page\">services</a></li> |\n                    <li><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n                </ul>\n            </div>\n\t\t\t").concat(HEADER_MENU_NAV, "\n        </div>\n    </div>\n</div>\n\n<!--      MAIN_PAGE            -->\n\n<div id=\"da-slider\" class=\"da-slider\">\n<div class=\"da-slide\">\n    <h2>welcome to aditii</h2>\n    <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her\n        hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line\n        Lane.</p>\n    <a href=\"\" class=\"da-link\">shop now</a>\n    <div class=\"da-img\"><img src=\"../images/slider1.png\" alt=\"image01\" /></div>\n</div>\n<div class=\"da-slide\">\n    <h2>Easy management</h2>\n    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the\n        blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language\n        ocean.</p>\n    <a href=\"\" class=\"da-link\">shop now</a>\n    <div class=\"da-img\"><img src=\"../images/slider2.png\" alt=\"image01\" /></div>\n</div>\n<div class=\"da-slide\">\n    <h2>Revolution</h2>\n    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a\n        paradisematic country, in which roasted parts of sentences fly into your mouth.</p>\n    <a href=\"\" class=\"da-link\">shop now</a>\n    <div class=\"da-img\"><img src=\"../images/slider3.png\" alt=\"image01\" /></div>\n</div>\n<div class=\"da-slide\">\n    <h2>Quality Control</h2>\n    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life\n        One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World\n        of Grammar.</p>\n    <a href=\"\" class=\"da-link\">shop now</a>\n    <div class=\"da-img\"><img src=\"../images/slider4.png\" alt=\"image01\" /></div>\n</div>\n<nav class=\"da-arrows\">\n    <span class=\"da-arrows-prev\"></span>\n    <span class=\"da-arrows-next\"></span>\n</nav>\n\n</div>\n<!-- -- start-cursual-- -->\n<div class=\"wrap\">\n  <div id=\"owl-demo\" class=\"owl-carousel\">\n    <div class=\"item\">\n        <div class=\"cau_left\">\n            <img class=\"lazyOwl\" data-src=\"../images/c1.jpg\" alt=\"Lazy Owl Image\">\n        </div>\n        <div class=\"cau_left\">\n            <h4><a href=\"\" class=\"details-page\">branded shoes</a></h4>\n            <a href=\"\" class=\"btn details-page\">shop</a>\n        </div>\n    </div>\n    <div class=\"item\">\n        <div class=\"cau_left\">\n            <img class=\"lazyOwl\" data-src=\"../images/c2.jpg\" alt=\"Lazy Owl Image\">\n        </div>\n        <div class=\"cau_left\">\n            <h4><a href=\"\" class=\"details-page\">branded tees</a></h4>\n            <a href=\"\" class=\"btn details-page\">shop</a>\n        </div>\n    </div>\n    <div class=\"item\">\n        <div class=\"cau_left\">\n            <img class=\"lazyOwl\" data-src=\"../images/c3.jpg\" alt=\"Lazy Owl Image\">\n        </div>\n        <div class=\"cau_left\">\n            <h4><a href=\"\" class=\"details-page\">branded jeens</a></h4>\n            <a href=\"\" class=\"btn details-page\">shop</a>\n        </div>\n    </div>\n    <div class=\"item\">\n        <div class=\"cau_left\">\n            <img class=\"lazyOwl\" data-src=\"../images/c2.jpg\" alt=\"Lazy Owl Image\">\n        </div>\n        <div class=\"cau_left\">\n            <h4><a href=\"\" class=\"details-page\">branded tees</a></h4>\n            <a href=\"\" class=\"btn details-page\">shop</a>\n        </div>\n    </div>\n    <div class=\"item\">\n        <div class=\"cau_left\">\n            <img class=\"lazyOwl\" data-src=\"../images/c1.jpg\" alt=\"Lazy Owl Image\">\n        </div>\n        <div class=\"cau_left\">\n\t\t<h4><a href=\"\" class=\"details-page\">branded shoes</a></h4>\n            <a href=\"\" class=\"btn details-page\">shop</a>\n        </div>\n    </div>\n    <div class=\"item\">\n        <div class=\"cau_left\">\n            <img class=\"lazyOwl\" data-src=\"../images/c2.jpg\" alt=\"Lazy Owl Image\">\n        </div>\n        <div class=\"cau_left\">\n\t\t<h4><a href=\"\" class=\"details-page\">branded tees</a></h4>\n            <a href=\"\" class=\"btn details-page\">shop</a>\n        </div>\n    </div>\n    <div class=\"item\">\n        <div class=\"cau_left\">\n            <img class=\"lazyOwl\" data-src=\"../images/c3.jpg\" alt=\"Lazy Owl Image\">\n        </div>\n        <div class=\"cau_left\">\n            <h4><a href=\"\" class=\"details-page\">branded jeens</a></h4>\n            <a href=\"\" class=\"btn details-page\">shop</a>\n        </div>\n    </div>\n  </div>\n</div>\n<!-- start main1 -->\n<div class=\"main_bg1\">\n  <div class=\"wrap\">\n    <div class=\"main1\">\n        <h2>featured products</h2>\n    </div>\n  </div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n<div class=\"wrap\">\n    <div class=\"main\">\n        <!-- start grids_of_3 -->\n        <div class=\"grids_of_3\">\n            <div class=\"grid1_of_3\">\n                <a href=\"\" class=\"details-page\">\n                    <img src=\"../images/pic1.jpg\" alt=\"\" class=\"details-page\" />\n                    <h3>branded shoes</h3>\n                    <div class=\"price\">\n                        <h4>$300<span class=\"details-page\">indulge</span></h4>\n                    </div>\n                    <span class=\"b_btm\"></span>\n                </a>\n            </div>\n            <div class=\"grid1_of_3\">\n                <a href=\"\" class=\"details-page\">\n                    <img src=\"../images/pic2.jpg\" alt=\"\" class=\"details-page\" />\n                    <h3>branded t-shirts</h3>\n                    <div class=\"price\">\n                        <h4>$300<span class=\"details-page\">indulge</span></h4>\n                    </div>\n                    <span class=\"b_btm\"></span>\n                </a>\n            </div>\n            <div class=\"grid1_of_3\">\n                <a href=\"\" class=\"details-page\">\n                    <img src=\"../images/pic3.jpg\" alt=\"\" class=\"details-page\" />\n                    <h3>branded tees</h3>\n                    <div class=\"price\">\n                        <h4>$300<span class=\"details-page\">indulge</span></h4>\n                    </div>\n                    <span class=\"b_btm\"></span>\n                </a>\n            </div>\n            <div class=\"clear\"></div>\n        </div>\n        <div class=\"grids_of_3\">\n            <div class=\"grid1_of_3\">\n                <a href=\"\" class=\"details-page\">\n                    <img src=\"../images/pic4.jpg\" alt=\"\" class=\"details-page\" />\n                    <h3>branded bags</h3>\n                    <div class=\"price\">\n                        <h4>$300<span class=\"details-page\">indulge</span></h4>\n                    </div>\n                    <span class=\"b_btm\"></span>\n                </a>\n            </div>\n            <div class=\"grid1_of_3\">\n                <a href=\"\" class=\"details-page\">\n                    <img src=\"../images/pic5.jpg\" alt=\"\" class=\"details-page\" />\n                    <h3>ems women bag</h3>\n                    <div class=\"price\">\n                        <h4>$300<span class=\"details-page\">indulge</span></h4>\n                    </div>\n                    <span class=\"b_btm\"></span>\n                </a>\n            </div>\n            <div class=\"grid1_of_3\">\n                <a href=\"\" class=\"details-page\">\n                    <img src=\"../images/pic6.jpg\" alt=\"\" class=\"details-page\" />\n                    <h3>branded cargos</h3>\n                    <div class=\"price\">\n                        <h4>$300<span class=\"details-page\">indulge</span></h4>\n                    </div>\n                    <span class=\"b_btm\"></span>\n                </a>\n            </div>\n            <div class=\"clear\"></div>\n        </div>\n    </div>\n</div>\n</div> \n\n").concat(FOOTER_BG); // --------------------------------------------------------------------------------
+DOM_STATE_HTML.MAIN_PAGE = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n    <div class=\"wrap\">\n        <div class=\"header_sub\">\n            <div class=\"h_menu\">\n                <ul>\n                    <li class=\"active\"><a href=\"\" class=\"main-page\">Home</a></li> |\n                    <li><a href=\"\" class=\"sale-page\">sale</a></li> |\n                    <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                    <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                    <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                    <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                    <li><a href=\"\" class=\"services-page\">services</a></li> |\n                    <li><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n                </ul>\n            </div>\n\t\t\t").concat(HEADER_MENU_NAV, "\n        </div>\n    </div>\n</div>\n\n<!--      MAIN_PAGE            -->\n\n<div id=\"da-slider\" class=\"da-slider\">\n<div class=\"da-slide\">\n    <h2>welcome to aditii</h2>\n    <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her\n        hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line\n        Lane.</p>\n    <a href=\"\" class=\"da-link sale-page\">shop now</a>\n    <div class=\"da-img\"><img src=\"../images/slider1.png\" alt=\"image01\" /></div>\n</div>\n<div class=\"da-slide\">\n    <h2>Easy management</h2>\n    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the\n        blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language\n        ocean.</p>\n    <a href=\"\" class=\"da-link sale-page\">shop now</a>\n    <div class=\"da-img\"><img src=\"../images/slider2.png\" alt=\"image01\" /></div>\n</div>\n<div class=\"da-slide\">\n    <h2>Revolution</h2>\n    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a\n        paradisematic country, in which roasted parts of sentences fly into your mouth.</p>\n    <a href=\"\" class=\"da-link sale-page\">shop now</a>\n    <div class=\"da-img\"><img src=\"../images/slider3.png\" alt=\"image01\" /></div>\n</div>\n<div class=\"da-slide\">\n    <h2>Quality Control</h2>\n    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life\n        One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World\n        of Grammar.</p>\n    <a href=\"\" class=\"da-link sale-page\">shop now</a>\n    <div class=\"da-img\"><img src=\"../images/slider4.png\" alt=\"image01\" /></div>\n</div>\n<nav class=\"da-arrows\">\n    <span class=\"da-arrows-prev\"></span>\n    <span class=\"da-arrows-next\"></span>\n</nav>\n</div>\n\n<!-- -- start-cursual-- -->\n<div class=\"wrap\">\n  <div id=\"owl-demo\" class=\"owl-carousel\">\n\n  </div>\n</div>\n\n<!-- start main1 -->\n<div class=\"main_bg1\">\n  <div class=\"wrap\">\n    <div class=\"main1\">\n        <h2>featured products</h2>\n    </div>\n  </div>\n</div>\n\n<!-- start main -->\n<div class=\"main_bg\">\n<div class=\"wrap\">\n<div class=\"main\">\n\n</div>\t\n</div>\n</div> \n\n").concat(FOOTER_BG); // --------------------------------------------------------------------------------
 
 DOM_STATE_HTML.SALE_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n<div class=\"wrap\">\n\t<div class=\"header_sub\">\n\t\t<div class=\"h_menu\">\n\t\t\t<ul>              \n                <li><a href=\"\" class=\"main-page\">Home</a></li> |\n                <li class=\"active\"><a href=\"\" class=\"sale-page\">sale</a></li> |\n                <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                <li><a href=\"\" class=\"services-page\">services</a></li> |\n                <li><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n\t\t\t</ul>\n\t\t</div>\n\t\t").concat(HEADER_MENU_NAV, "\n</div>\n</div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n<div class=\"wrap\">\t\n\t<div class=\"main\">\n\t<!-- start gallery_sale  -->\n\t\t\t<div class=\"gallery1\">\n\t\t\t\t\t<div class=\"container\">\n\t\t\t\t\t<ul id=\"filters\" class=\"clearfix\">\n\t\t\t\t\t\t<li><span class=\"filter active\" data-filter=\"men women watches accessories\">All</span></li>\n\t\t\t\t\t\t<li><span class=\"filter\" data-filter=\"men\">men</span></li>\n\t\t\t\t\t\t<li><span class=\"filter\" data-filter=\"women\">women</span></li>\n\t\t\t\t\t\t<li><span class=\"filter\" data-filter=\"watches\">Watches</span></li>\n\t\t\t\t\t\t<li><span class=\"filter\" data-filter=\"accessories\">Accessories</span></li>\n\t\t\t\t\t</ul>\n\t\t\t<div id=\"portfoliolist\">\n\t\t\t<div class=\"portfolio women\" data-cat=\"women\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic1.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">ethnic fashion guide: sarees</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\t\n\t\t\t<div class=\"portfolio watches\" data-cat=\"watches\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic2.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">fasttrack: watches</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\n\t\t\t<div class=\"portfolio women\" data-cat=\"women\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic3.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">ethnic fashion guide: dresses</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\t\n\t\t\t<div class=\"portfolio men\" data-cat=\"men\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic4.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">ethnic fashion guide: tees</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\n\t\t\t<div class=\"portfolio men\" data-cat=\"men\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic5.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">ethnic fashion guide: tees</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\t\t\t<div class=\"portfolio watches\" data-cat=\"watches\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic6.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">fasttrack: watches</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\n\t\t\t<div class=\"portfolio women\" data-cat=\"women\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic7.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">Sonor's Design</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\t\n\t\t\t<div class=\"portfolio accessories\" data-cat=\"accessories\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic8.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">Typography Company</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\n\t\t\t<div class=\"portfolio accessories\" data-cat=\"accessories\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic9.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">Weatherette</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\t\t\t<div class=\"portfolio accessories\" data-cat=\"accessories\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic10.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">BMF</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\n\t\t\t\t\t\n\t\t\t<div class=\"portfolio accessories\" data-cat=\"accessories\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic11.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">Techlion</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\n\t\t\t\n\t\t\t<div class=\"portfolio women\" data-cat=\"women\">\n\t\t\t\t<div class=\"portfolio-wrapper\">\t\t\t\n\t\t\t\t\t<a href=\"\" class=\"details-page\">\n\t\t\t\t\t\t<img src=\"../images/sale_pic12.jpg\"  alt=\"Image 2\" class=\"details-page\"/>\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"label\">\n\t\t\t\t\t\t<div class=\"label-text\">\n\t\t\t\t\t\t\t<a class=\"text-title\">KittyPic</a>\n\t\t\t\t\t\t\t<span class=\"text-category\">indulge</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"label-bg\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t</div>\n\t</div>\n\t<script type=\"text/javascript\" src=\"../js/Components/src/fliplightbox.min.js\"></script>\n\t<script type=\"text/javascript\">$('body').flipLightBox()</script>\n\t<div class=\"clear\"> </div>\n\t</div>\n\t</div>\n</div>\n</div>\t\t\n<!-- start footer -->\n").concat(FOOTER_BG, "\n"); // --------------------------------------------------------------------------------
 
@@ -586,6 +590,165 @@ var inputChecker = {
 
 /***/ }),
 /* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderFeaturedGoods", function() { return renderFeaturedGoods; });
+/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+
+/*
+*  load to HTML featured products
+*/
+
+function renderFeaturedGoods() {
+  var howManyGoodsInOneRow = 3;
+  var howManyFeaturedGoodsDoWeHave = 0;
+  var numberOfdepictedRows = 1;
+  _goods__WEBPACK_IMPORTED_MODULE_0__["goods"].forEach(function (product) {
+    if (product.featured === true) {
+      var outputHTML = "<div class=\"grid1_of_3\" id=\"".concat(product.id, "\">\n                          <a href=\"\" class=\"details-page\">\n                          <img src=\"").concat(product.image, "\" alt=\"\" class=\"details-page\" />\n                          <h3 class=\"details-page\">").concat(product.name, "</h3>\n                          <div class=\"price\">\n                          <h4>$").concat(product.price, "<span class=\"details-page\">indulge</span></h4>\n                          </div>\n                          <span class=\"b_btm\"></span>\n                          </a>\n                          </div>");
+      howManyFeaturedGoodsDoWeHave++;
+
+      if (howManyFeaturedGoodsDoWeHave === 1 || (howManyFeaturedGoodsDoWeHave - 1) % howManyGoodsInOneRow === 0) {
+        var wrapForFeaturedGoods = document.createElement('div');
+        wrapForFeaturedGoods.classList.add('grids_of_3');
+        $('.main').append(wrapForFeaturedGoods);
+      }
+
+      $('.grids_of_3')[numberOfdepictedRows - 1].insertAdjacentHTML("beforeend", outputHTML);
+
+      if (howManyFeaturedGoodsDoWeHave % howManyGoodsInOneRow === 0) {
+        var wrapForFeaturedGoodsClear = document.createElement('div');
+        wrapForFeaturedGoodsClear.classList.add('clear');
+        $('.grids_of_3')[numberOfdepictedRows - 1].append(wrapForFeaturedGoodsClear);
+        numberOfdepictedRows++;
+      }
+    }
+  });
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "goods", function() { return goods; });
+var goods = [{
+  "id": 10001,
+  "name": "Branded shoes",
+  "price": 100,
+  "description": "",
+  "image": "../images/pic1.jpg",
+  "featured": true,
+  "owl_carousel": false
+}, {
+  "id": 10002,
+  "name": "Levis T-shirt",
+  "price": 70,
+  "description": "",
+  "image": "../images/pic2.jpg",
+  "featured": true,
+  "owl_carousel": false
+}, {
+  "id": 10003,
+  "name": "True T-shirt",
+  "price": 15,
+  "description": "",
+  "image": "../images/pic3.jpg",
+  "featured": true,
+  "owl_carousel": false
+}, {
+  "id": 10004,
+  "name": "Branded bags",
+  "price": 25,
+  "description": "",
+  "image": "../images/pic4.jpg",
+  "featured": true,
+  "owl_carousel": true
+}, {
+  "id": 10005,
+  "name": "EMS women bag",
+  "price": 105,
+  "description": "",
+  "image": "../images/pic5.jpg",
+  "featured": true,
+  "owl_carousel": true
+}, {
+  "id": 10006,
+  "name": "Easy top",
+  "price": 10,
+  "description": "",
+  "image": "../images/pic6.jpg",
+  "featured": true,
+  "owl_carousel": true
+}, {
+  "id": 10007,
+  "name": "Easy top",
+  "price": 109,
+  "description": "",
+  "image": "../images/pic6.jpg",
+  "featured": false,
+  "owl_carousel": true
+}, {
+  "id": 10008,
+  "name": "Branded shoes",
+  "price": 99,
+  "description": "",
+  "image": "../images/c1.jpg",
+  "featured": false,
+  "owl_carousel": true
+}, {
+  "id": 10009,
+  "name": "Branded tees",
+  "price": 79,
+  "description": "",
+  "image": "../images/c2.jpg",
+  "featured": false,
+  "owl_carousel": true
+}, {
+  "id": 10010,
+  "name": "Branded jeens",
+  "price": 69,
+  "description": "",
+  "image": "../images/c3.jpg",
+  "featured": false,
+  "owl_carousel": true
+}, {
+  "id": 10011,
+  "name": "Branded tees",
+  "price": 79,
+  "description": "",
+  "image": "../images/c2.jpg",
+  "featured": false,
+  "owl_carousel": true
+}];
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderOwlCarouselGoods", function() { return renderOwlCarouselGoods; });
+/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+
+/*
+*  load to HTML owl-carousel products
+*/
+
+function renderOwlCarouselGoods() {
+  _goods__WEBPACK_IMPORTED_MODULE_0__["goods"].forEach(function (product) {
+    if (product.owl_carousel === true) {
+      var outputHTML = "<div class=\"item\">\n                            <div class=\"cau_left\">\n                              <img class=\"lazyOwl details-page\" data-src=\"".concat(product.image, "\" alt=\"Lazy Owl Image\">\n                            </div>\n                            <div class=\"cau_left\">\n                              <h4><a href=\"\" class=\"details-page\">").concat(product.name, "</a></h4>\n                              <a href=\"\" class=\"btn details-page\">shop</a>\n                            </div>\n                            </div>");
+      $('#owl-demo').append(outputHTML);
+    }
+  });
+}
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports) {
 
 (function ($, undefined) {
@@ -825,7 +988,7 @@ var inputChecker = {
 })(jQuery);
 
 /***/ }),
-/* 6 */
+/* 9 */
 /***/ (function(module, exports) {
 
 /*
@@ -2262,7 +2425,7 @@ if (typeof Object.create !== "function") {
 })(jQuery, window, document);
 
 /***/ }),
-/* 7 */
+/* 10 */
 /***/ (function(module, exports) {
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -2801,7 +2964,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 })(jQuery);
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
