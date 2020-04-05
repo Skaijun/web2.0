@@ -9,11 +9,11 @@ export function renderOwlCarouselGoods() {
         if (product.owl_carousel === true) {
             let outputHTML = `<div class="item">
                             <div class="cau_left">
-                              <img class="lazyOwl details-page" data-src="${product.image}" alt="Lazy Owl Image">
+                              <img class="lazyOwl details-page" data-src="${product.image}" data-art="${product.id}" alt="Lazy Owl Image">
                             </div>
                             <div class="cau_left">
-                              <h4><a href="" class="details-page">${product.name}</a></h4>
-                              <a href="" class="btn details-page">shop</a>
+                              <h4><a href="" class="details-page" data-art="${product.id}">${product.name}</a></h4>
+                              <a href="" class="btn details-page" data-art="${product.id}">shop</a>
                             </div>
                             </div>`;
 

@@ -4,6 +4,8 @@ export const goods = [
         "name": "Branded shoes",
         "price": 100,
         "description": "",
+        "category" : "shoes",
+        "color" : ['red'],
         "image": "../images/pic1.jpg",
         "featured": true,
         "owl_carousel": false
@@ -13,6 +15,8 @@ export const goods = [
         "name": "Levis T-shirt",
         "price": 70,
         "description": "",
+        "category" : "t_shirt",
+        "color" : ['black'],
         "image": "../images/pic2.jpg",
         "featured": true,
         "owl_carousel": false
@@ -22,6 +26,8 @@ export const goods = [
         "name": "True T-shirt",
         "price": 15,
         "description": "",
+        "category" : "t_shirt",
+        "color" : ['gray'],
         "image": "../images/pic3.jpg",
         "featured": true,
         "owl_carousel": false
@@ -31,6 +37,8 @@ export const goods = [
         "name": "Branded bags",
         "price": 25,
         "description": "",
+        "category" : "wallet",
+        "color" : ['brown'],
         "image": "../images/pic4.jpg",
         "featured": true,
         "owl_carousel": true
@@ -40,6 +48,8 @@ export const goods = [
         "name": "EMS women bag",
         "price": 105,
         "description": "",
+        "category" : "handbags",
+        "color" : ['coffee'],
         "image": "../images/pic5.jpg",
         "featured": true,
         "owl_carousel": true
@@ -49,6 +59,8 @@ export const goods = [
         "name": "Easy top",
         "price": 10,
         "description": "",
+        "category" : "t_shirt",
+        "color" : ['black'],
         "image": "../images/pic6.jpg",
         "featured": true,
         "owl_carousel": true
@@ -58,8 +70,10 @@ export const goods = [
         "name": "Easy top",
         "price": 109,
         "description": "",
+        "category" : "t_shirt",
+        "color" : ['black'],
         "image": "../images/pic6.jpg",
-        "featured": false,
+        "featured": true,
         "owl_carousel": true
     },
     {
@@ -67,8 +81,10 @@ export const goods = [
         "name": "Branded shoes",
         "price": 99,
         "description": "",
+        "category" : "shoes",
+        "color" : ['brown'],
         "image": "../images/c1.jpg",
-        "featured": false,
+        "featured": true,
         "owl_carousel": true
     },
     {
@@ -76,6 +92,8 @@ export const goods = [
         "name": "Branded tees",
         "price": 79,
         "description": "",
+        "category" : "t_shirt",
+        "color" : ['black'],
         "image": "../images/c2.jpg",
         "featured": false,
         "owl_carousel": true
@@ -85,6 +103,8 @@ export const goods = [
         "name": "Branded jeens",
         "price": 69,
         "description": "",
+        "category" : "jeens",
+        "color" : ['blue'],
         "image": "../images/c3.jpg",
         "featured": false,
         "owl_carousel": true
@@ -94,6 +114,8 @@ export const goods = [
         "name": "Branded tees",
         "price": 79,
         "description": "",
+        "category" : "t_shirt",
+        "color" : ['black'],
         "image": "../images/c2.jpg",
         "featured": false,
         "owl_carousel": true

@@ -11,11 +11,11 @@ export function renderFeaturedGoods() {
 
         if (product.featured === true) {
             let outputHTML = `<div class="grid1_of_3" id="${product.id}">
-                          <a href="" class="details-page">
-                          <img src="${product.image}" alt="" class="details-page" />
-                          <h3 class="details-page">${product.name}</h3>
+                          <a href="" class="details-page" data-art="${product.id}">
+                          <img src="${product.image}" alt="product image" class="details-page" data-art="${product.id}"/>
+                          <h3 class="details-page" data-art="${product.id}">${product.name}</h3>
                           <div class="price">
-                          <h4>$${product.price}<span class="details-page">indulge</span></h4>
+                          <h4>$${product.price}<span class="details-page" data-art="${product.id}">indulge</span></h4>
                           </div>
                           <span class="b_btm"></span>
                           </a>

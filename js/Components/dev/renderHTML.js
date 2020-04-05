@@ -1,6 +1,7 @@
-import { DOM_STATE_HTML } from './StateDOMHTML'
-import { StateDOMHTML } from './StateDOMHTML'
-import { ContactForms } from './form-validation'
+import { DOM_STATE_HTML, StateDOMHTML } from './StateDOMHTML.js'
+import { StateActiveProduct } from '../../goods/goods-details-state.js'
+import { ContactForms } from './form-validation.js'
+import { renderDetailedProduct } from '../../goods/goods-detailed-loader.js'
 import { renderFeaturedGoods } from '../../goods/goods-featured-loader.js'
 import { renderOwlCarouselGoods } from '../../goods/goods-owl_carousel-loader.js'
 import { cslider } from '../src/jquery.cslider'
@@ -11,12 +12,14 @@ export class RenderHTML {
     constructor(selectedHtmlElement) {
         this.selectedHtmlElement = selectedHtmlElement || document.body;
         this.pageState = new StateDOMHTML();
+        this.detailedProductState = new StateActiveProduct();
         this.depictCurrentPage();
         this.handleEventsOnBtns = this.handleEventsOnBtns.bind(this);
         this.setEventToDOM(this.selectedHtmlElement);
     }
 
     depictCurrentPage() {
+        $(this.selectedHtmlElement).empty();
         if (this.pageState.currPage === 'main-page') {
             this.depictMainPage();
         } else if (this.pageState.currPage === 'sale-page') {
@@ -39,7 +42,6 @@ export class RenderHTML {
     }
 
     depictMainPage() {
-        $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.MAIN_PAGE);
         renderFeaturedGoods();
         renderOwlCarouselGoods();
@@ -61,7 +63,6 @@ export class RenderHTML {
         });
     }
     depictSalePage() {
-        $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.SALE_PAGE_FULL);
         $(function () {
             var filterList = {
@@ -97,33 +98,27 @@ export class RenderHTML {
         });
     }
     depictHandbagsPage() {
-        $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.HANDBAGS_PAGE_FULL);
     }
     depictAccessoriesPage() {
-        $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.ACCESSORIES_PAGE_FULL);
     }
     depictWalletsPage() {
-        $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.WALLETS_PAGE_FULL);
     }
     depictShoesPage() {
-        $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.SHOES_PAGE_FULL);
     }
     depictServicesPage() {
-        $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.SERVICES_PAGE_FULL);
     }
     depictContactUsPage() {
-        $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.CONTACT_US_PAGE_FULL);
         const contactUsFormsInitialization = new ContactForms();
     }
     depictDetailsPage() {
-        $(this.selectedHtmlElement).empty();
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.DETAILS_PAGE_FULL);
+        renderDetailedProduct(this.detailedProductState.detailedProductAttr);
     }
 
     setEventToDOM(selectedElement) {
@@ -132,56 +127,48 @@ export class RenderHTML {
 
     handleEventsOnBtns(event) {
         // event.preventDefault();
-        if (event.target.classList.contains('main-page')) {
-            window.localStorage.clear();
-            this.pageState.savePageStateInLocalStorage('main-page');
-            document.location.reload(true);
-            this.depictCurrentPage();
-        } else if (event.target.classList.contains('sale-page')) {
-            window.localStorage.clear();
-            this.pageState.savePageStateInLocalStorage('sale-page');
-            document.location.reload(true);
-            this.depictCurrentPage();
-        } else if (event.target.classList.contains('handbags-page')) {
-            window.localStorage.clear();
-            this.pageState.savePageStateInLocalStorage('handbags-page');
-            document.location.reload(true);
-            this.depictCurrentPage();
-        } else if (event.target.classList.contains('accessories-page')) {
-            window.localStorage.clear();
-            this.pageState.savePageStateInLocalStorage('accessories-page');
-            document.location.reload(true);
-            this.depictCurrentPage();
-        } else if (event.target.classList.contains('wallets-page')) {
-            window.localStorage.clear();
-            this.pageState.savePageStateInLocalStorage('wallets-page');
-            document.location.reload(true);
-            this.depictCurrentPage();
-        } else if (event.target.classList.contains('shoes-page')) {
-            window.localStorage.clear();
-            this.pageState.savePageStateInLocalStorage('shoes-page');
-            document.location.reload(true);
-            this.depictCurrentPage();
-        } else if (event.target.classList.contains('services-page')) {
-            window.localStorage.clear();
-            this.pageState.savePageStateInLocalStorage('services-page');
-            document.location.reload(true);
-            this.depictCurrentPage();
-        } else if (event.target.classList.contains('contactUs-page')) {
-            window.localStorage.clear();
-            this.pageState.savePageStateInLocalStorage('contactUs-page');
-            document.location.reload(true);
-            this.depictCurrentPage();
-        } else if (event.target.classList.contains('details-page')) {
-            window.localStorage.clear();
-            this.pageState.savePageStateInLocalStorage('details-page');
-            document.location.reload(true);
-            this.depictCurrentPage();
+
+        let element = event.target.classList;
+        switch (true) {
+            case element.contains('main-page'):
+                this.handleDepictPageEvent('main-page');
+                break;
+            case element.contains('sale-page'):
+                this.handleDepictPageEvent('sale-page');
+                break;
+            case element.contains('handbags-page'):
+                this.handleDepictPageEvent('handbags-page');
+                break;
+            case element.contains('accessories-page'):
+                this.handleDepictPageEvent('accessories-page');
+                break;
+            case element.contains('wallets-page'):
+                this.handleDepictPageEvent('wallets-page');
+                break;
+            case element.contains('shoes-page'):
+                this.handleDepictPageEvent('shoes-page');
+                break;
+            case element.contains('services-page'):
+                this.handleDepictPageEvent('services-page');
+                break;
+            case element.contains('contactUs-page'):
+                this.handleDepictPageEvent('contactUs-page');
+                break;
+            case element.contains('details-page'):
+                window.localStorage.clear();
+                this.pageState.savePageStateInLocalStorage('details-page');
+                this.detailedProductState.saveProductStateInLocalStorage(event.target.getAttribute('data-art'));
+                document.location.reload(true);
+                this.depictCurrentPage();
+                break;
         }
     }
 
+    handleDepictPageEvent(pageClass) {
+        window.localStorage.clear();
+        this.pageState.savePageStateInLocalStorage(pageClass);
+        document.location.reload(true);
+        this.depictCurrentPage();
+    }
+
 }
-
-
-    
-

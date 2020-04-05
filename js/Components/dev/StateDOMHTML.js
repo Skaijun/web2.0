@@ -1127,7 +1127,7 @@ ${HEADER_BG}
 				        <div class="product-img-box">
 				    <div class="more-views" style="float:left;">
 				        <div class="more-views-container">
-				        <ul>
+				         <ul>
 				            <li>
 				            	<a class="cs-fancybox-thumbs" data-fancybox-group="thumb" style="width:64px;height:85px;" href=""  title="" alt="">
 				            	<img src="" src_main=""  title="" alt="" /></a>            
@@ -1151,11 +1151,7 @@ ${HEADER_BG}
 				          </ul>
 				        </div>
 				    </div>
-				    <div class="product-image"> 
-				        <a class="cs-fancybox-thumbs cloud-zoom" rel="adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5" data-fancybox-group="thumb" href="../images/0001-2.jpg" title="Women Shorts" alt="Women Shorts">
-				           	<img src="../images/0001-2.jpg" alt="Women Shorts" title="Women Shorts" />
-				        </a>
-				   </div>
+
 					<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 						var prodGallery = jQblvg.parseJSON('{"prod_1":{"main":{"orig":"../images/0001-2.jpg","main":"../images/large/0001-2.jpg","thumb":"../images/small/0001-2.jpg","label":""},"gallery":{"item_0":{"orig":"../images/0001-2.jpg","main":"../images/large/0001-2.jpg","thumb":"../images/small/0001-2.jpg","label":""},"item_1":{"orig":"../images/0001-1.jpg","main":"../images/large/0001-1.jpg","thumb":"../images/small/0001-1.jpg","label":""},"item_2":{"orig":"../images/0001-5.jpg","main":"../images/large/0001-5.jpg","thumb":"../images/small/0001-5.jpg","label":""},"item_3":{"orig":"../images/0001-3.jpg","main":"../images/large/0001-3.jpg","thumb":"../images/small/0001-3.jpg","label":""},"item_4":{"orig":"../images/0001-4.jpg","main":"../images/large/0001-4.jpg","thumb":"../images/small/0001-4.jpg","label":""}},"type":"simple","video":false}}'),
 						    gallery_elmnt = jQblvg('.product-img-box'),

@@ -92,10 +92,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_dev_renderHTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
-// import {ContactForms} from './Components/dev/form-validation';
+/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 
- // import { ContactForms } from './Components/dev/form-validation'
 
  // import './Components/src/cloud-zoom.1.0.3.min';
 // import './Components/src/easing';
@@ -125,21 +123,24 @@ window.StateDOMHTML = _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__[
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderHTML", function() { return RenderHTML; });
-/* harmony import */ var _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _form_validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _goods_goods_featured_loader_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
-/* harmony import */ var _goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
-/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
-/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_cslider__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
-/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_src_owl_carousel__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
-/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _goods_goods_details_state_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _form_validation_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _goods_goods_detailed_loader_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
+/* harmony import */ var _goods_goods_featured_loader_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+/* harmony import */ var _goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
+/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
+/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_cslider__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
+/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_src_owl_carousel__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
+/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_8__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -156,7 +157,8 @@ function () {
     _classCallCheck(this, RenderHTML);
 
     this.selectedHtmlElement = selectedHtmlElement || document.body;
-    this.pageState = new _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["StateDOMHTML"]();
+    this.pageState = new _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["StateDOMHTML"]();
+    this.detailedProductState = new _goods_goods_details_state_js__WEBPACK_IMPORTED_MODULE_1__["StateActiveProduct"]();
     this.depictCurrentPage();
     this.handleEventsOnBtns = this.handleEventsOnBtns.bind(this);
     this.setEventToDOM(this.selectedHtmlElement);
@@ -165,6 +167,8 @@ function () {
   _createClass(RenderHTML, [{
     key: "depictCurrentPage",
     value: function depictCurrentPage() {
+      $(this.selectedHtmlElement).empty();
+
       if (this.pageState.currPage === 'main-page') {
         this.depictMainPage();
       } else if (this.pageState.currPage === 'sale-page') {
@@ -188,10 +192,9 @@ function () {
   }, {
     key: "depictMainPage",
     value: function depictMainPage() {
-      $(this.selectedHtmlElement).empty();
-      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].MAIN_PAGE);
-      Object(_goods_goods_featured_loader_js__WEBPACK_IMPORTED_MODULE_2__["renderFeaturedGoods"])();
-      Object(_goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_3__["renderOwlCarouselGoods"])();
+      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].MAIN_PAGE);
+      Object(_goods_goods_featured_loader_js__WEBPACK_IMPORTED_MODULE_4__["renderFeaturedGoods"])();
+      Object(_goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_5__["renderOwlCarouselGoods"])();
       $(function () {
         $('#da-slider').cslider();
       });
@@ -212,8 +215,7 @@ function () {
   }, {
     key: "depictSalePage",
     value: function depictSalePage() {
-      $(this.selectedHtmlElement).empty();
-      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].SALE_PAGE_FULL);
+      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].SALE_PAGE_FULL);
       $(function () {
         var filterList = {
           init: function init() {
@@ -254,45 +256,39 @@ function () {
   }, {
     key: "depictHandbagsPage",
     value: function depictHandbagsPage() {
-      $(this.selectedHtmlElement).empty();
-      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].HANDBAGS_PAGE_FULL);
+      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].HANDBAGS_PAGE_FULL);
     }
   }, {
     key: "depictAccessoriesPage",
     value: function depictAccessoriesPage() {
-      $(this.selectedHtmlElement).empty();
-      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].ACCESSORIES_PAGE_FULL);
+      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].ACCESSORIES_PAGE_FULL);
     }
   }, {
     key: "depictWalletsPage",
     value: function depictWalletsPage() {
-      $(this.selectedHtmlElement).empty();
-      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].WALLETS_PAGE_FULL);
+      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].WALLETS_PAGE_FULL);
     }
   }, {
     key: "depictShoesPage",
     value: function depictShoesPage() {
-      $(this.selectedHtmlElement).empty();
-      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].SHOES_PAGE_FULL);
+      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].SHOES_PAGE_FULL);
     }
   }, {
     key: "depictServicesPage",
     value: function depictServicesPage() {
-      $(this.selectedHtmlElement).empty();
-      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].SERVICES_PAGE_FULL);
+      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].SERVICES_PAGE_FULL);
     }
   }, {
     key: "depictContactUsPage",
     value: function depictContactUsPage() {
-      $(this.selectedHtmlElement).empty();
-      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].CONTACT_US_PAGE_FULL);
-      var contactUsFormsInitialization = new _form_validation__WEBPACK_IMPORTED_MODULE_1__["ContactForms"]();
+      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].CONTACT_US_PAGE_FULL);
+      var contactUsFormsInitialization = new _form_validation_js__WEBPACK_IMPORTED_MODULE_2__["ContactForms"]();
     }
   }, {
     key: "depictDetailsPage",
     value: function depictDetailsPage() {
-      $(this.selectedHtmlElement).empty();
-      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].DETAILS_PAGE_FULL);
+      this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].DETAILS_PAGE_FULL);
+      Object(_goods_goods_detailed_loader_js__WEBPACK_IMPORTED_MODULE_3__["renderDetailedProduct"])(this.detailedProductState.detailedProductAttr);
     }
   }, {
     key: "setEventToDOM",
@@ -303,52 +299,57 @@ function () {
     key: "handleEventsOnBtns",
     value: function handleEventsOnBtns(event) {
       // event.preventDefault();
-      if (event.target.classList.contains('main-page')) {
-        window.localStorage.clear();
-        this.pageState.savePageStateInLocalStorage('main-page');
-        document.location.reload(true);
-        this.depictCurrentPage();
-      } else if (event.target.classList.contains('sale-page')) {
-        window.localStorage.clear();
-        this.pageState.savePageStateInLocalStorage('sale-page');
-        document.location.reload(true);
-        this.depictCurrentPage();
-      } else if (event.target.classList.contains('handbags-page')) {
-        window.localStorage.clear();
-        this.pageState.savePageStateInLocalStorage('handbags-page');
-        document.location.reload(true);
-        this.depictCurrentPage();
-      } else if (event.target.classList.contains('accessories-page')) {
-        window.localStorage.clear();
-        this.pageState.savePageStateInLocalStorage('accessories-page');
-        document.location.reload(true);
-        this.depictCurrentPage();
-      } else if (event.target.classList.contains('wallets-page')) {
-        window.localStorage.clear();
-        this.pageState.savePageStateInLocalStorage('wallets-page');
-        document.location.reload(true);
-        this.depictCurrentPage();
-      } else if (event.target.classList.contains('shoes-page')) {
-        window.localStorage.clear();
-        this.pageState.savePageStateInLocalStorage('shoes-page');
-        document.location.reload(true);
-        this.depictCurrentPage();
-      } else if (event.target.classList.contains('services-page')) {
-        window.localStorage.clear();
-        this.pageState.savePageStateInLocalStorage('services-page');
-        document.location.reload(true);
-        this.depictCurrentPage();
-      } else if (event.target.classList.contains('contactUs-page')) {
-        window.localStorage.clear();
-        this.pageState.savePageStateInLocalStorage('contactUs-page');
-        document.location.reload(true);
-        this.depictCurrentPage();
-      } else if (event.target.classList.contains('details-page')) {
-        window.localStorage.clear();
-        this.pageState.savePageStateInLocalStorage('details-page');
-        document.location.reload(true);
-        this.depictCurrentPage();
+      var element = event.target.classList;
+
+      switch (true) {
+        case element.contains('main-page'):
+          this.handleDepictPageEvent('main-page');
+          break;
+
+        case element.contains('sale-page'):
+          this.handleDepictPageEvent('sale-page');
+          break;
+
+        case element.contains('handbags-page'):
+          this.handleDepictPageEvent('handbags-page');
+          break;
+
+        case element.contains('accessories-page'):
+          this.handleDepictPageEvent('accessories-page');
+          break;
+
+        case element.contains('wallets-page'):
+          this.handleDepictPageEvent('wallets-page');
+          break;
+
+        case element.contains('shoes-page'):
+          this.handleDepictPageEvent('shoes-page');
+          break;
+
+        case element.contains('services-page'):
+          this.handleDepictPageEvent('services-page');
+          break;
+
+        case element.contains('contactUs-page'):
+          this.handleDepictPageEvent('contactUs-page');
+          break;
+
+        case element.contains('details-page'):
+          window.localStorage.clear();
+          this.pageState.savePageStateInLocalStorage('details-page');
+          this.detailedProductState.saveProductStateInLocalStorage(event.target.getAttribute('data-art'));
+          document.location.reload(true);
+          this.depictCurrentPage();
+          break;
       }
+    }
+  }, {
+    key: "handleDepictPageEvent",
+    value: function handleDepictPageEvent(pageClass) {
+      window.localStorage.clear();
+      this.pageState.savePageStateInLocalStorage(pageClass);
+      document.location.reload(true);
+      this.depictCurrentPage();
     }
   }]);
 
@@ -423,7 +424,7 @@ DOM_STATE_HTML.SERVICES_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_
 
 DOM_STATE_HTML.CONTACT_US_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n    <div class=\"wrap\">\n        <div class=\"header_sub\">\n            <div class=\"h_menu\">\n                <ul>\n                    <li><a href=\"\" class=\"main-page\">Home</a></li> |\n                    <li><a href=\"\" class=\"sale-page\">sale</a></li> |\n                    <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                    <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                    <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                    <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                    <li><a href=\"\" class=\"services-page\">services</a></li> |\n                    <li class=\"active\"><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n                </ul>\n            </div>\n\t\t\t").concat(HEADER_MENU_NAV, "\n        </div>\n    </div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n    <div class=\"wrap\">\n        <div class=\"main\">\n            <div class=\"contact\">\n                <div class=\"contact_info\">\n                    <h2>get in touch</h2>\n                    <div class=\"map\">\n                        <iframe width=\"100%\" height=\"250\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\"\n                            marginwidth=\"0\"\n                            src=\"https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed\"></iframe><br><small><a\n                                href=\"https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265\"\n                                style=\"color:#777777;text-align:left;font-size:13px;font-family: 'Source Sans Pro', sans-serif;\">View\n                                Larger Map</a></small>\n                    </div>\n                </div>\n                <div class=\"contact-form\">\n                    <h2>Contact Us</h2>\n                    <form method=\"post\" action=\"contact-post.html\" id=\"user-contact-form\">\n                        <div class=\"form-contact-control\">\n                            <span><label>Name</label></span>\n                            <input name=\"userName\" type=\"text\" id=\"user-contact-name\" class=\"textbox\">\n                            <small>Error message</small>\n                        </div>\n                        <div class=\"form-contact-control\">\n                            <span><label>E-mail</label></span>\n                            <input name=\"userEmail\" type=\"text\" id=\"user-contact-email\" class=\"textbox\" style=\"text-transform:lowercase\">\n                            <small>Error message</small>\n                        </div>\n                        <div class=\"form-contact-control\">\n                            <span><label>Mobile</label></span>\n                            <input name=\"userPhone\" type=\"text\" id=\"user-contact-phone\" class=\"textbox\" placeholder=\"+380...\">\n                            <small>Error message</small>\n                        </div>\n                        <div class=\"form-contact-control\">\n                            <span><label>Subject</label></span>\n                            <textarea name=\"userMsg\" id=\"user-contact-subject\"> </textarea>\n                        </div>\n                        <div>\n                            <span><input type=\"submit\" class=\"user-contact-submit\" value=\"Submit us\"></span>\n                        </div>\n                    </form>\n                </div>\n                <div class=\"clear\"></div>\n            </div>\n        </div>\n    </div>\n</div>\n<!-- start footer -->\n").concat(FOOTER_BG, "\n"); // --------------------------------------------------------------------------------
 
-DOM_STATE_HTML.DETAILS_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n<div class=\"wrap\">\n\t<div class=\"header_sub\">\n\t\t<div class=\"h_menu\">\n\t\t\t<ul>\n                <li class=\"active\"><a href=\"\" class=\"main-page\">Home</a></li> |\n                <li><a href=\"\" class=\"sale-page\">sale</a></li> |\n                <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                <li><a href=\"\" class=\"services-page\">services</a></li> |\n                <li><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n\t\t\t</ul>\n\t\t</div>\n\t\t").concat(HEADER_MENU_NAV, "\n</div>\n</div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n<div class=\"wrap\">\t\n\t<div class=\"main\">\n\t<!-- start content -->\n\t<div class=\"single\">\n\t\t\t<!-- start span1_of_1 -->\n\t\t\t<div class=\"left_content\">\n\t\t\t<div class=\"span1_of_1\">\n\t\t\t\t<!-- start product_slider -->\n\t\t\t\t<div class=\"product-view\">\n\t\t\t\t    <div class=\"product-essential\">\n\t\t\t\t        <div class=\"product-img-box\">\n\t\t\t\t    <div class=\"more-views\" style=\"float:left;\">\n\t\t\t\t        <div class=\"more-views-container\">\n\t\t\t\t        <ul>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\"  title=\"\" alt=\"\" /></a>            \n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\"  title=\"\" alt=\"\" /></a>\n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\"  title=\"\" alt=\"\" /></a> \n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\" title=\"\" alt=\"\" /></a>  \n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\" title=\"\" alt=\"\" /></a>\n\t\t\t\t            </li>\n\t\t\t\t          </ul>\n\t\t\t\t        </div>\n\t\t\t\t    </div>\n\t\t\t\t    <div class=\"product-image\"> \n\t\t\t\t        <a class=\"cs-fancybox-thumbs cloud-zoom\" rel=\"adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5\" data-fancybox-group=\"thumb\" href=\"../images/0001-2.jpg\" title=\"Women Shorts\" alt=\"Women Shorts\">\n\t\t\t\t           \t<img src=\"../images/0001-2.jpg\" alt=\"Women Shorts\" title=\"Women Shorts\" />\n\t\t\t\t        </a>\n\t\t\t\t   </div>\n\t\t\t\t\t<script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\">\n\t\t\t\t\t\tvar prodGallery = jQblvg.parseJSON('{\"prod_1\":{\"main\":{\"orig\":\"../images/0001-2.jpg\",\"main\":\"../images/large/0001-2.jpg\",\"thumb\":\"../images/small/0001-2.jpg\",\"label\":\"\"},\"gallery\":{\"item_0\":{\"orig\":\"../images/0001-2.jpg\",\"main\":\"../images/large/0001-2.jpg\",\"thumb\":\"../images/small/0001-2.jpg\",\"label\":\"\"},\"item_1\":{\"orig\":\"../images/0001-1.jpg\",\"main\":\"../images/large/0001-1.jpg\",\"thumb\":\"../images/small/0001-1.jpg\",\"label\":\"\"},\"item_2\":{\"orig\":\"../images/0001-5.jpg\",\"main\":\"../images/large/0001-5.jpg\",\"thumb\":\"../images/small/0001-5.jpg\",\"label\":\"\"},\"item_3\":{\"orig\":\"../images/0001-3.jpg\",\"main\":\"../images/large/0001-3.jpg\",\"thumb\":\"../images/small/0001-3.jpg\",\"label\":\"\"},\"item_4\":{\"orig\":\"../images/0001-4.jpg\",\"main\":\"../images/large/0001-4.jpg\",\"thumb\":\"../images/small/0001-4.jpg\",\"label\":\"\"}},\"type\":\"simple\",\"video\":false}}'),\n\t\t\t\t\t\t    gallery_elmnt = jQblvg('.product-img-box'),\n\t\t\t\t\t\t    galleryObj = new Object(),\n\t\t\t\t\t\t    gallery_conf = new Object();\n\t\t\t\t\t\t    gallery_conf.moreviewitem = '<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\"><img src=\"\" src_main=\"\" width=\"64\" height=\"85\" title=\"\" alt=\"\" /></a>';\n\t\t\t\t\t\t    gallery_conf.animspeed = 200;\n\t\t\t\t\t\tjQblvg(document).ready(function() {\n\t\t\t\t\t\t    galleryObj[1] = new prodViewGalleryForm(prodGallery, 'prod_1', gallery_elmnt, gallery_conf, '.product-image', '.more-views', 'http:');\n\t\t\t\t\t\t        jQblvg('.product-image .cs-fancybox-thumbs').absoluteClick();\n\t\t\t\t\t\t    jQblvg('.cs-fancybox-thumbs').fancybox({ prevEffect : 'none', \n\t\t\t\t\t\t                             nextEffect : 'none',\n\t\t\t\t\t\t                             closeBtn : true,\n\t\t\t\t\t\t                             arrows : true,\n\t\t\t\t\t\t                             nextClick : true, \n\t\t\t\t\t\t                             helpers: {\n\t\t\t\t\t\t                               thumbs : {\n\t\t\t\t\t\t                                   width: 64,\n\t\t\t\t\t\t                                   height: 85,\n\t\t\t\t\t\t                                   position: 'bottom'\n\t\t\t\t\t\t                               }\n\t\t\t\t\t\t                             }\n\t\t\t\t\t\t                             });\n\t\t\t\t\t\t    jQblvg('#wrap').css('z-index', '100');\n\t\t\t\t\t\t            jQblvg('.more-views-container').elScroll({type: 'vertical', elqty: 4, btn_pos: 'border', scroll_speed: 400 });\n\t\t\t\t\t\t        \n\t\t\t\t\t\t});\n\t\t\t\t\t\t\n\t\t\t\t\t\tfunction initGallery(a,b,element) {\n\t\t\t\t\t\t    galleryObj[a] = new prodViewGalleryForm(prods, b, gallery_elmnt, gallery_conf, '.product-image', '.more-views', '');\n\t\t\t\t\t\t};\n\t\t\t\t\t</script>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<!-- end product_slider -->\n\t\t\t</div>\n\t\t\t<!-- start span1_of_1 -->\n\t\t\t<div class=\"span1_of_1_des\">\n\t\t\t\t  <div class=\"desc1\">\n\t\t\t\t\t<h3>Lorem Ipsum is simply dummy text </h3>\n\t\t\t\t\t<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>\n\t\t\t\t\t<h5>Rs. 399 <a href=\"#\">click for offer</a></h5>\n\t\t\t\t\t<div class=\"available\">\n\t\t\t\t\t\t<h4>Available Options :</h4>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Color:\n\t\t\t\t\t\t\t\t<select>\n\t\t\t\t\t\t\t\t<option>Silver</option>\n\t\t\t\t\t\t\t\t<option>Black</option>\n\t\t\t\t\t\t\t\t<option>Dark Black</option>\n\t\t\t\t\t\t\t\t<option>Red</option>\n\t\t\t\t\t\t\t</select></li>\n\t\t\t\t\t\t\t<li>Size:\n\t\t\t\t\t\t\t\t<select>\n\t\t\t\t\t\t\t\t\t<option>L</option>\n\t\t\t\t\t\t\t\t\t<option>XL</option>\n\t\t\t\t\t\t\t\t\t<option>S</option>\n\t\t\t\t\t\t\t\t\t<option>M</option>\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t<li>Quality:\n\t\t\t\t\t\t\t\t<select>\n\t\t\t\t\t\t\t\t\t<option>1</option>\n\t\t\t\t\t\t\t\t\t<option>2</option>\n\t\t\t\t\t\t\t\t\t<option>3</option>\n\t\t\t\t\t\t\t\t\t<option>4</option>\n\t\t\t\t\t\t\t\t\t<option>5</option>\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<div class=\"btn_form\">\n\t\t\t\t\t\t\t<form>\n\t\t\t\t\t\t\t\t<input type=\"submit\" value=\"add to cart\" title=\"\" />\n\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<span class=\"span_right\"><a href=\"#\">login to save in wishlist </a></span>\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"share-desc\">\n\t\t\t\t\t\t<div class=\"share\">\n\t\t\t\t\t\t\t<h4>Share Product :</h4>\n\t\t\t\t\t\t\t<ul class=\"share_nav\">\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/facebook.png\" title=\"facebook\"></a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/twitter.png\" title=\"Twiiter\"></a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/rss.png\" title=\"Rss\"></a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/gpluse.png\" title=\"Google+\"></a></li>\n\t\t\t\t    \t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t</div>\n\t\t\t   \t </div>\n\t\t\t   \t</div>\n\t\t\t   \t<div class=\"clear\"></div>\n\t\t\t   \t<!-- start tabs -->\n\t\t\t\t   \t<section class=\"tabs\">\n\t\t            <input id=\"tab-1\" type=\"radio\" name=\"radio-set\" class=\"tab-selector-1\" checked=\"checked\">\n\t\t\t        <label for=\"tab-1\" class=\"tab-label-1\">overview</label>\n\t\t\t\n\t\t            <input id=\"tab-2\" type=\"radio\" name=\"radio-set\" class=\"tab-selector-2\">\n\t\t\t        <label for=\"tab-2\" class=\"tab-label-2\">consumer electronics</label>\n\t\t\t\n\t\t            <input id=\"tab-3\" type=\"radio\" name=\"radio-set\" class=\"tab-selector-3\">\n\t\t\t        <label for=\"tab-3\" class=\"tab-label-3\">semiconductor</label>\n\t          \n\t\t\t\t    <div class=\"clear-shadow\"></div>\n\t\t\t\t\t\n\t\t\t        <div class=\"content\">\n\t\t\t\t        <div class=\"content-1\">\n\t\t\t\t        \t<p class=\"para top\"><span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t<li>Research</li>\n\t\t\t\t\t\t\t\t<li>Design and Development</li>\n\t\t\t\t\t\t\t\t<li>Porting and Optimization</li>\n\t\t\t\t\t\t\t\t<li>System integration</li>\n\t\t\t\t\t\t\t\t<li>Verification, Validation and Testing</li>\n\t\t\t\t\t\t\t\t<li>Maintenance and Support</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t        <div class=\"content-2\">\n\t\t\t\t\t\t\t<p class=\"para\"><span>WELCOME </span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>\n\t\t\t\t\t\t\t<ul class=\"qua_nav\">\n\t\t\t\t\t\t\t\t<li>Multimedia Systems</li>\n\t\t\t\t\t\t\t\t<li>Digital media adapters</li>\n\t\t\t\t\t\t\t\t<li>Set top boxes for HDTV and IPTV Player applications on various Operating Systems and Hardware Platforms</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t        <div class=\"content-3\">\n\t\t\t\t        \t<p class=\"para top\"><span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t<li>Research</li>\n\t\t\t\t\t\t\t\t<li>Design and Development</li>\n\t\t\t\t\t\t\t\t<li>Porting and Optimization</li>\n\t\t\t\t\t\t\t\t<li>System integration</li>\n\t\t\t\t\t\t\t\t<li>Verification, Validation and Testing</li>\n\t\t\t\t\t\t\t\t<li>Maintenance and Support</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t</div>\n\t\t\t        </div>\n\t\t\t        </section>\n\t\t         \t<!-- end tabs -->\n\t\t\t   \t</div>\n\t\t\t   \t<!-- start sidebar -->\n\t\t\t <div class=\"left_sidebar\">\n\t\t\t\t\t<div class=\"sellers\">\n\t\t\t\t\t\t<h4>Best Sellers</h4>\n\t\t\t\t\t\t<div class=\"single-nav\">\n\t\t\t                <ul>\n\t\t\t                   <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\t\t\t                    \n\t\t\t                </ul>\n\t\t\t              </div>\n\t\t\t\t\t\t  <div class=\"banner-wrap bottom_banner color_link\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"main_link\">\n\t\t\t\t\t\t\t\t<figure><img src=\"../images/delivery.png\" alt=\"\"></figure>\n\t\t\t\t\t\t\t\t<h5><span>Free Shipping</span><br> on orders over $99.</h5><p>This offer is valid on all our store items.</p></a>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <div class=\"brands\">\n\t\t\t\t\t\t\t <h1>Brands</h1>\n\t\t\t\t\t  \t\t <div class=\"field\">\n\t\t\t\t                 <select class=\"select1\">\n\t\t\t\t                   <option>Please Select</option>\n\t\t\t\t\t\t\t\t\t\t<option>Lorem ipsum dolor sit amet</option>\n\t\t\t\t\t\t\t\t\t\t<option>Lorem ipsum dolor sit amet</option>\n\t\t\t\t\t\t\t\t\t\t<option>Lorem ipsum dolor sit amet</option>\n\t\t\t\t                  </select>\n\t\t\t\t            </div>\n\t\t\t    \t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t<!-- end sidebar -->\n          \t    <div class=\"clear\"></div>\n\t       </div>\t\n\t</div>\n </div>\n</div>\n").concat(FOOTER_BG, "\n");
+DOM_STATE_HTML.DETAILS_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_BG, "\n<div class=\"header_btm\">\n<div class=\"wrap\">\n\t<div class=\"header_sub\">\n\t\t<div class=\"h_menu\">\n\t\t\t<ul>\n                <li class=\"active\"><a href=\"\" class=\"main-page\">Home</a></li> |\n                <li><a href=\"\" class=\"sale-page\">sale</a></li> |\n                <li><a href=\"\" class=\"handbags-page\">handbags</a></li> |\n                <li><a href=\"\" class=\"accessories-page\">accessories</a></li> |\n                <li><a href=\"\" class=\"wallets-page\">wallets</a></li> |\n                <li><a href=\"\" class=\"shoes-page\">shoes</a></li> |\n                <li><a href=\"\" class=\"services-page\">services</a></li> |\n                <li><a href=\"\" class=\"contactUs-page\">contact us</a></li>\n\t\t\t</ul>\n\t\t</div>\n\t\t").concat(HEADER_MENU_NAV, "\n</div>\n</div>\n</div>\n<!-- start main -->\n<div class=\"main_bg\">\n<div class=\"wrap\">\t\n\t<div class=\"main\">\n\t<!-- start content -->\n\t<div class=\"single\">\n\t\t\t<!-- start span1_of_1 -->\n\t\t\t<div class=\"left_content\">\n\t\t\t<div class=\"span1_of_1\">\n\t\t\t\t<!-- start product_slider -->\n\t\t\t\t<div class=\"product-view\">\n\t\t\t\t    <div class=\"product-essential\">\n\t\t\t\t        <div class=\"product-img-box\">\n\t\t\t\t    <div class=\"more-views\" style=\"float:left;\">\n\t\t\t\t        <div class=\"more-views-container\">\n\t\t\t\t         <ul>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\"  title=\"\" alt=\"\" /></a>            \n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\"  title=\"\" alt=\"\" /></a>\n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\"  title=\"\" alt=\"\" /></a> \n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\" title=\"\" alt=\"\" /></a>  \n\t\t\t\t            </li>\n\t\t\t\t            <li>\n\t\t\t\t            \t<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\">\n\t\t\t\t            \t<img src=\"\" src_main=\"\" title=\"\" alt=\"\" /></a>\n\t\t\t\t            </li>\n\t\t\t\t          </ul>\n\t\t\t\t        </div>\n\t\t\t\t    </div>\n\n\t\t\t\t\t<script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\">\n\t\t\t\t\t\tvar prodGallery = jQblvg.parseJSON('{\"prod_1\":{\"main\":{\"orig\":\"../images/0001-2.jpg\",\"main\":\"../images/large/0001-2.jpg\",\"thumb\":\"../images/small/0001-2.jpg\",\"label\":\"\"},\"gallery\":{\"item_0\":{\"orig\":\"../images/0001-2.jpg\",\"main\":\"../images/large/0001-2.jpg\",\"thumb\":\"../images/small/0001-2.jpg\",\"label\":\"\"},\"item_1\":{\"orig\":\"../images/0001-1.jpg\",\"main\":\"../images/large/0001-1.jpg\",\"thumb\":\"../images/small/0001-1.jpg\",\"label\":\"\"},\"item_2\":{\"orig\":\"../images/0001-5.jpg\",\"main\":\"../images/large/0001-5.jpg\",\"thumb\":\"../images/small/0001-5.jpg\",\"label\":\"\"},\"item_3\":{\"orig\":\"../images/0001-3.jpg\",\"main\":\"../images/large/0001-3.jpg\",\"thumb\":\"../images/small/0001-3.jpg\",\"label\":\"\"},\"item_4\":{\"orig\":\"../images/0001-4.jpg\",\"main\":\"../images/large/0001-4.jpg\",\"thumb\":\"../images/small/0001-4.jpg\",\"label\":\"\"}},\"type\":\"simple\",\"video\":false}}'),\n\t\t\t\t\t\t    gallery_elmnt = jQblvg('.product-img-box'),\n\t\t\t\t\t\t    galleryObj = new Object(),\n\t\t\t\t\t\t    gallery_conf = new Object();\n\t\t\t\t\t\t    gallery_conf.moreviewitem = '<a class=\"cs-fancybox-thumbs\" data-fancybox-group=\"thumb\" style=\"width:64px;height:85px;\" href=\"\"  title=\"\" alt=\"\"><img src=\"\" src_main=\"\" width=\"64\" height=\"85\" title=\"\" alt=\"\" /></a>';\n\t\t\t\t\t\t    gallery_conf.animspeed = 200;\n\t\t\t\t\t\tjQblvg(document).ready(function() {\n\t\t\t\t\t\t    galleryObj[1] = new prodViewGalleryForm(prodGallery, 'prod_1', gallery_elmnt, gallery_conf, '.product-image', '.more-views', 'http:');\n\t\t\t\t\t\t        jQblvg('.product-image .cs-fancybox-thumbs').absoluteClick();\n\t\t\t\t\t\t    jQblvg('.cs-fancybox-thumbs').fancybox({ prevEffect : 'none', \n\t\t\t\t\t\t                             nextEffect : 'none',\n\t\t\t\t\t\t                             closeBtn : true,\n\t\t\t\t\t\t                             arrows : true,\n\t\t\t\t\t\t                             nextClick : true, \n\t\t\t\t\t\t                             helpers: {\n\t\t\t\t\t\t                               thumbs : {\n\t\t\t\t\t\t                                   width: 64,\n\t\t\t\t\t\t                                   height: 85,\n\t\t\t\t\t\t                                   position: 'bottom'\n\t\t\t\t\t\t                               }\n\t\t\t\t\t\t                             }\n\t\t\t\t\t\t                             });\n\t\t\t\t\t\t    jQblvg('#wrap').css('z-index', '100');\n\t\t\t\t\t\t            jQblvg('.more-views-container').elScroll({type: 'vertical', elqty: 4, btn_pos: 'border', scroll_speed: 400 });\n\t\t\t\t\t\t        \n\t\t\t\t\t\t});\n\t\t\t\t\t\t\n\t\t\t\t\t\tfunction initGallery(a,b,element) {\n\t\t\t\t\t\t    galleryObj[a] = new prodViewGalleryForm(prods, b, gallery_elmnt, gallery_conf, '.product-image', '.more-views', '');\n\t\t\t\t\t\t};\n\t\t\t\t\t</script>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<!-- end product_slider -->\n\t\t\t</div>\n\t\t\t<!-- start span1_of_1 -->\n\t\t\t<div class=\"span1_of_1_des\">\n\t\t\t\t  <div class=\"desc1\">\n\t\t\t\t\t<h3>Lorem Ipsum is simply dummy text </h3>\n\t\t\t\t\t<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>\n\t\t\t\t\t<h5>Rs. 399 <a href=\"#\">click for offer</a></h5>\n\t\t\t\t\t<div class=\"available\">\n\t\t\t\t\t\t<h4>Available Options :</h4>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Color:\n\t\t\t\t\t\t\t\t<select>\n\t\t\t\t\t\t\t\t<option>Silver</option>\n\t\t\t\t\t\t\t\t<option>Black</option>\n\t\t\t\t\t\t\t\t<option>Dark Black</option>\n\t\t\t\t\t\t\t\t<option>Red</option>\n\t\t\t\t\t\t\t</select></li>\n\t\t\t\t\t\t\t<li>Size:\n\t\t\t\t\t\t\t\t<select>\n\t\t\t\t\t\t\t\t\t<option>L</option>\n\t\t\t\t\t\t\t\t\t<option>XL</option>\n\t\t\t\t\t\t\t\t\t<option>S</option>\n\t\t\t\t\t\t\t\t\t<option>M</option>\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t<li>Quality:\n\t\t\t\t\t\t\t\t<select>\n\t\t\t\t\t\t\t\t\t<option>1</option>\n\t\t\t\t\t\t\t\t\t<option>2</option>\n\t\t\t\t\t\t\t\t\t<option>3</option>\n\t\t\t\t\t\t\t\t\t<option>4</option>\n\t\t\t\t\t\t\t\t\t<option>5</option>\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<div class=\"btn_form\">\n\t\t\t\t\t\t\t<form>\n\t\t\t\t\t\t\t\t<input type=\"submit\" value=\"add to cart\" title=\"\" />\n\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<span class=\"span_right\"><a href=\"#\">login to save in wishlist </a></span>\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"share-desc\">\n\t\t\t\t\t\t<div class=\"share\">\n\t\t\t\t\t\t\t<h4>Share Product :</h4>\n\t\t\t\t\t\t\t<ul class=\"share_nav\">\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/facebook.png\" title=\"facebook\"></a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/twitter.png\" title=\"Twiiter\"></a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/rss.png\" title=\"Rss\"></a></li>\n\t\t\t\t\t\t\t\t<li><a href=\"#\"><img src=\"../images/gpluse.png\" title=\"Google+\"></a></li>\n\t\t\t\t    \t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t</div>\n\t\t\t   \t </div>\n\t\t\t   \t</div>\n\t\t\t   \t<div class=\"clear\"></div>\n\t\t\t   \t<!-- start tabs -->\n\t\t\t\t   \t<section class=\"tabs\">\n\t\t            <input id=\"tab-1\" type=\"radio\" name=\"radio-set\" class=\"tab-selector-1\" checked=\"checked\">\n\t\t\t        <label for=\"tab-1\" class=\"tab-label-1\">overview</label>\n\t\t\t\n\t\t            <input id=\"tab-2\" type=\"radio\" name=\"radio-set\" class=\"tab-selector-2\">\n\t\t\t        <label for=\"tab-2\" class=\"tab-label-2\">consumer electronics</label>\n\t\t\t\n\t\t            <input id=\"tab-3\" type=\"radio\" name=\"radio-set\" class=\"tab-selector-3\">\n\t\t\t        <label for=\"tab-3\" class=\"tab-label-3\">semiconductor</label>\n\t          \n\t\t\t\t    <div class=\"clear-shadow\"></div>\n\t\t\t\t\t\n\t\t\t        <div class=\"content\">\n\t\t\t\t        <div class=\"content-1\">\n\t\t\t\t        \t<p class=\"para top\"><span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t<li>Research</li>\n\t\t\t\t\t\t\t\t<li>Design and Development</li>\n\t\t\t\t\t\t\t\t<li>Porting and Optimization</li>\n\t\t\t\t\t\t\t\t<li>System integration</li>\n\t\t\t\t\t\t\t\t<li>Verification, Validation and Testing</li>\n\t\t\t\t\t\t\t\t<li>Maintenance and Support</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t        <div class=\"content-2\">\n\t\t\t\t\t\t\t<p class=\"para\"><span>WELCOME </span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>\n\t\t\t\t\t\t\t<ul class=\"qua_nav\">\n\t\t\t\t\t\t\t\t<li>Multimedia Systems</li>\n\t\t\t\t\t\t\t\t<li>Digital media adapters</li>\n\t\t\t\t\t\t\t\t<li>Set top boxes for HDTV and IPTV Player applications on various Operating Systems and Hardware Platforms</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t        <div class=\"content-3\">\n\t\t\t\t        \t<p class=\"para top\"><span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>\n\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t<li>Research</li>\n\t\t\t\t\t\t\t\t<li>Design and Development</li>\n\t\t\t\t\t\t\t\t<li>Porting and Optimization</li>\n\t\t\t\t\t\t\t\t<li>System integration</li>\n\t\t\t\t\t\t\t\t<li>Verification, Validation and Testing</li>\n\t\t\t\t\t\t\t\t<li>Maintenance and Support</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t</div>\n\t\t\t        </div>\n\t\t\t        </section>\n\t\t         \t<!-- end tabs -->\n\t\t\t   \t</div>\n\t\t\t   \t<!-- start sidebar -->\n\t\t\t <div class=\"left_sidebar\">\n\t\t\t\t\t<div class=\"sellers\">\n\t\t\t\t\t\t<h4>Best Sellers</h4>\n\t\t\t\t\t\t<div class=\"single-nav\">\n\t\t\t                <ul>\n\t\t\t                   <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">The standard chunk of Lorem Ipsum</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\n\t\t\t                    <li><a href=\"#\">Always free from repetition</a></li>\t\t\t                    \n\t\t\t                </ul>\n\t\t\t              </div>\n\t\t\t\t\t\t  <div class=\"banner-wrap bottom_banner color_link\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"main_link\">\n\t\t\t\t\t\t\t\t<figure><img src=\"../images/delivery.png\" alt=\"\"></figure>\n\t\t\t\t\t\t\t\t<h5><span>Free Shipping</span><br> on orders over $99.</h5><p>This offer is valid on all our store items.</p></a>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <div class=\"brands\">\n\t\t\t\t\t\t\t <h1>Brands</h1>\n\t\t\t\t\t  \t\t <div class=\"field\">\n\t\t\t\t                 <select class=\"select1\">\n\t\t\t\t                   <option>Please Select</option>\n\t\t\t\t\t\t\t\t\t\t<option>Lorem ipsum dolor sit amet</option>\n\t\t\t\t\t\t\t\t\t\t<option>Lorem ipsum dolor sit amet</option>\n\t\t\t\t\t\t\t\t\t\t<option>Lorem ipsum dolor sit amet</option>\n\t\t\t\t                  </select>\n\t\t\t\t            </div>\n\t\t\t    \t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t<!-- end sidebar -->\n          \t    <div class=\"clear\"></div>\n\t       </div>\t\n\t</div>\n </div>\n</div>\n").concat(FOOTER_BG, "\n");
 
 /***/ }),
 /* 3 */
@@ -431,8 +432,40 @@ DOM_STATE_HTML.DETAILS_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_B
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StateActiveProduct", function() { return StateActiveProduct; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var StateActiveProduct =
+/*#__PURE__*/
+function () {
+  function StateActiveProduct() {
+    _classCallCheck(this, StateActiveProduct);
+
+    this.detailedProductAttr = JSON.parse(window.localStorage.getItem("detailedProductAttr")) || '';
+  }
+
+  _createClass(StateActiveProduct, [{
+    key: "saveProductStateInLocalStorage",
+    value: function saveProductStateInLocalStorage(attr) {
+      window.localStorage.setItem("detailedProductAttr", JSON.stringify(attr));
+    }
+  }]);
+
+  return StateActiveProduct;
+}();
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactForms", function() { return ContactForms; });
-/* harmony import */ var _utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -559,7 +592,7 @@ function () {
 }();
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -589,13 +622,154 @@ var inputChecker = {
 };
 
 /***/ }),
-/* 5 */
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderDetailedProduct", function() { return renderDetailedProduct; });
+/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+
+/*
+*  load to HTML detailed info of the product
+*/
+
+function renderDetailedProduct(attr) {
+  _goods__WEBPACK_IMPORTED_MODULE_0__["goods"].forEach(function (product) {
+    if (product.id === +attr) {
+      var outputHTML = "<div\n                              class=\"product-image\"> \n                              <a\n                              class=\"cs-fancybox-thumbs cloud-zoom\"\n                              rel=\"adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5\"\n                              data-fancybox-group=\"thumb\"\n                              href=\"".concat(product.image, "\"\n                              title=\"").concat(product.name, "\"\n                              alt=\"").concat(product.description, "\">\n                              <img src=\"").concat(product.image, "\" alt=\"").concat(product.description, "\" title=\"").concat(product.name, "\" />\n                              </a>\n                              </div>");
+      $('.product-img-box')[0].insertAdjacentHTML("beforeend", outputHTML);
+    }
+  });
+}
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "goods", function() { return goods; });
+var goods = [{
+  "id": 10001,
+  "name": "Branded shoes",
+  "price": 100,
+  "description": "",
+  "category": "shoes",
+  "color": ['red'],
+  "image": "../images/pic1.jpg",
+  "featured": true,
+  "owl_carousel": false
+}, {
+  "id": 10002,
+  "name": "Levis T-shirt",
+  "price": 70,
+  "description": "",
+  "category": "t_shirt",
+  "color": ['black'],
+  "image": "../images/pic2.jpg",
+  "featured": true,
+  "owl_carousel": false
+}, {
+  "id": 10003,
+  "name": "True T-shirt",
+  "price": 15,
+  "description": "",
+  "category": "t_shirt",
+  "color": ['gray'],
+  "image": "../images/pic3.jpg",
+  "featured": true,
+  "owl_carousel": false
+}, {
+  "id": 10004,
+  "name": "Branded bags",
+  "price": 25,
+  "description": "",
+  "category": "wallet",
+  "color": ['brown'],
+  "image": "../images/pic4.jpg",
+  "featured": true,
+  "owl_carousel": true
+}, {
+  "id": 10005,
+  "name": "EMS women bag",
+  "price": 105,
+  "description": "",
+  "category": "handbags",
+  "color": ['coffee'],
+  "image": "../images/pic5.jpg",
+  "featured": true,
+  "owl_carousel": true
+}, {
+  "id": 10006,
+  "name": "Easy top",
+  "price": 10,
+  "description": "",
+  "category": "t_shirt",
+  "color": ['black'],
+  "image": "../images/pic6.jpg",
+  "featured": true,
+  "owl_carousel": true
+}, {
+  "id": 10007,
+  "name": "Easy top",
+  "price": 109,
+  "description": "",
+  "category": "t_shirt",
+  "color": ['black'],
+  "image": "../images/pic6.jpg",
+  "featured": true,
+  "owl_carousel": true
+}, {
+  "id": 10008,
+  "name": "Branded shoes",
+  "price": 99,
+  "description": "",
+  "category": "shoes",
+  "color": ['brown'],
+  "image": "../images/c1.jpg",
+  "featured": true,
+  "owl_carousel": true
+}, {
+  "id": 10009,
+  "name": "Branded tees",
+  "price": 79,
+  "description": "",
+  "category": "t_shirt",
+  "color": ['black'],
+  "image": "../images/c2.jpg",
+  "featured": false,
+  "owl_carousel": true
+}, {
+  "id": 10010,
+  "name": "Branded jeens",
+  "price": 69,
+  "description": "",
+  "category": "jeens",
+  "color": ['blue'],
+  "image": "../images/c3.jpg",
+  "featured": false,
+  "owl_carousel": true
+}, {
+  "id": 10011,
+  "name": "Branded tees",
+  "price": 79,
+  "description": "",
+  "category": "t_shirt",
+  "color": ['black'],
+  "image": "../images/c2.jpg",
+  "featured": false,
+  "owl_carousel": true
+}];
+
+/***/ }),
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderFeaturedGoods", function() { return renderFeaturedGoods; });
-/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 /*
 *  load to HTML featured products
@@ -607,7 +781,7 @@ function renderFeaturedGoods() {
   var numberOfdepictedRows = 1;
   _goods__WEBPACK_IMPORTED_MODULE_0__["goods"].forEach(function (product) {
     if (product.featured === true) {
-      var outputHTML = "<div class=\"grid1_of_3\" id=\"".concat(product.id, "\">\n                          <a href=\"\" class=\"details-page\">\n                          <img src=\"").concat(product.image, "\" alt=\"\" class=\"details-page\" />\n                          <h3 class=\"details-page\">").concat(product.name, "</h3>\n                          <div class=\"price\">\n                          <h4>$").concat(product.price, "<span class=\"details-page\">indulge</span></h4>\n                          </div>\n                          <span class=\"b_btm\"></span>\n                          </a>\n                          </div>");
+      var outputHTML = "<div class=\"grid1_of_3\" id=\"".concat(product.id, "\">\n                          <a href=\"\" class=\"details-page\" data-art=\"").concat(product.id, "\">\n                          <img src=\"").concat(product.image, "\" alt=\"product image\" class=\"details-page\" data-art=\"").concat(product.id, "\"/>\n                          <h3 class=\"details-page\" data-art=\"").concat(product.id, "\">").concat(product.name, "</h3>\n                          <div class=\"price\">\n                          <h4>$").concat(product.price, "<span class=\"details-page\" data-art=\"").concat(product.id, "\">indulge</span></h4>\n                          </div>\n                          <span class=\"b_btm\"></span>\n                          </a>\n                          </div>");
       howManyFeaturedGoodsDoWeHave++;
 
       if (howManyFeaturedGoodsDoWeHave === 1 || (howManyFeaturedGoodsDoWeHave - 1) % howManyGoodsInOneRow === 0) {
@@ -629,110 +803,13 @@ function renderFeaturedGoods() {
 }
 
 /***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "goods", function() { return goods; });
-var goods = [{
-  "id": 10001,
-  "name": "Branded shoes",
-  "price": 100,
-  "description": "",
-  "image": "../images/pic1.jpg",
-  "featured": true,
-  "owl_carousel": false
-}, {
-  "id": 10002,
-  "name": "Levis T-shirt",
-  "price": 70,
-  "description": "",
-  "image": "../images/pic2.jpg",
-  "featured": true,
-  "owl_carousel": false
-}, {
-  "id": 10003,
-  "name": "True T-shirt",
-  "price": 15,
-  "description": "",
-  "image": "../images/pic3.jpg",
-  "featured": true,
-  "owl_carousel": false
-}, {
-  "id": 10004,
-  "name": "Branded bags",
-  "price": 25,
-  "description": "",
-  "image": "../images/pic4.jpg",
-  "featured": true,
-  "owl_carousel": true
-}, {
-  "id": 10005,
-  "name": "EMS women bag",
-  "price": 105,
-  "description": "",
-  "image": "../images/pic5.jpg",
-  "featured": true,
-  "owl_carousel": true
-}, {
-  "id": 10006,
-  "name": "Easy top",
-  "price": 10,
-  "description": "",
-  "image": "../images/pic6.jpg",
-  "featured": true,
-  "owl_carousel": true
-}, {
-  "id": 10007,
-  "name": "Easy top",
-  "price": 109,
-  "description": "",
-  "image": "../images/pic6.jpg",
-  "featured": false,
-  "owl_carousel": true
-}, {
-  "id": 10008,
-  "name": "Branded shoes",
-  "price": 99,
-  "description": "",
-  "image": "../images/c1.jpg",
-  "featured": false,
-  "owl_carousel": true
-}, {
-  "id": 10009,
-  "name": "Branded tees",
-  "price": 79,
-  "description": "",
-  "image": "../images/c2.jpg",
-  "featured": false,
-  "owl_carousel": true
-}, {
-  "id": 10010,
-  "name": "Branded jeens",
-  "price": 69,
-  "description": "",
-  "image": "../images/c3.jpg",
-  "featured": false,
-  "owl_carousel": true
-}, {
-  "id": 10011,
-  "name": "Branded tees",
-  "price": 79,
-  "description": "",
-  "image": "../images/c2.jpg",
-  "featured": false,
-  "owl_carousel": true
-}];
-
-/***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderOwlCarouselGoods", function() { return renderOwlCarouselGoods; });
-/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 /*
 *  load to HTML owl-carousel products
@@ -741,14 +818,14 @@ __webpack_require__.r(__webpack_exports__);
 function renderOwlCarouselGoods() {
   _goods__WEBPACK_IMPORTED_MODULE_0__["goods"].forEach(function (product) {
     if (product.owl_carousel === true) {
-      var outputHTML = "<div class=\"item\">\n                            <div class=\"cau_left\">\n                              <img class=\"lazyOwl details-page\" data-src=\"".concat(product.image, "\" alt=\"Lazy Owl Image\">\n                            </div>\n                            <div class=\"cau_left\">\n                              <h4><a href=\"\" class=\"details-page\">").concat(product.name, "</a></h4>\n                              <a href=\"\" class=\"btn details-page\">shop</a>\n                            </div>\n                            </div>");
+      var outputHTML = "<div class=\"item\">\n                            <div class=\"cau_left\">\n                              <img class=\"lazyOwl details-page\" data-src=\"".concat(product.image, "\" data-art=\"").concat(product.id, "\" alt=\"Lazy Owl Image\">\n                            </div>\n                            <div class=\"cau_left\">\n                              <h4><a href=\"\" class=\"details-page\" data-art=\"").concat(product.id, "\">").concat(product.name, "</a></h4>\n                              <a href=\"\" class=\"btn details-page\" data-art=\"").concat(product.id, "\">shop</a>\n                            </div>\n                            </div>");
       $('#owl-demo').append(outputHTML);
     }
   });
 }
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports) {
 
 (function ($, undefined) {
@@ -988,7 +1065,7 @@ function renderOwlCarouselGoods() {
 })(jQuery);
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports) {
 
 /*
@@ -2425,7 +2502,7 @@ if (typeof Object.create !== "function") {
 })(jQuery, window, document);
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports) {
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -2964,7 +3041,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 })(jQuery);
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
