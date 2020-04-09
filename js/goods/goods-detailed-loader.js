@@ -1,7 +1,7 @@
 import { goods } from './goods'
 
 /*
-*  load to HTML detailed info of the product
+*  load HTML of product's detailed info to the product-details-page
 */
 
 export function renderDetailedProduct(attr) {
@@ -22,7 +22,52 @@ export function renderDetailedProduct(attr) {
                               </div>`;
 
             $('.product-img-box')[0].insertAdjacentHTML("beforeend", outputHTML);
-            
+            //    ---------------------------------------------------------------------------
+
+            let descrAndCostHTML = `<h3>${product.name}</h3>
+                     <p>${product.description}</p>
+                      <h5>${product.price} $ <a href="" data-art="${product.id}">click for offer</a></h5>`;
+            $('.desc1')[0].insertAdjacentHTML("afterbegin", descrAndCostHTML);
+            //    ---------------------------------------------------------------------------
+            let abiableColorArr = product.color;
+            let colorSelect = pickUpAviableSelectForThis(abiableColorArr);
+            let abiableSizeArr = product.size;
+            let sizeSelect = pickUpAviableSelectForThis(abiableSizeArr);
+
+            let aviableOptionsHTML = `<h4>Available Options :</h4>
+                        <ul>
+                          <li>Color:
+                            <select>
+                          ${colorSelect}
+                            </select>
+                          </li>
+                          <li>Size:
+                            <select>
+                          ${sizeSelect}
+                            </select>
+                          </li>
+                        </ul>`;
+
+            $('.available')[0].insertAdjacentHTML("afterbegin", aviableOptionsHTML);
+            //    ---------------------------------------------------------------------------
+
+            let addToCartHTML = `<form>
+                                  <input type="submit" value="add to cart" title="" data-art="${product.id}"/>
+                                 </form>`;
+            $('.btn_form')[0].insertAdjacentHTML("beforeend", addToCartHTML);
         }
     });
+
+    function pickUpAviableSelectForThis(arr) {
+        let textHTML = '';
+        arr.forEach((item) => {
+            textHTML += `<option>${item}</option>`;
+        });
+        return textHTML;
+    };
+
 }
+
+
+
+

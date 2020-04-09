@@ -1,6 +1,6 @@
 import { goods } from './goods'
 /*
-*  load to HTML owl-carousel products
+*  load HTML owl-carousel products to the main page
 */
 export function renderOwlCarouselGoods() {
 

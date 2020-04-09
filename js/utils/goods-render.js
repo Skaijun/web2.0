@@ -1,15 +1,15 @@
-import { goods } from './goods'
+import { goods } from '../goods/goods.js'
 /*
-*  load to HTML featured products
+*  load HTML of featured products to the page
 */
-export function renderFeaturedGoods() {
-    let howManyGoodsInOneRow = 3;
+
+export function renderFeaturedGoods(productFeatures, condition, howManyGoodsInOneRow) {
     let howManyFeaturedGoodsDoWeHave = 0;
     let numberOfdepictedRows = 1;
 
     goods.forEach((product) => {
 
-        if (product.featured === true) {
+        if (product[productFeatures] === condition) {
             let outputHTML = `<div class="grid1_of_3" id="${product.id}">
                           <a href="" class="details-page" data-art="${product.id}">
                           <img src="${product.image}" alt="product image" class="details-page" data-art="${product.id}"/>

@@ -2,7 +2,7 @@ import { DOM_STATE_HTML, StateDOMHTML } from './StateDOMHTML.js'
 import { StateActiveProduct } from '../../goods/goods-details-state.js'
 import { ContactForms } from './form-validation.js'
 import { renderDetailedProduct } from '../../goods/goods-detailed-loader.js'
-import { renderFeaturedGoods } from '../../goods/goods-featured-loader.js'
+import { goodsState } from '../../goods/goods-state.js'
 import { renderOwlCarouselGoods } from '../../goods/goods-owl_carousel-loader.js'
 import { cslider } from '../src/jquery.cslider'
 import { owlCarousel } from '../src/owl.carousel'
@@ -43,7 +43,7 @@ export class RenderHTML {
 
     depictMainPage() {
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.MAIN_PAGE);
-        renderFeaturedGoods();
+        goodsState.renderFeatGoodsMainPage();
         renderOwlCarouselGoods();
         $(function () {
             $('#da-slider').cslider();
@@ -108,6 +108,7 @@ export class RenderHTML {
     }
     depictShoesPage() {
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.SHOES_PAGE_FULL);
+        goodsState.renderShoesCategoryShoesPage();
     }
     depictServicesPage() {
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.SERVICES_PAGE_FULL);

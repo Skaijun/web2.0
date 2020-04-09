@@ -58,6 +58,10 @@ const HEADER_BG = `
 
 // ---------------------------------------------------------
 
+/* <li class="nav-item"><a href="" class="handbags-page">handbags</a></li>
+<li class="nav-item"><a href="" class="accessories-page">accessories</a></li>
+<li class="nav-item"><a href="" class="wallets-page">wallets</a></li> */
+
 const HEADER_MENU_NAV = `
 
 <div class="top-nav">
@@ -66,9 +70,7 @@ const HEADER_MENU_NAV = `
 	<ul class="nav-list">
 		<li class="nav-item active"><a href="" class="main-page">Home</a></li>
 		<li class="nav-item"><a href="" class="sale-page">sale</a></li>
-		<li class="nav-item"><a href="" class="handbags-page">handbags</a></li>
-		<li class="nav-item"><a href="" class="accessories-page">accessories</a></li>
-		<li class="nav-item"><a href="" class="wallets-page">wallets</a></li>
+
 		<li class="nav-item"><a href="" class="shoes-page">shoes</a></li>
 		<li class="nav-item"><a href="" class="services-page">services</a></li>
 		<li class="nav-item"><a href="" class="contactUs-page">contact us</a></li>
@@ -171,8 +173,7 @@ const FOOTER_BG = `
             <a href="" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
             <!-- end scroll_top_btn -->
             <div class="copy">
-            <p class="link">&copy; All rights reserved <a href="https://github.com/Skaijun/web2.0"> by OOO "Anja
-                    & Co.: [Max, Dima];"</a></p>
+            <p class="link">&copy; All rights reserved <a href="https://github.com/Skaijun/web2.0"> by OOO "Skaliun_Lab"</a></p>
         </div>
             <div class="clear"></div>
         </div>
@@ -180,7 +181,9 @@ const FOOTER_BG = `
 </div>
 `;
 
-
+/* <li><a href="" class="handbags-page">handbags</a></li> |
+<li><a href="" class="accessories-page">accessories</a></li> |
+<li><a href="" class="wallets-page">wallets</a></li> | */
 
 DOM_STATE_HTML.MAIN_PAGE = `
 
@@ -193,9 +196,7 @@ ${HEADER_BG}
                 <ul>
                     <li class="active"><a href="" class="main-page">Home</a></li> |
                     <li><a href="" class="sale-page">sale</a></li> |
-                    <li><a href="" class="handbags-page">handbags</a></li> |
-                    <li><a href="" class="accessories-page">accessories</a></li> |
-                    <li><a href="" class="wallets-page">wallets</a></li> |
+					
                     <li><a href="" class="shoes-page">shoes</a></li> |
                     <li><a href="" class="services-page">services</a></li> |
                     <li><a href="" class="contactUs-page">contact us</a></li>
@@ -275,6 +276,12 @@ ${FOOTER_BG}`;
 
 // --------------------------------------------------------------------------------
 
+
+/* <li><a href="" class="handbags-page">handbags</a></li> |
+<li><a href="" class="accessories-page">accessories</a></li> |
+<li><a href="" class="wallets-page">wallets</a></li> | */
+
+
 DOM_STATE_HTML.SALE_PAGE_FULL = `
 
 <!-- start header -->
@@ -286,9 +293,7 @@ ${HEADER_BG}
 			<ul>              
                 <li><a href="" class="main-page">Home</a></li> |
                 <li class="active"><a href="" class="sale-page">sale</a></li> |
-                <li><a href="" class="handbags-page">handbags</a></li> |
-                <li><a href="" class="accessories-page">accessories</a></li> |
-                <li><a href="" class="wallets-page">wallets</a></li> |
+
                 <li><a href="" class="shoes-page">shoes</a></li> |
                 <li><a href="" class="services-page">services</a></li> |
                 <li><a href="" class="contactUs-page">contact us</a></li>
@@ -809,6 +814,10 @@ ${FOOTER_BG}
 
 // --------------------------------------------------------------------------------
 
+/* <li><a href="" class="handbags-page">handbags</a></li> |
+<li><a href="" class="accessories-page">accessories</a></li> |
+<li><a href="" class="wallets-page">wallets</a></li> | */
+
 DOM_STATE_HTML.SHOES_PAGE_FULL = `
 
 <!-- start header -->
@@ -820,9 +829,6 @@ ${HEADER_BG}
             <ul>
                 <li><a href="" class="main-page">Home</a></li> |
                 <li><a href="" class="sale-page">sale</a></li> |
-                <li><a href="" class="handbags-page">handbags</a></li> |
-                <li><a href="" class="accessories-page">accessories</a></li> |
-                <li><a href="" class="wallets-page">wallets</a></li> |
                 <li class="active"><a href="" class="shoes-page">shoes</a></li> |
                 <li><a href="" class="services-page">services</a></li> |
                 <li><a href="" class="contactUs-page">contact us</a></li>
@@ -832,78 +838,17 @@ ${HEADER_BG}
 </div>
 </div>
 </div>
+
 <!-- start main -->
 <div class="main_bg">
 <div class="wrap">	
 	<div class="main">
 		<h2 class="style top">featured shoes</h2>
 		<!-- start grids_of_3 -->
-		<div class="grids_of_3">
-			<div class="grid1_of_3">
-				<a href="" class="details-page">
-					<img src="../images/shoe_pic1.jpg" alt=""/ class="details-page">
-					<h3>branded shoes</h3>
-					<div class="price">
-						<h4>$499<span class="details-page">indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="" class="details-page">
-					<img src="../images/shoe_pic2.jpg" alt=""/ class="details-page">
-					<h3>branded shoes</h3>
-					<div class="price">
-						<h4>$499<span class="details-page">indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="" class="details-page">
-					<img src="../images/shoe_pic3.jpg" alt=""/ class="details-page">
-					<h3>branded shoes</h3>
-					<div class="price">
-						<h4>$499<span class="details-page">indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="grids_of_3">
-			<div class="grid1_of_3">
-				<a href="" class="details-page">
-					<img src="../images/shoe_pic4.jpg" alt=""/ class="details-page">
-					<h3>branded shoes</h3>
-					<div class="price">
-						<h4>$499<span class="details-page">indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="" class="details-page">
-					<img src="../images/shoe_pic5.jpg" alt=""/ class="details-page">
-					<h3>branded shoes</h3>
-					<div class="price">
-						<h4>$499<span class="details-page">indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="" class="details-page">
-					<img src="../images/shoe_pic6.jpg" alt=""/ class="details-page">
-					<h3>branded shoes</h3>
-					<div class="price">
-						<h4>$499<span class="details-page">indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="clear"></div>
-		</div>
+
+
+
+
 	</div>
 </div>
 </div>		
@@ -911,6 +856,10 @@ ${FOOTER_BG}
 `;
 
 // --------------------------------------------------------------------------------
+
+/* <li><a href="" class="handbags-page">handbags</a></li> |
+<li><a href="" class="accessories-page">accessories</a></li> |
+<li><a href="" class="wallets-page">wallets</a></li> | */
 
 DOM_STATE_HTML.SERVICES_PAGE_FULL = `
 
@@ -923,9 +872,7 @@ ${HEADER_BG}
 			<ul>
                 <li><a href="" class="main-page">Home</a></li> |
                 <li><a href="" class="sale-page">sale</a></li> |
-                <li><a href="" class="handbags-page">handbags</a></li> |
-                <li><a href="" class="accessories-page">accessories</a></li> |
-                <li><a href="" class="wallets-page">wallets</a></li> |
+				
                 <li><a href="" class="shoes-page">shoes</a></li> |
                 <li class="active"><a href="" class="services-page">services</a></li> |
                 <li><a href="" class="contactUs-page">contact us</a></li>
@@ -1012,6 +959,11 @@ ${FOOTER_BG}
 `;
 
 // --------------------------------------------------------------------------------
+
+/* <li><a href="" class="handbags-page">handbags</a></li> |
+<li><a href="" class="accessories-page">accessories</a></li> |
+<li><a href="" class="wallets-page">wallets</a></li> | */
+
 DOM_STATE_HTML.CONTACT_US_PAGE_FULL = `
 
 <!-- start header -->
@@ -1023,9 +975,6 @@ ${HEADER_BG}
                 <ul>
                     <li><a href="" class="main-page">Home</a></li> |
                     <li><a href="" class="sale-page">sale</a></li> |
-                    <li><a href="" class="handbags-page">handbags</a></li> |
-                    <li><a href="" class="accessories-page">accessories</a></li> |
-                    <li><a href="" class="wallets-page">wallets</a></li> |
                     <li><a href="" class="shoes-page">shoes</a></li> |
                     <li><a href="" class="services-page">services</a></li> |
                     <li class="active"><a href="" class="contactUs-page">contact us</a></li>
@@ -1100,9 +1049,6 @@ ${HEADER_BG}
 			<ul>
                 <li class="active"><a href="" class="main-page">Home</a></li> |
                 <li><a href="" class="sale-page">sale</a></li> |
-                <li><a href="" class="handbags-page">handbags</a></li> |
-                <li><a href="" class="accessories-page">accessories</a></li> |
-                <li><a href="" class="wallets-page">wallets</a></li> |
                 <li><a href="" class="shoes-page">shoes</a></li> |
                 <li><a href="" class="services-page">services</a></li> |
                 <li><a href="" class="contactUs-page">contact us</a></li>
@@ -1192,53 +1138,21 @@ ${HEADER_BG}
 			<!-- start span1_of_1 -->
 			<div class="span1_of_1_des">
 				  <div class="desc1">
-					<h3>Lorem Ipsum is simply dummy text </h3>
-					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-					<h5>Rs. 399 <a href="#">click for offer</a></h5>
+
 					<div class="available">
-						<h4>Available Options :</h4>
-						<ul>
-							<li>Color:
-								<select>
-								<option>Silver</option>
-								<option>Black</option>
-								<option>Dark Black</option>
-								<option>Red</option>
-							</select></li>
-							<li>Size:
-								<select>
-									<option>L</option>
-									<option>XL</option>
-									<option>S</option>
-									<option>M</option>
-								</select>
-							</li>
-							<li>Quality:
-								<select>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							</li>
-						</ul>
-						<div class="btn_form">
-							<form>
-								<input type="submit" value="add to cart" title="" />
-							</form>
-						</div>
-						<span class="span_right"><a href="#">login to save in wishlist </a></span>
-						<div class="clear"></div>
+						<div class="btn_form">  </div>
+						<span class="span_right"><a href="">login to save in wishlist </a></span>
+						<div class="clear">  </div>
 					</div>
+
 					<div class="share-desc">
 						<div class="share">
 							<h4>Share Product :</h4>
 							<ul class="share_nav">
-								<li><a href="#"><img src="../images/facebook.png" title="facebook"></a></li>
-								<li><a href="#"><img src="../images/twitter.png" title="Twiiter"></a></li>
-								<li><a href="#"><img src="../images/rss.png" title="Rss"></a></li>
-								<li><a href="#"><img src="../images/gpluse.png" title="Google+"></a></li>
+								<li><a href="https://www.facebook.com/"><img src="../images/facebook.png" title="facebook"></a></li>
+								<li><a href="https://twitter.com/"><img src="../images/twitter.png" title="Twiiter"></a></li>
+								<li><a href="https://ru.wikipedia.org/wiki/RSS"><img src="../images/rss.png" title="Rss"></a></li>
+								<li><a href="https://www.google.com/"><img src="../images/gpluse.png" title="Google+"></a></li>
 				    		</ul>
 						</div>
 						<div class="clear"></div>
