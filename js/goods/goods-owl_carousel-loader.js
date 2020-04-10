@@ -4,20 +4,21 @@ import { goods } from './goods'
 */
 export function renderOwlCarouselGoods() {
 
-    goods.forEach((product) => {
-
-        if (product.owl_carousel === true) {
-            let outputHTML = `<div class="item">
+  for (let key in goods) {
+    let outputHTML = '';
+    if (goods[key].owl_carousel === true) {
+      outputHTML = `<div class="item">
                             <div class="cau_left">
-                              <img class="lazyOwl details-page" data-src="${product.image}" data-art="${product.id}" alt="Lazy Owl Image">
+                              <img class="lazyOwl details-page" data-src="${goods[key].image}" data-art="${key}" alt="Lazy Owl Image">
                             </div>
                             <div class="cau_left">
-                              <h4><a href="" class="details-page" data-art="${product.id}">${product.name}</a></h4>
-                              <a href="" class="btn details-page" data-art="${product.id}">shop</a>
+                              <h4><a href="" class="details-page" data-art="${key}">${goods[key].name}</a></h4>
+                              <a href="" class="btn details-page" data-art="${key}">shop</a>
                             </div>
                             </div>`;
 
-            $('#owl-demo').append(outputHTML);
-        }
-    });
+      $('#owl-demo').append(outputHTML);
+    }
+  };
+
 }

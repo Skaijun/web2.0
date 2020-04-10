@@ -1,4 +1,5 @@
 import { DOM_STATE_HTML, StateDOMHTML } from './StateDOMHTML.js'
+import { Basket } from './Basket.js'
 import { StateActiveProduct } from '../../goods/goods-details-state.js'
 import { ContactForms } from './form-validation.js'
 import { renderDetailedProduct } from '../../goods/goods-detailed-loader.js'
@@ -14,6 +15,7 @@ export class RenderHTML {
         this.pageState = new StateDOMHTML();
         this.detailedProductState = new StateActiveProduct();
         this.depictCurrentPage();
+        this.cart = new Basket();
         this.handleEventsOnBtns = this.handleEventsOnBtns.bind(this);
         this.setEventToDOM(this.selectedHtmlElement);
     }
@@ -156,7 +158,7 @@ export class RenderHTML {
                 this.handleDepictPageEvent('contactUs-page');
                 break;
             case element.contains('details-page'):
-                window.localStorage.clear();
+                this.pageState.removePageStateFromLocalStorage();
                 this.pageState.savePageStateInLocalStorage('details-page');
                 this.detailedProductState.saveProductStateInLocalStorage(event.target.getAttribute('data-art'));
                 document.location.reload(true);
@@ -166,7 +168,8 @@ export class RenderHTML {
     }
 
     handleDepictPageEvent(pageClass) {
-        window.localStorage.clear();
+        this.pageState.removePageStateFromLocalStorage();
+        this.detailedProductState.removeProductStateFromLocalStorage();
         this.pageState.savePageStateInLocalStorage(pageClass);
         document.location.reload(true);
         this.depictCurrentPage();

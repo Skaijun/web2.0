@@ -1,4 +1,3 @@
-
 export class StateDOMHTML {
 	constructor() {
 		this.currPage = JSON.parse(window.localStorage.getItem("currentPage")) || 'main-page';
@@ -10,6 +9,12 @@ export class StateDOMHTML {
 
 	savePageStateInLocalStorage(page) {
 		window.localStorage.setItem("currentPage", JSON.stringify(page));
+	}
+
+	removePageStateFromLocalStorage() {
+		if (JSON.parse(window.localStorage.getItem("currentPage")) != null) {
+			window.localStorage.removeItem("currentPage");
+		}
 	}
 
 }
@@ -35,14 +40,7 @@ const HEADER_BG = `
 			<a href=""><img src="../images/logo.png" alt="" class="main-page"/> </a>
 		</div>
 		<div class="h_icon">
-		<ul class="icon1 sub-icon1">
-			<li><a class="active-icon c1" href="#"><i>$300</i></a>
-				<ul class="sub-icon1 list">
-					<li><h3>shopping cart empty</h3><a href=""></a></li>
-					<li><p>if items in your wishlit are missing, <a href="" class="contactUs-page">contact us</a> to view them</p></li>
-				</ul>
-			</li>
-		</ul>
+
 		</div>
 		<div class="h_search">
     		<form>

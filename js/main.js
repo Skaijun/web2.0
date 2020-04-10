@@ -1,5 +1,5 @@
-import { RenderHTML } from './Components/dev/renderHTML';
-import { StateDOMHTML } from './Components/dev/StateDOMHTML'
+import { RenderHTML } from './Components/dev/renderHTML.js';
+import { StateDOMHTML } from './Components/dev/StateDOMHTML.js'
 import { activateResponsiveMenu } from './Components/src/responsive.menu.js'
 
 // import './Components/src/cloud-zoom.1.0.3.min';
@@ -20,7 +20,7 @@ import { activateResponsiveMenu } from './Components/src/responsive.menu.js'
 
 // sector clear :)
 
-const webShopDOM = new RenderHTML(document.body);
+window.onload = new RenderHTML(document.body);
 window.onload = activateResponsiveMenu();
 window.StateDOMHTML = StateDOMHTML;
 

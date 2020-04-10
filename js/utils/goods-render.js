@@ -6,16 +6,16 @@ import { goods } from '../goods/goods.js'
 export function renderFeaturedGoods(productFeatures, condition, howManyGoodsInOneRow) {
     let howManyFeaturedGoodsDoWeHave = 0;
     let numberOfdepictedRows = 1;
-
-    goods.forEach((product) => {
-
-        if (product[productFeatures] === condition) {
-            let outputHTML = `<div class="grid1_of_3" id="${product.id}">
-                          <a href="" class="details-page" data-art="${product.id}">
-                          <img src="${product.image}" alt="product image" class="details-page" data-art="${product.id}"/>
-                          <h3 class="details-page" data-art="${product.id}">${product.name}</h3>
+    
+    let outputHTML = '';
+    for (let key in goods) {
+        if (goods[key][productFeatures] === condition) {
+            outputHTML = `<div class="grid1_of_3" id="${key}">
+                          <a href="" class="details-page" data-art="${key}">
+                          <img src="${goods[key].image}" alt="product image" class="details-page" data-art="${key}"/>
+                          <h3 class="details-page" data-art="${key}">${goods[key].name}</h3>
                           <div class="price">
-                          <h4>$${product.price}<span class="details-page" data-art="${product.id}">indulge</span></h4>
+                          <h4>$${goods[key].price}<span class="details-page" data-art="${key}">indulge</span></h4>
                           </div>
                           <span class="b_btm"></span>
                           </a>
@@ -38,5 +38,10 @@ export function renderFeaturedGoods(productFeatures, condition, howManyGoodsInOn
                 numberOfdepictedRows++;
             }
         }
-    });
+    };
+
+
+
+
+
 }

@@ -1312,6 +1312,48 @@ border-color: #2ecc71;
 	color: #e74c3c;
 } 
 
+.sub-mini-total {
+	color: #018577;
+	font-size: 22px;
+	font-weight: 600;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.sub-product__wrap {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 10px;
+}
+
+.sub-product__img {
+	display: block;
+	position: absolute;
+	color: red;
+}
+
+.sub-product__wrap button {
+   color: whitesmoke;
+   border-radius: 50%;
+   background-color: darkolivegreen;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.sub-product__wrap button:hover {
+	opacity: 0.7;
+	border-radius: 50%;
+	background-color: blueviolet;
+ }
+.sub-product__wrap.sub-product__details {
+	float: left;
+
+}
+
+
+
+
 /* end tabs */
 /***** Media Quries *****/
 @media only screen and (max-width: 1366px) {

@@ -5,66 +5,61 @@ import { goods } from './goods'
 */
 
 export function renderDetailedProduct(attr) {
-    goods.forEach((product) => {
-        if (product.id === +attr) {
 
-            let outputHTML = `<div
-                              class="product-image"> 
-                              <a
-                              class="cs-fancybox-thumbs cloud-zoom"
+  let outputHTML = '';
+  for (let key in goods) {
+    if (key === attr) {
+      outputHTML = `<div class="product-image"> 
+                              <a class="cs-fancybox-thumbs cloud-zoom"
                               rel="adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5"
                               data-fancybox-group="thumb"
-                              href="${product.image}"
-                              title="${product.name}"
-                              alt="${product.description}">
-                              <img src="${product.image}" alt="${product.description}" title="${product.name}" />
+                              href="${goods[key].image}"
+                              title="${goods[key].name}"
+                              alt="${goods[key].description}">
+                              <img src="${goods[key].image}" alt="${goods[key].description}" title="${goods[key].name}" />
                               </a>
                               </div>`;
+      $('.product-img-box')[0].insertAdjacentHTML("beforeend", outputHTML);
+      //    ---------------------------------------------------------------------------
+      let descrAndCostHTML = `<h3>${goods[key].name}</h3>
+                     <p>${goods[key].description}</p>
+                      <h5>${goods[key].price} $ <a href="" data-art="${key}">click for offer</a></h5>`;
+      $('.desc1')[0].insertAdjacentHTML("afterbegin", descrAndCostHTML);
+      //    ---------------------------------------------------------------------------
+      let abiableColorArr = goods[key].color;
+      let colorSelect = pickUpAviableSelectForThis(abiableColorArr);
+      let abiableSizeArr = goods[key].size;
+      let sizeSelect = pickUpAviableSelectForThis(abiableSizeArr);
+      let aviableOptionsHTML = `<h4>Available Options :</h4>
+                       <ul>
+                         <li>Color:
+                           <select class="color-select">
+                         ${colorSelect}
+                           </select>
+                         </li>
+                         <li>Size:
+                           <select class="size-select">
+                         ${sizeSelect}
+                           </select>
+                         </li>
+                       </ul>`;
 
-            $('.product-img-box')[0].insertAdjacentHTML("beforeend", outputHTML);
-            //    ---------------------------------------------------------------------------
+      $('.available')[0].insertAdjacentHTML("afterbegin", aviableOptionsHTML);
+      //    ---------------------------------------------------------------------------
+      let addToCartHTML = `<form class="add-to-cart">
+      <input type="submit" value="add to cart" title="" data-art="${key}"/>
+     </form>`;
+      $('.btn_form')[0].insertAdjacentHTML("beforeend", addToCartHTML);
+    }
+  };
 
-            let descrAndCostHTML = `<h3>${product.name}</h3>
-                     <p>${product.description}</p>
-                      <h5>${product.price} $ <a href="" data-art="${product.id}">click for offer</a></h5>`;
-            $('.desc1')[0].insertAdjacentHTML("afterbegin", descrAndCostHTML);
-            //    ---------------------------------------------------------------------------
-            let abiableColorArr = product.color;
-            let colorSelect = pickUpAviableSelectForThis(abiableColorArr);
-            let abiableSizeArr = product.size;
-            let sizeSelect = pickUpAviableSelectForThis(abiableSizeArr);
-
-            let aviableOptionsHTML = `<h4>Available Options :</h4>
-                        <ul>
-                          <li>Color:
-                            <select>
-                          ${colorSelect}
-                            </select>
-                          </li>
-                          <li>Size:
-                            <select>
-                          ${sizeSelect}
-                            </select>
-                          </li>
-                        </ul>`;
-
-            $('.available')[0].insertAdjacentHTML("afterbegin", aviableOptionsHTML);
-            //    ---------------------------------------------------------------------------
-
-            let addToCartHTML = `<form>
-                                  <input type="submit" value="add to cart" title="" data-art="${product.id}"/>
-                                 </form>`;
-            $('.btn_form')[0].insertAdjacentHTML("beforeend", addToCartHTML);
-        }
+  function pickUpAviableSelectForThis(arr) {
+    let textHTML = '';
+    arr.forEach((item) => {
+      textHTML += `<option value="${item}">${item}</option>`;
     });
-
-    function pickUpAviableSelectForThis(arr) {
-        let textHTML = '';
-        arr.forEach((item) => {
-            textHTML += `<option>${item}</option>`;
-        });
-        return textHTML;
-    };
+    return textHTML;
+  };
 
 }
 

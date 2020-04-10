@@ -90,9 +90,9 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Components_dev_renderHTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
+/* harmony import */ var _Components_dev_renderHTML_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _Components_dev_StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16);
 
 
  // import './Components/src/cloud-zoom.1.0.3.min';
@@ -112,9 +112,9 @@ __webpack_require__.r(__webpack_exports__);
 // import './Components/src/responsive.menu';
 // sector clear :)
 
-var webShopDOM = new _Components_dev_renderHTML__WEBPACK_IMPORTED_MODULE_0__["RenderHTML"](document.body);
+window.onload = new _Components_dev_renderHTML_js__WEBPACK_IMPORTED_MODULE_0__["RenderHTML"](document.body);
 window.onload = Object(_Components_src_responsive_menu_js__WEBPACK_IMPORTED_MODULE_2__["activateResponsiveMenu"])();
-window.StateDOMHTML = _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__["StateDOMHTML"];
+window.StateDOMHTML = _Components_dev_StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_1__["StateDOMHTML"];
 
 /***/ }),
 /* 1 */
@@ -124,22 +124,24 @@ window.StateDOMHTML = _Components_dev_StateDOMHTML__WEBPACK_IMPORTED_MODULE_1__[
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderHTML", function() { return RenderHTML; });
 /* harmony import */ var _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _goods_goods_details_state_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _form_validation_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _goods_goods_detailed_loader_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
-/* harmony import */ var _goods_goods_state_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
-/* harmony import */ var _goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10);
-/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(11);
-/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_cslider__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(12);
-/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_src_owl_carousel__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(13);
-/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Basket_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _goods_goods_details_state_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var _form_validation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var _goods_goods_detailed_loader_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
+/* harmony import */ var _goods_goods_state_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10);
+/* harmony import */ var _goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(12);
+/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(13);
+/* harmony import */ var _src_jquery_cslider__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_cslider__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(14);
+/* harmony import */ var _src_owl_carousel__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_src_owl_carousel__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(15);
+/* harmony import */ var _src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_src_jquery_mixitup__WEBPACK_IMPORTED_MODULE_9__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -158,8 +160,9 @@ function () {
 
     this.selectedHtmlElement = selectedHtmlElement || document.body;
     this.pageState = new _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["StateDOMHTML"]();
-    this.detailedProductState = new _goods_goods_details_state_js__WEBPACK_IMPORTED_MODULE_1__["StateActiveProduct"]();
+    this.detailedProductState = new _goods_goods_details_state_js__WEBPACK_IMPORTED_MODULE_2__["StateActiveProduct"]();
     this.depictCurrentPage();
+    this.cart = new _Basket_js__WEBPACK_IMPORTED_MODULE_1__["Basket"]();
     this.handleEventsOnBtns = this.handleEventsOnBtns.bind(this);
     this.setEventToDOM(this.selectedHtmlElement);
   }
@@ -193,8 +196,8 @@ function () {
     key: "depictMainPage",
     value: function depictMainPage() {
       this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].MAIN_PAGE);
-      _goods_goods_state_js__WEBPACK_IMPORTED_MODULE_4__["goodsState"].renderFeatGoodsMainPage();
-      Object(_goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_5__["renderOwlCarouselGoods"])();
+      _goods_goods_state_js__WEBPACK_IMPORTED_MODULE_5__["goodsState"].renderFeatGoodsMainPage();
+      Object(_goods_goods_owl_carousel_loader_js__WEBPACK_IMPORTED_MODULE_6__["renderOwlCarouselGoods"])();
       $(function () {
         $('#da-slider').cslider();
       });
@@ -272,7 +275,7 @@ function () {
     key: "depictShoesPage",
     value: function depictShoesPage() {
       this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].SHOES_PAGE_FULL);
-      _goods_goods_state_js__WEBPACK_IMPORTED_MODULE_4__["goodsState"].renderShoesCategoryShoesPage();
+      _goods_goods_state_js__WEBPACK_IMPORTED_MODULE_5__["goodsState"].renderShoesCategoryShoesPage();
     }
   }, {
     key: "depictServicesPage",
@@ -283,13 +286,13 @@ function () {
     key: "depictContactUsPage",
     value: function depictContactUsPage() {
       this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].CONTACT_US_PAGE_FULL);
-      var contactUsFormsInitialization = new _form_validation_js__WEBPACK_IMPORTED_MODULE_2__["ContactForms"]();
+      var contactUsFormsInitialization = new _form_validation_js__WEBPACK_IMPORTED_MODULE_3__["ContactForms"]();
     }
   }, {
     key: "depictDetailsPage",
     value: function depictDetailsPage() {
       this.selectedHtmlElement.insertAdjacentHTML("afterbegin", _StateDOMHTML_js__WEBPACK_IMPORTED_MODULE_0__["DOM_STATE_HTML"].DETAILS_PAGE_FULL);
-      Object(_goods_goods_detailed_loader_js__WEBPACK_IMPORTED_MODULE_3__["renderDetailedProduct"])(this.detailedProductState.detailedProductAttr);
+      Object(_goods_goods_detailed_loader_js__WEBPACK_IMPORTED_MODULE_4__["renderDetailedProduct"])(this.detailedProductState.detailedProductAttr);
     }
   }, {
     key: "setEventToDOM",
@@ -336,7 +339,7 @@ function () {
           break;
 
         case element.contains('details-page'):
-          window.localStorage.clear();
+          this.pageState.removePageStateFromLocalStorage();
           this.pageState.savePageStateInLocalStorage('details-page');
           this.detailedProductState.saveProductStateInLocalStorage(event.target.getAttribute('data-art'));
           document.location.reload(true);
@@ -347,7 +350,8 @@ function () {
   }, {
     key: "handleDepictPageEvent",
     value: function handleDepictPageEvent(pageClass) {
-      window.localStorage.clear();
+      this.pageState.removePageStateFromLocalStorage();
+      this.detailedProductState.removeProductStateFromLocalStorage();
       this.pageState.savePageStateInLocalStorage(pageClass);
       document.location.reload(true);
       this.depictCurrentPage();
@@ -390,6 +394,13 @@ function () {
     value: function savePageStateInLocalStorage(page) {
       window.localStorage.setItem("currentPage", JSON.stringify(page));
     }
+  }, {
+    key: "removePageStateFromLocalStorage",
+    value: function removePageStateFromLocalStorage() {
+      if (JSON.parse(window.localStorage.getItem("currentPage")) != null) {
+        window.localStorage.removeItem("currentPage");
+      }
+    }
   }]);
 
   return StateDOMHTML;
@@ -405,7 +416,7 @@ var DOM_STATE_HTML = {
   "CONTACT_US_PAGE_FULL": '',
   "DETAILS_PAGE_FULL": ''
 };
-var HEADER_BG = " \n<div class=\"header_bg\">\n <div class=\"wrap\">\n\t<div class=\"header\">\n\t\t<div class=\"logo\">\n\t\t\t<a href=\"\"><img src=\"../images/logo.png\" alt=\"\" class=\"main-page\"/> </a>\n\t\t</div>\n\t\t<div class=\"h_icon\">\n\t\t<ul class=\"icon1 sub-icon1\">\n\t\t\t<li><a class=\"active-icon c1\" href=\"#\"><i>$300</i></a>\n\t\t\t\t<ul class=\"sub-icon1 list\">\n\t\t\t\t\t<li><h3>shopping cart empty</h3><a href=\"\"></a></li>\n\t\t\t\t\t<li><p>if items in your wishlit are missing, <a href=\"\" class=\"contactUs-page\">contact us</a> to view them</p></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t</ul>\n\t\t</div>\n\t\t<div class=\"h_search\">\n    \t\t<form>\n    \t\t\t<input type=\"text\" value=\"\">\n    \t\t\t<input type=\"submit\" value=\"\">\n    \t\t</form>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n </div>\n</div>\n"; // ---------------------------------------------------------
+var HEADER_BG = " \n<div class=\"header_bg\">\n <div class=\"wrap\">\n\t<div class=\"header\">\n\t\t<div class=\"logo\">\n\t\t\t<a href=\"\"><img src=\"../images/logo.png\" alt=\"\" class=\"main-page\"/> </a>\n\t\t</div>\n\t\t<div class=\"h_icon\">\n\n\t\t</div>\n\t\t<div class=\"h_search\">\n    \t\t<form>\n    \t\t\t<input type=\"text\" value=\"\">\n    \t\t\t<input type=\"submit\" value=\"\">\n    \t\t</form>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n </div>\n</div>\n"; // ---------------------------------------------------------
 
 /* <li class="nav-item"><a href="" class="handbags-page">handbags</a></li>
 <li class="nav-item"><a href="" class="accessories-page">accessories</a></li>
@@ -457,6 +468,374 @@ DOM_STATE_HTML.DETAILS_PAGE_FULL = "\n\n<!-- start header -->\n".concat(HEADER_B
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Basket", function() { return Basket; });
+/* harmony import */ var _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _utils_isEmptyObj_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Basket =
+/*#__PURE__*/
+function () {
+  function Basket() {
+    _classCallCheck(this, Basket);
+
+    this.basket = JSON.parse(window.localStorage.getItem("basket")) || {};
+    this.totalPrice = JSON.parse(window.localStorage.getItem("totalprice")) || 0;
+    this.addProductToCart = this.addProductToCart.bind(this);
+    this.removeItemFromTheBasket = this.removeItemFromTheBasket.bind(this);
+    this.addItemToTheBasket = this.addItemToTheBasket.bind(this);
+    this.deleteAllItemsFromTheBasket = this.deleteAllItemsFromTheBasket.bind(this);
+    this.renderMiniBasketHTML();
+    this.selectDOMElements();
+    this.handleEventsOnBtns();
+  }
+
+  _createClass(Basket, [{
+    key: "renderMiniBasketHTML",
+    value: function renderMiniBasketHTML() {
+      $('.h_icon').empty();
+      var out = "<ul class=\"icon1 sub-icon1\">\n                 <li>\n                  <a class=\"active-icon c1\" href=\"#\"><i id=\"mini-basket-total\">$".concat(this.totalPrice, "</i></a>\n                     <ul class=\"sub-icon1 list\">\n                     ").concat(this.getStateOfMiniBasket(), "\n\t\t\t\t     </ul>\n\t\t\t     </li>\n                 </ul>");
+      $('.h_icon')[0].insertAdjacentHTML("beforeend", out);
+      this.handleEventsOnBtns();
+    }
+  }, {
+    key: "getStateOfMiniBasket",
+    value: function getStateOfMiniBasket() {
+      var myCart = this.basket;
+      var output = '';
+
+      if (!Object(_utils_isEmptyObj_js__WEBPACK_IMPORTED_MODULE_1__["isEmptyObject"])(myCart)) {
+        output = "<li><h3>shopping list</h3></li>";
+
+        for (var article in myCart) {
+          output += "<li><div class=\"sub-product__wrap\">\n                                  <div sub-product__img>\n                                      <img\n                                       src=\"".concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].image, "\"\n                                       alt=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].description, "\"\n                                       title=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].name, "\"\n                                       width=\"60px\" height=\"60px\"\n                                       />\n                                      <button class=\"remove-from-basket\" data-art=\"").concat(article, "\"> - </button>\n                                      ").concat(myCart[article], " it. \n                                      <button class=\"add-to-basket\" data-art=\"").concat(article, "\"> + </button>\n                                  </div>\n                                  <div sub-product__details>\n                                     <button class=\"delete-product\" data-art=\"").concat(article, "\"> X </button>\n                                     <div class=\"sub-product__name\">").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].name, "</div>\n                                     <div class=\"sub-product__features\">\n                                        <div class=\"sub-product__size\">size: 39</div>\n                                        <div class=\"sub-product__color\">color: black</div>\n                                     </div>\n                                     <div class=\"sub-product__price\">$ ").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price, "</div>\n                                  </div>\n                               </div>\n                           </li>");
+        }
+
+        output += "<li>\n                       <div class=\"sub-mini-total\"><span>Total price: </span><i>$ ".concat(this.totalPrice, "</i></div>\n                       </li>");
+      } else {
+        output = "<li><h3>shopping cart empty</h3><a href=\"\"></a></li>\n                      <li><p>if items in your wishlit are missing, <a href=\"\" class=\"contactUs-page\">contact us</a> to view them</p></li>";
+      }
+
+      return output;
+    }
+  }, {
+    key: "selectDOMElements",
+    value: function selectDOMElements() {
+      this.sizeCustomerInput = $('.size-select')[0];
+      this.colorCustomerInput = $('.color-select')[0];
+    }
+  }, {
+    key: "handleEventsOnBtns",
+    value: function handleEventsOnBtns() {
+      if ($('.add-to-cart')[0]) {
+        $('.add-to-cart')[0].addEventListener('submit', this.addProductToCart);
+      }
+
+      if ($('.remove-from-basket')) {
+        $('.remove-from-basket').on('click', this.removeItemFromTheBasket);
+      }
+
+      if ($('.add-to-basket')) {
+        $('.add-to-basket').on('click', this.addItemToTheBasket);
+      }
+
+      if ($('.delete-product')) {
+        $('.delete-product').on('click', this.deleteAllItemsFromTheBasket);
+      }
+    }
+  }, {
+    key: "addProductToCart",
+    value: function addProductToCart() {
+      event.preventDefault();
+      var productArticle = $('.add-to-cart').children(['data-art']).attr('data-art');
+      this.totalPrice = this.totalPrice + _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][productArticle].price;
+
+      if (this.basket[productArticle] == undefined) {
+        this.basket[productArticle] = 1; // if there are not any such goods in the basket => set quantity to 1
+      } else {
+        this.basket[productArticle]++; // if there are already such goods in the basket => set quantity +1
+      }
+
+      this.refreshBasketState();
+    }
+  }, {
+    key: "removeItemFromTheBasket",
+    value: function removeItemFromTheBasket() {
+      event.preventDefault();
+      var myCart = this.basket;
+      var article = $(event.target).attr('data-art');
+      this.totalPrice = this.totalPrice - _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price;
+
+      if (myCart[article] > 1) {
+        myCart[article]--;
+      } else {
+        delete myCart[article];
+      }
+
+      this.refreshBasketState();
+    }
+  }, {
+    key: "addItemToTheBasket",
+    value: function addItemToTheBasket() {
+      event.preventDefault();
+      var myCart = this.basket;
+      var article = $(event.target).attr('data-art');
+      this.totalPrice = this.totalPrice + _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price;
+      myCart[article]++;
+      this.refreshBasketState();
+    }
+  }, {
+    key: "deleteAllItemsFromTheBasket",
+    value: function deleteAllItemsFromTheBasket() {
+      event.preventDefault();
+      var myCart = this.basket;
+      var id = $(event.target).attr('data-art');
+      this.totalPrice = this.totalPrice - _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][id].price * myCart[id];
+      delete myCart[id];
+      this.refreshBasketState();
+    }
+  }, {
+    key: "refreshBasketState",
+    value: function refreshBasketState() {
+      this.saveGoodsTotalPriceInLocalStorage();
+      this.saveBasketStateInLocalStorage();
+      this.renderMiniBasketHTML();
+    }
+  }, {
+    key: "selectUserChoiseValue",
+    value: function selectUserChoiseValue(searchInElement) {
+      return searchInElement.value;
+    }
+  }, {
+    key: "saveBasketStateInLocalStorage",
+    value: function saveBasketStateInLocalStorage() {
+      window.localStorage.setItem("basket", JSON.stringify(this.basket));
+    }
+  }, {
+    key: "saveGoodsTotalPriceInLocalStorage",
+    value: function saveGoodsTotalPriceInLocalStorage() {
+      window.localStorage.setItem("totalprice", JSON.stringify(this.totalPrice));
+    }
+  }]);
+
+  return Basket;
+}();
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "goods", function() { return goods; });
+var goods = {
+  "10001": {
+    "name": "Branded shoes",
+    "price": 100,
+    "description": "pokupaem new bransed shoes go check sizes and color id 10001",
+    "category": "shoes",
+    "color": ['red', 'white'],
+    "size": [39, 36],
+    "image": "../images/pic1.jpg",
+    "featured": true,
+    "owl_carousel": false
+  },
+  "10002": {
+    "name": "Levis T-shirt",
+    "price": 70,
+    "description": "try new Levis T-shirtt buy it very very good  buy it go go go some text try again 10002",
+    "category": "t_shirt",
+    "color": ['black', 'blue', 'white'],
+    "size": ["L", "M"],
+    "image": "../images/pic2.jpg",
+    "featured": true,
+    "owl_carousel": false
+  },
+  "10003": {
+    "name": "True T-shirt",
+    "price": 15,
+    "description": "try new Branded t-shirt buy it very very good  buy it go go go some text try again 10003",
+    "category": "t_shirt",
+    "color": ['gray'],
+    "size": ["L", "M"],
+    "image": "../images/pic3.jpg",
+    "featured": true,
+    "owl_carousel": false
+  },
+  "10004": {
+    "name": "Branded bags",
+    "price": 25,
+    "description": "very good wallet buy it go go go some text try again 10004",
+    "category": "wallet",
+    "color": ['brown'],
+    "size": ["current"],
+    "image": "../images/pic4.jpg",
+    "featured": true,
+    "owl_carousel": true
+  },
+  "10005": {
+    "name": "EMS women bag",
+    "price": 105,
+    "description": "very good bag buy it go go go some text try again 10005",
+    "category": "handbags",
+    "color": ['coffee'],
+    "size": ["current"],
+    "image": "../images/pic5.jpg",
+    "featured": true,
+    "owl_carousel": true
+  },
+  "10006": {
+    "name": "Easy top",
+    "price": 10,
+    "description": "try new Branded top shirt buy it very very good  buy it go go go some text try again 10006",
+    "category": "t_shirt",
+    "color": ['black'],
+    "size": ["L", "S"],
+    "image": "../images/pic6.jpg",
+    "featured": true,
+    "owl_carousel": true
+  },
+  "10007": {
+    "name": "Easy top",
+    "price": 109,
+    "description": "try new Branded top shirt buy it very very good  buy it go go go some text try again 10007",
+    "category": "t_shirt",
+    "color": ['black'],
+    "size": ["S", "XS"],
+    "image": "../images/pic6.jpg",
+    "featured": true,
+    "owl_carousel": true
+  },
+  "10008": {
+    "name": "Branded shoes",
+    "price": 99,
+    "description": "pokupaem new bransed shoes go check sizes and color id 10008",
+    "category": "shoes",
+    "color": ['brown', 'black'],
+    "size": [43, 46],
+    "image": "../images/c1.jpg",
+    "featured": true,
+    "owl_carousel": true
+  },
+  "10009": {
+    "name": "Branded tees",
+    "price": 79,
+    "description": "try new Branded tees buy it very very good  buy it go go go some text try again 10009",
+    "category": "t_shirt",
+    "color": ['black'],
+    "size": ["S", "XS"],
+    "image": "../images/c2.jpg",
+    "featured": false,
+    "owl_carousel": true
+  },
+  "10010": {
+    "name": "Branded jeens",
+    "price": 69,
+    "description": "try new jeens buy it very very good  buy it go go go some text try again 10010",
+    "category": "jeens",
+    "color": ['blue'],
+    "size": ["M", "XS"],
+    "image": "../images/c3.jpg",
+    "featured": false,
+    "owl_carousel": true
+  },
+  "10011": {
+    "name": "Branded tees",
+    "price": 79,
+    "description": "try new Branded tees buy it very very good  buy it go go go some text try again 10011",
+    "category": "t_shirt",
+    "color": ['black'],
+    "size": ["L", "M", "S", "XS"],
+    "image": "../images/c2.jpg",
+    "featured": false,
+    "owl_carousel": true
+  },
+  "10012": {
+    "name": "Branded shoes",
+    "price": 150,
+    "description": "pokupaem new bransed shoes go check sizes and color id 10012",
+    "category": "shoes",
+    "color": ['red', 'white'],
+    "size": [36, 39],
+    "image": "../images/shoe_pic1.jpg",
+    "featured": false,
+    "owl_carousel": false
+  },
+  "10013": {
+    "name": "Branded shoes",
+    "price": 170,
+    "description": "pokupaem new bransed shoes go check sizes and color id 10013",
+    "category": "shoes",
+    "color": ['red', 'white', 'brown', 'dark'],
+    "size": [39, 40, 41, 42, 45, 46],
+    "image": "../images/shoe_pic2.jpg",
+    "featured": false,
+    "owl_carousel": false
+  },
+  "10014": {
+    "name": "Branded shoes",
+    "price": 220,
+    "description": "pokupaem new bransed shoes go check sizes and color id 10014",
+    "category": "shoes",
+    "color": ['red', 'white', 'brown', 'dark'],
+    "size": [39, 42, 45, 46],
+    "image": "../images/shoe_pic3.jpg",
+    "featured": false,
+    "owl_carousel": false
+  },
+  "10015": {
+    "name": "Branded shoes",
+    "price": 110,
+    "description": "pokupaem new bransed shoes go check sizes and color id 10015",
+    "category": "shoes",
+    "color": ['red', 'white', 'brown', 'dark'],
+    "size": [39, 42, 45, 46],
+    "image": "../images/shoe_pic4.jpg",
+    "featured": false,
+    "owl_carousel": false
+  },
+  "10016": {
+    "name": "Branded shoes",
+    "price": 113,
+    "description": "pokupaem new bransed shoes go check sizes and color id 10016",
+    "category": "shoes",
+    "color": ['white', 'brown', 'dark'],
+    "size": [39, 42, 45],
+    "image": "../images/shoe_pic5.jpg",
+    "featured": false,
+    "owl_carousel": false
+  }
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEmptyObject", function() { return isEmptyObject; });
+function isEmptyObject(obj) {
+  for (var i in obj) {
+    if (obj.hasOwnProperty(i)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StateActiveProduct", function() { return StateActiveProduct; });
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -478,19 +857,26 @@ function () {
     value: function saveProductStateInLocalStorage(attr) {
       window.localStorage.setItem("detailedProductAttr", JSON.stringify(attr));
     }
+  }, {
+    key: "removeProductStateFromLocalStorage",
+    value: function removeProductStateFromLocalStorage() {
+      if (JSON.parse(window.localStorage.getItem("detailedProductAttr")) != null) {
+        window.localStorage.removeItem("detailedProductAttr");
+      }
+    }
   }]);
 
   return StateActiveProduct;
 }();
 
 /***/ }),
-/* 4 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactForms", function() { return ContactForms; });
-/* harmony import */ var _utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _utils_inputChecker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -617,7 +1003,7 @@ function () {
 }();
 
 /***/ }),
-/* 5 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -647,43 +1033,47 @@ var inputChecker = {
 };
 
 /***/ }),
-/* 6 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderDetailedProduct", function() { return renderDetailedProduct; });
-/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 /*
 *  load HTML of product's detailed info to the product-details-page
 */
 
 function renderDetailedProduct(attr) {
-  _goods__WEBPACK_IMPORTED_MODULE_0__["goods"].forEach(function (product) {
-    if (product.id === +attr) {
-      var outputHTML = "<div\n                              class=\"product-image\"> \n                              <a\n                              class=\"cs-fancybox-thumbs cloud-zoom\"\n                              rel=\"adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5\"\n                              data-fancybox-group=\"thumb\"\n                              href=\"".concat(product.image, "\"\n                              title=\"").concat(product.name, "\"\n                              alt=\"").concat(product.description, "\">\n                              <img src=\"").concat(product.image, "\" alt=\"").concat(product.description, "\" title=\"").concat(product.name, "\" />\n                              </a>\n                              </div>");
+  var outputHTML = '';
+
+  for (var key in _goods__WEBPACK_IMPORTED_MODULE_0__["goods"]) {
+    if (key === attr) {
+      outputHTML = "<div class=\"product-image\"> \n                              <a class=\"cs-fancybox-thumbs cloud-zoom\"\n                              rel=\"adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5\"\n                              data-fancybox-group=\"thumb\"\n                              href=\"".concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].image, "\"\n                              title=\"").concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].name, "\"\n                              alt=\"").concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].description, "\">\n                              <img src=\"").concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].image, "\" alt=\"").concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].description, "\" title=\"").concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].name, "\" />\n                              </a>\n                              </div>");
       $('.product-img-box')[0].insertAdjacentHTML("beforeend", outputHTML); //    ---------------------------------------------------------------------------
 
-      var descrAndCostHTML = "<h3>".concat(product.name, "</h3>\n                     <p>").concat(product.description, "</p>\n                      <h5>").concat(product.price, " $ <a href=\"\" data-art=\"").concat(product.id, "\">click for offer</a></h5>");
+      var descrAndCostHTML = "<h3>".concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].name, "</h3>\n                     <p>").concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].description, "</p>\n                      <h5>").concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].price, " $ <a href=\"\" data-art=\"").concat(key, "\">click for offer</a></h5>");
       $('.desc1')[0].insertAdjacentHTML("afterbegin", descrAndCostHTML); //    ---------------------------------------------------------------------------
 
-      var abiableColorArr = product.color;
+      var abiableColorArr = _goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].color;
       var colorSelect = pickUpAviableSelectForThis(abiableColorArr);
-      var abiableSizeArr = product.size;
+      var abiableSizeArr = _goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].size;
       var sizeSelect = pickUpAviableSelectForThis(abiableSizeArr);
-      var aviableOptionsHTML = "<h4>Available Options :</h4>\n                        <ul>\n                          <li>Color:\n                            <select>\n                          ".concat(colorSelect, "\n                            </select>\n                          </li>\n                          <li>Size:\n                            <select>\n                          ").concat(sizeSelect, "\n                            </select>\n                          </li>\n                        </ul>");
+      var aviableOptionsHTML = "<h4>Available Options :</h4>\n                       <ul>\n                         <li>Color:\n                           <select class=\"color-select\">\n                         ".concat(colorSelect, "\n                           </select>\n                         </li>\n                         <li>Size:\n                           <select class=\"size-select\">\n                         ").concat(sizeSelect, "\n                           </select>\n                         </li>\n                       </ul>");
       $('.available')[0].insertAdjacentHTML("afterbegin", aviableOptionsHTML); //    ---------------------------------------------------------------------------
 
-      var addToCartHTML = "<form>\n                                  <input type=\"submit\" value=\"add to cart\" title=\"\" data-art=\"".concat(product.id, "\"/>\n                                 </form>");
+      var addToCartHTML = "<form class=\"add-to-cart\">\n      <input type=\"submit\" value=\"add to cart\" title=\"\" data-art=\"".concat(key, "\"/>\n     </form>");
       $('.btn_form')[0].insertAdjacentHTML("beforeend", addToCartHTML);
     }
-  });
+  }
+
+  ;
 
   function pickUpAviableSelectForThis(arr) {
     var textHTML = '';
     arr.forEach(function (item) {
-      textHTML += "<option>".concat(item, "</option>");
+      textHTML += "<option value=\"".concat(item, "\">").concat(item, "</option>");
     });
     return textHTML;
   }
@@ -692,198 +1082,13 @@ function renderDetailedProduct(attr) {
 }
 
 /***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "goods", function() { return goods; });
-var goods = [{
-  "id": 10001,
-  "name": "Branded shoes",
-  "price": 100,
-  "description": "pokupaem new bransed shoes go check sizes and color id 10001",
-  "category": "shoes",
-  "color": ['red', 'white'],
-  "size": [39, 36],
-  "image": "../images/pic1.jpg",
-  "featured": true,
-  "owl_carousel": false
-}, {
-  "id": 10002,
-  "name": "Levis T-shirt",
-  "price": 70,
-  "description": "try new Levis T-shirtt buy it very very good  buy it go go go some text try again 10002",
-  "category": "t_shirt",
-  "color": ['black', 'blue', 'white'],
-  "size": ["L", "M"],
-  "image": "../images/pic2.jpg",
-  "featured": true,
-  "owl_carousel": false
-}, {
-  "id": 10003,
-  "name": "True T-shirt",
-  "price": 15,
-  "description": "try new Branded t-shirt buy it very very good  buy it go go go some text try again 10003",
-  "category": "t_shirt",
-  "color": ['gray'],
-  "size": ["L", "M"],
-  "image": "../images/pic3.jpg",
-  "featured": true,
-  "owl_carousel": false
-}, {
-  "id": 10004,
-  "name": "Branded bags",
-  "price": 25,
-  "description": "very good wallet buy it go go go some text try again 10004",
-  "category": "wallet",
-  "color": ['brown'],
-  "size": ["current"],
-  "image": "../images/pic4.jpg",
-  "featured": true,
-  "owl_carousel": true
-}, {
-  "id": 10005,
-  "name": "EMS women bag",
-  "price": 105,
-  "description": "very good bag buy it go go go some text try again 10005",
-  "category": "handbags",
-  "color": ['coffee'],
-  "size": ["current"],
-  "image": "../images/pic5.jpg",
-  "featured": true,
-  "owl_carousel": true
-}, {
-  "id": 10006,
-  "name": "Easy top",
-  "price": 10,
-  "description": "try new Branded top shirt buy it very very good  buy it go go go some text try again 10006",
-  "category": "t_shirt",
-  "color": ['black'],
-  "size": ["L", "S"],
-  "image": "../images/pic6.jpg",
-  "featured": true,
-  "owl_carousel": true
-}, {
-  "id": 10007,
-  "name": "Easy top",
-  "price": 109,
-  "description": "try new Branded top shirt buy it very very good  buy it go go go some text try again 10007",
-  "category": "t_shirt",
-  "color": ['black'],
-  "size": ["S", "XS"],
-  "image": "../images/pic6.jpg",
-  "featured": true,
-  "owl_carousel": true
-}, {
-  "id": 10008,
-  "name": "Branded shoes",
-  "price": 99,
-  "description": "pokupaem new bransed shoes go check sizes and color id 10008",
-  "category": "shoes",
-  "color": ['brown', 'black'],
-  "size": [43, 46],
-  "image": "../images/c1.jpg",
-  "featured": true,
-  "owl_carousel": true
-}, {
-  "id": 10009,
-  "name": "Branded tees",
-  "price": 79,
-  "description": "try new Branded tees buy it very very good  buy it go go go some text try again 10009",
-  "category": "t_shirt",
-  "color": ['black'],
-  "size": ["S", "XS"],
-  "image": "../images/c2.jpg",
-  "featured": false,
-  "owl_carousel": true
-}, {
-  "id": 10010,
-  "name": "Branded jeens",
-  "price": 69,
-  "description": "try new jeens buy it very very good  buy it go go go some text try again 10010",
-  "category": "jeens",
-  "color": ['blue'],
-  "size": ["M", "XS"],
-  "image": "../images/c3.jpg",
-  "featured": false,
-  "owl_carousel": true
-}, {
-  "id": 10011,
-  "name": "Branded tees",
-  "price": 79,
-  "description": "try new Branded tees buy it very very good  buy it go go go some text try again 10011",
-  "category": "t_shirt",
-  "color": ['black'],
-  "size": ["L", "M", "S", "XS"],
-  "image": "../images/c2.jpg",
-  "featured": false,
-  "owl_carousel": true
-}, {
-  "id": 10012,
-  "name": "Branded shoes",
-  "price": 150,
-  "description": "pokupaem new bransed shoes go check sizes and color id 10012",
-  "category": "shoes",
-  "color": ['red', 'white'],
-  "size": [36, 39],
-  "image": "../images/shoe_pic1.jpg",
-  "featured": false,
-  "owl_carousel": false
-}, {
-  "id": 10013,
-  "name": "Branded shoes",
-  "price": 170,
-  "description": "pokupaem new bransed shoes go check sizes and color id 10013",
-  "category": "shoes",
-  "color": ['red', 'white', 'brown', 'dark'],
-  "size": [39, 40, 41, 42, 45, 46],
-  "image": "../images/shoe_pic2.jpg",
-  "featured": false,
-  "owl_carousel": false
-}, {
-  "id": 10014,
-  "name": "Branded shoes",
-  "price": 220,
-  "description": "pokupaem new bransed shoes go check sizes and color id 10014",
-  "category": "shoes",
-  "color": ['red', 'white', 'brown', 'dark'],
-  "size": [39, 42, 45, 46],
-  "image": "../images/shoe_pic3.jpg",
-  "featured": false,
-  "owl_carousel": false
-}, {
-  "id": 10015,
-  "name": "Branded shoes",
-  "price": 110,
-  "description": "pokupaem new bransed shoes go check sizes and color id 10015",
-  "category": "shoes",
-  "color": ['red', 'white', 'brown', 'dark'],
-  "size": [39, 42, 45, 46],
-  "image": "../images/shoe_pic4.jpg",
-  "featured": false,
-  "owl_carousel": false
-}, {
-  "id": 10016,
-  "name": "Branded shoes",
-  "price": 113,
-  "description": "pokupaem new bransed shoes go check sizes and color id 10016",
-  "category": "shoes",
-  "color": ['white', 'brown', 'dark'],
-  "size": [39, 42, 45],
-  "image": "../images/shoe_pic5.jpg",
-  "featured": false,
-  "owl_carousel": false
-}];
-
-/***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "goodsState", function() { return goodsState; });
-/* harmony import */ var _utils_goods_render_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _utils_goods_render_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
 
 /*
 *  load HTML of featured products to the main page
@@ -909,13 +1114,13 @@ var goodsState = {
 };
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderFeaturedGoods", function() { return renderFeaturedGoods; });
-/* harmony import */ var _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+/* harmony import */ var _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 /*
 *  load HTML of featured products to the page
@@ -924,9 +1129,11 @@ __webpack_require__.r(__webpack_exports__);
 function renderFeaturedGoods(productFeatures, condition, howManyGoodsInOneRow) {
   var howManyFeaturedGoodsDoWeHave = 0;
   var numberOfdepictedRows = 1;
-  _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"].forEach(function (product) {
-    if (product[productFeatures] === condition) {
-      var outputHTML = "<div class=\"grid1_of_3\" id=\"".concat(product.id, "\">\n                          <a href=\"\" class=\"details-page\" data-art=\"").concat(product.id, "\">\n                          <img src=\"").concat(product.image, "\" alt=\"product image\" class=\"details-page\" data-art=\"").concat(product.id, "\"/>\n                          <h3 class=\"details-page\" data-art=\"").concat(product.id, "\">").concat(product.name, "</h3>\n                          <div class=\"price\">\n                          <h4>$").concat(product.price, "<span class=\"details-page\" data-art=\"").concat(product.id, "\">indulge</span></h4>\n                          </div>\n                          <span class=\"b_btm\"></span>\n                          </a>\n                          </div>");
+  var outputHTML = '';
+
+  for (var key in _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"]) {
+    if (_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][key][productFeatures] === condition) {
+      outputHTML = "<div class=\"grid1_of_3\" id=\"".concat(key, "\">\n                          <a href=\"\" class=\"details-page\" data-art=\"").concat(key, "\">\n                          <img src=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][key].image, "\" alt=\"product image\" class=\"details-page\" data-art=\"").concat(key, "\"/>\n                          <h3 class=\"details-page\" data-art=\"").concat(key, "\">").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][key].name, "</h3>\n                          <div class=\"price\">\n                          <h4>$").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][key].price, "<span class=\"details-page\" data-art=\"").concat(key, "\">indulge</span></h4>\n                          </div>\n                          <span class=\"b_btm\"></span>\n                          </a>\n                          </div>");
       howManyFeaturedGoodsDoWeHave++;
 
       if (howManyFeaturedGoodsDoWeHave === 1 || (howManyFeaturedGoodsDoWeHave - 1) % howManyGoodsInOneRow === 0) {
@@ -944,33 +1151,39 @@ function renderFeaturedGoods(productFeatures, condition, howManyGoodsInOneRow) {
         numberOfdepictedRows++;
       }
     }
-  });
+  }
+
+  ;
 }
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderOwlCarouselGoods", function() { return renderOwlCarouselGoods; });
-/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+/* harmony import */ var _goods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 /*
 *  load HTML owl-carousel products to the main page
 */
 
 function renderOwlCarouselGoods() {
-  _goods__WEBPACK_IMPORTED_MODULE_0__["goods"].forEach(function (product) {
-    if (product.owl_carousel === true) {
-      var outputHTML = "<div class=\"item\">\n                            <div class=\"cau_left\">\n                              <img class=\"lazyOwl details-page\" data-src=\"".concat(product.image, "\" data-art=\"").concat(product.id, "\" alt=\"Lazy Owl Image\">\n                            </div>\n                            <div class=\"cau_left\">\n                              <h4><a href=\"\" class=\"details-page\" data-art=\"").concat(product.id, "\">").concat(product.name, "</a></h4>\n                              <a href=\"\" class=\"btn details-page\" data-art=\"").concat(product.id, "\">shop</a>\n                            </div>\n                            </div>");
+  for (var key in _goods__WEBPACK_IMPORTED_MODULE_0__["goods"]) {
+    var outputHTML = '';
+
+    if (_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].owl_carousel === true) {
+      outputHTML = "<div class=\"item\">\n                            <div class=\"cau_left\">\n                              <img class=\"lazyOwl details-page\" data-src=\"".concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].image, "\" data-art=\"").concat(key, "\" alt=\"Lazy Owl Image\">\n                            </div>\n                            <div class=\"cau_left\">\n                              <h4><a href=\"\" class=\"details-page\" data-art=\"").concat(key, "\">").concat(_goods__WEBPACK_IMPORTED_MODULE_0__["goods"][key].name, "</a></h4>\n                              <a href=\"\" class=\"btn details-page\" data-art=\"").concat(key, "\">shop</a>\n                            </div>\n                            </div>");
       $('#owl-demo').append(outputHTML);
     }
-  });
+  }
+
+  ;
 }
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports) {
 
 (function ($, undefined) {
@@ -1210,7 +1423,7 @@ function renderOwlCarouselGoods() {
 })(jQuery);
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /*
@@ -2647,7 +2860,7 @@ if (typeof Object.create !== "function") {
 })(jQuery, window, document);
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports) {
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -3186,7 +3399,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 })(jQuery);
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

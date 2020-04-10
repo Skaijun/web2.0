@@ -7,4 +7,10 @@ export class StateActiveProduct {
         window.localStorage.setItem("detailedProductAttr", JSON.stringify(attr));
 	}
 
+	removeProductStateFromLocalStorage() {
+		if (JSON.parse(window.localStorage.getItem("detailedProductAttr")) != null) {
+			window.localStorage.removeItem("detailedProductAttr");
+		}
+	}
+
 }
