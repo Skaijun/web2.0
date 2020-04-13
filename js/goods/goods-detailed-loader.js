@@ -61,8 +61,25 @@ export function renderDetailedProduct(attr) {
     return textHTML;
   };
 
+  $(document).ready(function () {
+    $("select.color-select").change(function () {
+      let selectedColor = $(this).children("option:selected").val();
+      let currModel = goods[attr].model;
+      let newKey = getItemWithSelectedColor(selectedColor, currModel);
+      window.localStorage.setItem("detailedProductAttr", JSON.stringify(newKey));
+      document.location.reload(true);
+
+      function getItemWithSelectedColor(color, itemsModel) {
+        for (let key in goods) {
+          if (itemsModel === goods[key].model && color === goods[key].color[0]) {
+            return key;
+          }
+        }
+      }
+
+    });
+  });
+
 }
-
-
 
 

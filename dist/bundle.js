@@ -489,11 +489,10 @@ function () {
     this.totalPrice = JSON.parse(window.localStorage.getItem("totalprice")) || 0;
     this.addProductToCart = this.addProductToCart.bind(this);
     this.removeItemFromTheBasket = this.removeItemFromTheBasket.bind(this);
-    this.addItemToTheBasket = this.addItemToTheBasket.bind(this);
+    this.plusItemToTheBasket = this.plusItemToTheBasket.bind(this);
     this.deleteAllItemsFromTheBasket = this.deleteAllItemsFromTheBasket.bind(this);
     this.renderMiniBasketHTML();
-    this.selectDOMElements();
-    this.handleEventsOnBtns();
+    this.selectUsersChoise(); // this.handleEventsOnBtns();
   }
 
   _createClass(Basket, [{
@@ -514,7 +513,10 @@ function () {
         output = "<li><h3>shopping list</h3></li>";
 
         for (var article in myCart) {
-          output += "<li><div class=\"sub-product__wrap\">\n                                  <div sub-product__img>\n                                      <img\n                                       src=\"".concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].image, "\"\n                                       alt=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].description, "\"\n                                       title=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].name, "\"\n                                       width=\"60px\" height=\"60px\"\n                                       />\n                                      <button class=\"remove-from-basket\" data-art=\"").concat(article, "\"> - </button>\n                                      ").concat(myCart[article], " it. \n                                      <button class=\"add-to-basket\" data-art=\"").concat(article, "\"> + </button>\n                                  </div>\n                                  <div sub-product__details>\n                                     <button class=\"delete-product\" data-art=\"").concat(article, "\"> X </button>\n                                     <div class=\"sub-product__name\">").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].name, "</div>\n                                     <div class=\"sub-product__features\">\n                                        <div class=\"sub-product__size\">size: 39</div>\n                                        <div class=\"sub-product__color\">color: black</div>\n                                     </div>\n                                     <div class=\"sub-product__price\">$ ").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price, "</div>\n                                  </div>\n                               </div>\n                           </li>");
+          var itemKey = article.split("-")[0];
+          var itemColor = article.split("-")[1];
+          var itemSize = article.split("-")[2];
+          output += "<li><div class=\"sub-product__wrap\">\n                                  <div sub-product__img>\n                                      <img\n                                       class=\"details-page\"\n                                       data-art=\"".concat(itemKey, "\"\n                                       src=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].image, "\"\n                                       alt=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].description, "\"\n                                       title=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].name, "\"\n                                       width=\"100px\" height=\"100px\" style=\"cursor : pointer;\"\n                                       />\n                                      <button class=\"remove-from-basket\" data-art=\"").concat(article, "\"> - </button>\n                                      ").concat(myCart[article], " it. \n                                      <button class=\"add-to-basket\" data-art=\"").concat(article, "\"> + </button>\n                                  </div>\n                                  <div sub-product__details>\n                                     <button class=\"delete-product\" data-art=\"").concat(article, "\"> X </button>\n                                     <div class=\"sub-product__name\">").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].name, "</div>\n                                     <div class=\"sub-product__features\">\n                                        <div class=\"sub-product__size\">size: ").concat(itemSize, "</div>\n                                        <div class=\"sub-product__color\">color: ").concat(itemColor, "</div>\n                                     </div>\n                                     <div class=\"sub-product__price\">$ ").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].price, "</div>\n                                  </div>\n                               </div>\n                           </li>");
         }
 
         output += "<li>\n                       <div class=\"sub-mini-total\"><span>Total price: </span><i>$ ".concat(this.totalPrice, "</i></div>\n                       </li>");
@@ -525,8 +527,8 @@ function () {
       return output;
     }
   }, {
-    key: "selectDOMElements",
-    value: function selectDOMElements() {
+    key: "selectUsersChoise",
+    value: function selectUsersChoise() {
       this.sizeCustomerInput = $('.size-select')[0];
       this.colorCustomerInput = $('.color-select')[0];
     }
@@ -542,7 +544,7 @@ function () {
       }
 
       if ($('.add-to-basket')) {
-        $('.add-to-basket').on('click', this.addItemToTheBasket);
+        $('.add-to-basket').on('click', this.plusItemToTheBasket);
       }
 
       if ($('.delete-product')) {
@@ -553,13 +555,20 @@ function () {
     key: "addProductToCart",
     value: function addProductToCart() {
       event.preventDefault();
-      var productArticle = $('.add-to-cart').children(['data-art']).attr('data-art');
+      var productArticle = $('.add-to-cart').children(['data-art']).attr('data-art'); //10001
+
+      var productColor = "".concat($("select.color-select").children("option:selected").val()); // "black"                  
+
+      var productSize = "".concat($("select.size-select").children("option:selected").val()); // 39   
+
+      var newItemArticle = "".concat(productArticle, "-").concat(productColor, "-").concat(productSize); // "10001-black-39"
+
       this.totalPrice = this.totalPrice + _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][productArticle].price;
 
-      if (this.basket[productArticle] == undefined) {
-        this.basket[productArticle] = 1; // if there are not any such goods in the basket => set quantity to 1
+      if (this.basket[newItemArticle] == undefined) {
+        this.basket[newItemArticle] = 1; // if there are not any such goods in the basket => set quantity to 1
       } else {
-        this.basket[productArticle]++; // if there are already such goods in the basket => set quantity +1
+        this.basket[newItemArticle]++; // if there are already such goods in the basket => set quantity +1
       }
 
       this.refreshBasketState();
@@ -569,25 +578,31 @@ function () {
     value: function removeItemFromTheBasket() {
       event.preventDefault();
       var myCart = this.basket;
-      var article = $(event.target).attr('data-art');
+      var key = $(event.target).attr('data-art');
+      var article = key.split("-")[0];
+      console.log(this.totalPrice, " - ", _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price);
       this.totalPrice = this.totalPrice - _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price;
+      console.log(this.totalPrice);
 
-      if (myCart[article] > 1) {
-        myCart[article]--;
+      if (myCart[key] > 1) {
+        myCart[key]--;
       } else {
-        delete myCart[article];
+        delete myCart[key];
       }
 
       this.refreshBasketState();
     }
   }, {
-    key: "addItemToTheBasket",
-    value: function addItemToTheBasket() {
+    key: "plusItemToTheBasket",
+    value: function plusItemToTheBasket() {
       event.preventDefault();
       var myCart = this.basket;
-      var article = $(event.target).attr('data-art');
+      var key = $(event.target).attr('data-art');
+      var article = key.split("-")[0];
+      console.log(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price, " + ", this.totalPrice);
       this.totalPrice = this.totalPrice + _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price;
-      myCart[article]++;
+      myCart[key]++;
+      console.log(this.totalPrice);
       this.refreshBasketState();
     }
   }, {
@@ -595,9 +610,12 @@ function () {
     value: function deleteAllItemsFromTheBasket() {
       event.preventDefault();
       var myCart = this.basket;
-      var id = $(event.target).attr('data-art');
-      this.totalPrice = this.totalPrice - _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][id].price * myCart[id];
-      delete myCart[id];
+      var key = $(event.target).attr('data-art');
+      var article = key.split("-")[0];
+      console.log(this.totalPrice, " -all ", _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price);
+      this.totalPrice = this.totalPrice - _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price * myCart[key];
+      console.log(this.totalPrice);
+      delete myCart[key];
       this.refreshBasketState();
     }
   }, {
@@ -635,16 +653,31 @@ function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "goods", function() { return goods; });
 var goods = {
-  "10001": {
-    "name": "Branded shoes",
-    "price": 100,
+  "10000": {
+    "name": "ECCO Soft ZW5569",
+    "price": 130,
     "description": "pokupaem new bransed shoes go check sizes and color id 10001",
     "category": "shoes",
-    "color": ['red', 'white'],
-    "size": [39, 36],
-    "image": "../images/pic1.jpg",
+    "brand": "ECCO",
+    "model": "ZW5000",
+    "color": ['red', 'grey'],
+    "size": [37, 38, 39],
+    "image": "../images/ZW5569.jpeg",
     "featured": true,
     "owl_carousel": false
+  },
+  "10001": {
+    "name": "ECCO Soft ZW5680",
+    "price": 120,
+    "description": "pokupaem new bransed shoes go check sizes and color id 10001-1",
+    "category": "shoes",
+    "brand": "ECCO",
+    "model": "ZW5000",
+    "color": ['grey', 'red'],
+    "size": [36, 40],
+    "image": "../images/ZW5680.jpeg",
+    "featured": false,
+    "owl_carousel": true
   },
   "10002": {
     "name": "Levis T-shirt",
@@ -662,7 +695,7 @@ var goods = {
     "price": 15,
     "description": "try new Branded t-shirt buy it very very good  buy it go go go some text try again 10003",
     "category": "t_shirt",
-    "color": ['gray'],
+    "color": ['grey'],
     "size": ["L", "M"],
     "image": "../images/pic3.jpg",
     "featured": true,
@@ -713,12 +746,13 @@ var goods = {
     "owl_carousel": true
   },
   "10008": {
-    "name": "Branded shoes",
-    "price": 99,
+    "name": "Geox BR01",
+    "price": 90,
     "description": "pokupaem new bransed shoes go check sizes and color id 10008",
     "category": "shoes",
-    "color": ['brown', 'black'],
-    "size": [43, 46],
+    "color": ['brown'],
+    "brand": "Geox",
+    "size": [43, 45, 46],
     "image": "../images/c1.jpg",
     "featured": true,
     "owl_carousel": true
@@ -757,56 +791,66 @@ var goods = {
     "owl_carousel": true
   },
   "10012": {
-    "name": "Branded shoes",
+    "name": "Fly T134",
     "price": 150,
     "description": "pokupaem new bransed shoes go check sizes and color id 10012",
     "category": "shoes",
-    "color": ['red', 'white'],
-    "size": [36, 39],
+    "brand": "Fly",
+    "model": "T100",
+    "color": ['black', 'brown', 'lightbrown'],
+    "size": [40, 41],
     "image": "../images/shoe_pic1.jpg",
     "featured": false,
     "owl_carousel": false
   },
   "10013": {
-    "name": "Branded shoes",
-    "price": 170,
+    "name": "Fly T135",
+    "price": 150,
     "description": "pokupaem new bransed shoes go check sizes and color id 10013",
     "category": "shoes",
-    "color": ['red', 'white', 'brown', 'dark'],
-    "size": [39, 40, 41, 42, 45, 46],
+    "brand": "Fly",
+    "model": "T100",
+    "color": ['brown', 'black', 'lightbrown'],
+    "size": [40, 41, 42, 45, 46],
     "image": "../images/shoe_pic2.jpg",
     "featured": false,
     "owl_carousel": false
   },
   "10014": {
-    "name": "Branded shoes",
-    "price": 220,
+    "name": "Fly T136",
+    "price": 150,
     "description": "pokupaem new bransed shoes go check sizes and color id 10014",
     "category": "shoes",
-    "color": ['red', 'white', 'brown', 'dark'],
-    "size": [39, 42, 45, 46],
+    "brand": "Fly",
+    "model": "T100",
+    "color": ['lightbrown', 'brown', 'black'],
+    "size": [42, 45, 46],
     "image": "../images/shoe_pic3.jpg",
     "featured": false,
     "owl_carousel": false
   },
   "10015": {
-    "name": "Branded shoes",
+    "name": "Moko F001",
     "price": 110,
     "description": "pokupaem new bransed shoes go check sizes and color id 10015",
     "category": "shoes",
-    "color": ['red', 'white', 'brown', 'dark'],
-    "size": [39, 42, 45, 46],
+    "brand": "Moko",
+    "model": "F000",
+    "color": ['brown', 'coffee'],
+    "size": [40, 42, 45, 46],
     "image": "../images/shoe_pic4.jpg",
     "featured": false,
     "owl_carousel": false
   },
   "10016": {
-    "name": "Branded shoes",
-    "price": 113,
+    "name": "Moko F002",
+    "price": 110,
     "description": "pokupaem new bransed shoes go check sizes and color id 10016",
     "category": "shoes",
-    "color": ['white', 'brown', 'dark'],
-    "size": [39, 42, 45],
+    "brand": "Moko",
+    "model": "F000",
+    "color": ['coffee', 'brown'],
+    "size": [43, 44, 45],
     "image": "../images/shoe_pic5.jpg",
     "featured": false,
     "owl_carousel": false
@@ -1079,6 +1123,23 @@ function renderDetailedProduct(attr) {
   }
 
   ;
+  $(document).ready(function () {
+    $("select.color-select").change(function () {
+      var selectedColor = $(this).children("option:selected").val();
+      var currModel = _goods__WEBPACK_IMPORTED_MODULE_0__["goods"][attr].model;
+      var newKey = getItemWithSelectedColor(selectedColor, currModel);
+      window.localStorage.setItem("detailedProductAttr", JSON.stringify(newKey));
+      document.location.reload(true);
+
+      function getItemWithSelectedColor(color, itemsModel) {
+        for (var _key in _goods__WEBPACK_IMPORTED_MODULE_0__["goods"]) {
+          if (itemsModel === _goods__WEBPACK_IMPORTED_MODULE_0__["goods"][_key].model && color === _goods__WEBPACK_IMPORTED_MODULE_0__["goods"][_key].color[0]) {
+            return _key;
+          }
+        }
+      }
+    });
+  });
 }
 
 /***/ }),

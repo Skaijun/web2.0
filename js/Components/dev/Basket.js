@@ -7,11 +7,10 @@ export class Basket {
         this.totalPrice = JSON.parse(window.localStorage.getItem("totalprice")) || 0;
         this.addProductToCart = this.addProductToCart.bind(this);
         this.removeItemFromTheBasket = this.removeItemFromTheBasket.bind(this);
-        this.addItemToTheBasket = this.addItemToTheBasket.bind(this);
+        this.plusItemToTheBasket = this.plusItemToTheBasket.bind(this);
         this.deleteAllItemsFromTheBasket = this.deleteAllItemsFromTheBasket.bind(this);
         this.renderMiniBasketHTML();
-        this.selectDOMElements();
-        this.handleEventsOnBtns();
+        this.selectUsersChoise();
     }
 
     renderMiniBasketHTML() {
@@ -34,13 +33,18 @@ export class Basket {
         if (!isEmptyObject(myCart)) {
             output = `<li><h3>shopping list</h3></li>`;
             for (let article in myCart) {
+                let itemKey = article.split("-")[0];
+                let itemColor = article.split("-")[1];
+                let itemSize = article.split("-")[2];
                 output += `<li><div class="sub-product__wrap">
                                   <div sub-product__img>
                                       <img
-                                       src="${goods[article].image}"
-                                       alt="${goods[article].description}"
-                                       title="${goods[article].name}"
-                                       width="60px" height="60px"
+                                       class="details-page"
+                                       data-art="${itemKey}"
+                                       src="${goods[itemKey].image}"
+                                       alt="${goods[itemKey].description}"
+                                       title="${goods[itemKey].name}"
+                                       width="100px" height="100px" style="cursor : pointer;"
                                        />
                                       <button class="remove-from-basket" data-art="${article}"> - </button>
                                       ${myCart[article]} it. 
@@ -48,12 +52,12 @@ export class Basket {
                                   </div>
                                   <div sub-product__details>
                                      <button class="delete-product" data-art="${article}"> X </button>
-                                     <div class="sub-product__name">${goods[article].name}</div>
+                                     <div class="sub-product__name">${goods[itemKey].name}</div>
                                      <div class="sub-product__features">
-                                        <div class="sub-product__size">size: 39</div>
-                                        <div class="sub-product__color">color: black</div>
+                                        <div class="sub-product__size">size: ${itemSize}</div>
+                                        <div class="sub-product__color">color: ${itemColor}</div>
                                      </div>
-                                     <div class="sub-product__price">$ ${goods[article].price}</div>
+                                     <div class="sub-product__price">$ ${goods[itemKey].price}</div>
                                   </div>
                                </div>
                            </li>`;
@@ -69,7 +73,7 @@ export class Basket {
         return output;
     }
 
-    selectDOMElements() {
+    selectUsersChoise() {
         this.sizeCustomerInput = $('.size-select')[0];
         this.colorCustomerInput = $('.color-select')[0];
     }
@@ -82,7 +86,7 @@ export class Basket {
             $('.remove-from-basket').on('click', this.removeItemFromTheBasket);
         }
         if ($('.add-to-basket')) {
-            $('.add-to-basket').on('click', this.addItemToTheBasket);
+            $('.add-to-basket').on('click', this.plusItemToTheBasket);
         }
         if ($('.delete-product')) {
             $('.delete-product').on('click', this.deleteAllItemsFromTheBasket);
@@ -91,12 +95,15 @@ export class Basket {
 
     addProductToCart() {
         event.preventDefault();
-        let productArticle = $('.add-to-cart').children(['data-art']).attr('data-art');
+        let productArticle = $('.add-to-cart').children(['data-art']).attr('data-art'); //10001
+        let productColor = `${$("select.color-select").children("option:selected").val()}`;   // "black"                  
+        let productSize = `${$("select.size-select").children("option:selected").val()}`;    // 39   
+        let newItemArticle = `${productArticle}-${productColor}-${productSize}`; // "10001-black-39"
         this.totalPrice = this.totalPrice + goods[productArticle].price;
-        if (this.basket[productArticle] == undefined) {
-            this.basket[productArticle] = 1; // if there are not any such goods in the basket => set quantity to 1
+        if (this.basket[newItemArticle] == undefined) {
+            this.basket[newItemArticle] = 1; // if there are not any such goods in the basket => set quantity to 1
         } else {
-            this.basket[productArticle]++; // if there are already such goods in the basket => set quantity +1
+            this.basket[newItemArticle]++; // if there are already such goods in the basket => set quantity +1
         }
         this.refreshBasketState();
     }
@@ -104,31 +111,40 @@ export class Basket {
     removeItemFromTheBasket() {
         event.preventDefault();
         let myCart = this.basket;
-        let article = $(event.target).attr('data-art');
+        let key = $(event.target).attr('data-art');
+        let article = key.split("-")[0];
+        console.log(this.totalPrice, " - ", goods[article].price);
         this.totalPrice = this.totalPrice - goods[article].price;
-        if (myCart[article] > 1) {
-            myCart[article]--;
+        console.log(this.totalPrice);
+        if (myCart[key] > 1) {
+            myCart[key]--;
         } else {
-            delete myCart[article];
+            delete myCart[key];
         }
         this.refreshBasketState();
     }
 
-    addItemToTheBasket() {
+    plusItemToTheBasket() {
         event.preventDefault();
         let myCart = this.basket;
-        let article = $(event.target).attr('data-art');
+        let key = $(event.target).attr('data-art');
+        let article = key.split("-")[0];
+        console.log(goods[article].price, " + ", this.totalPrice);
         this.totalPrice = this.totalPrice + goods[article].price;
-        myCart[article]++;
+        myCart[key]++;
+        console.log(this.totalPrice);
         this.refreshBasketState();
     }
 
     deleteAllItemsFromTheBasket() {
         event.preventDefault();
         let myCart = this.basket;
-        let id = $(event.target).attr('data-art');
-        this.totalPrice = this.totalPrice - (goods[id].price * myCart[id]);
-        delete myCart[id];
+        let key = $(event.target).attr('data-art');
+        let article = key.split("-")[0];
+        console.log(this.totalPrice, " -all ", goods[article].price);
+        this.totalPrice = this.totalPrice - (goods[article].price * myCart[key]);
+        console.log(this.totalPrice);
+        delete myCart[key];
         this.refreshBasketState();
     }
 
