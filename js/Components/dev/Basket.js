@@ -9,6 +9,7 @@ export class Basket {
         this.removeItemFromTheBasket = this.removeItemFromTheBasket.bind(this);
         this.plusItemToTheBasket = this.plusItemToTheBasket.bind(this);
         this.deleteAllItemsFromTheBasket = this.deleteAllItemsFromTheBasket.bind(this);
+        this.resetTheBasket = this.resetTheBasket.bind(this);
         this.renderMiniBasketHTML();
         this.selectUsersChoise();
     }
@@ -44,7 +45,7 @@ export class Basket {
                                        src="${goods[itemKey].image}"
                                        alt="${goods[itemKey].description}"
                                        title="${goods[itemKey].name}"
-                                       width="100px" height="100px" style="cursor : pointer;"
+                                       width="100px" height="100px"
                                        />
                                       <button class="remove-from-basket" data-art="${article}"> - </button>
                                       ${myCart[article]} it. 
@@ -64,7 +65,11 @@ export class Basket {
             }
             output += `<li>
                        <div class="sub-mini-total"><span>Total price: </span><i>$ ${this.totalPrice}</i></div>
-                       </li>`;
+                       </li>
+                       <li>
+                       <div class="sub-mini-reset"><button class="reset-basket">delete all goods</button></div>
+                       </li>
+                       `;
         } else {
             output = `<li><h3>shopping cart empty</h3><a href=""></a></li>
                       <li><p>if items in your wishlit are missing, <a href="" class="contactUs-page">contact us</a> to view them</p></li>`;
@@ -91,60 +96,58 @@ export class Basket {
         if ($('.delete-product')) {
             $('.delete-product').on('click', this.deleteAllItemsFromTheBasket);
         }
+        if ($('.reset-basket')) {
+            $('.reset-basket').on('click', this.resetTheBasket);
+        }
+    
     }
 
     addProductToCart() {
         event.preventDefault();
-        let productArticle = $('.add-to-cart').children(['data-art']).attr('data-art'); //10001
-        let productColor = `${$("select.color-select").children("option:selected").val()}`;   // "black"                  
+        let productArticle = $('.add-to-cart').children(['data-art']).attr('data-art');      // 10001
+        let productColor = `${$("select.color-select").children("option:selected").val()}`;  // "black"                  
         let productSize = `${$("select.size-select").children("option:selected").val()}`;    // 39   
-        let newItemArticle = `${productArticle}-${productColor}-${productSize}`; // "10001-black-39"
+        let newItemArticle = `${productArticle}-${productColor}-${productSize}`;             // "10001-black-39"
         this.totalPrice = this.totalPrice + goods[productArticle].price;
         if (this.basket[newItemArticle] == undefined) {
-            this.basket[newItemArticle] = 1; // if there are not any such goods in the basket => set quantity to 1
+            this.basket[newItemArticle] = 1; // if there are no same goods in the basket => set quantity to 1
         } else {
-            this.basket[newItemArticle]++; // if there are already such goods in the basket => set quantity +1
+            this.basket[newItemArticle]++; // if there are already same goods in the basket => set quantity +1
         }
         this.refreshBasketState();
     }
 
     removeItemFromTheBasket() {
-        event.preventDefault();
-        let myCart = this.basket;
         let key = $(event.target).attr('data-art');
         let article = key.split("-")[0];
-        console.log(this.totalPrice, " - ", goods[article].price);
         this.totalPrice = this.totalPrice - goods[article].price;
-        console.log(this.totalPrice);
-        if (myCart[key] > 1) {
-            myCart[key]--;
+        if (this.basket[key] > 1) {
+            this.basket[key]--;
         } else {
-            delete myCart[key];
+            delete this.basket[key];
         }
         this.refreshBasketState();
     }
 
     plusItemToTheBasket() {
-        event.preventDefault();
-        let myCart = this.basket;
         let key = $(event.target).attr('data-art');
         let article = key.split("-")[0];
-        console.log(goods[article].price, " + ", this.totalPrice);
         this.totalPrice = this.totalPrice + goods[article].price;
-        myCart[key]++;
-        console.log(this.totalPrice);
+        this.basket[key]++;
         this.refreshBasketState();
     }
 
     deleteAllItemsFromTheBasket() {
-        event.preventDefault();
-        let myCart = this.basket;
         let key = $(event.target).attr('data-art');
         let article = key.split("-")[0];
-        console.log(this.totalPrice, " -all ", goods[article].price);
-        this.totalPrice = this.totalPrice - (goods[article].price * myCart[key]);
-        console.log(this.totalPrice);
-        delete myCart[key];
+        this.totalPrice = this.totalPrice - (goods[article].price * this.basket[key]);
+        delete this.basket[key];
+        this.refreshBasketState();
+    }
+
+    resetTheBasket() {
+        this.totalPrice = 0;
+        this.basket = {};
         this.refreshBasketState();
     }
 

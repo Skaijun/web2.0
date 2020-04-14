@@ -491,8 +491,9 @@ function () {
     this.removeItemFromTheBasket = this.removeItemFromTheBasket.bind(this);
     this.plusItemToTheBasket = this.plusItemToTheBasket.bind(this);
     this.deleteAllItemsFromTheBasket = this.deleteAllItemsFromTheBasket.bind(this);
+    this.resetTheBasket = this.resetTheBasket.bind(this);
     this.renderMiniBasketHTML();
-    this.selectUsersChoise(); // this.handleEventsOnBtns();
+    this.selectUsersChoise();
   }
 
   _createClass(Basket, [{
@@ -516,10 +517,10 @@ function () {
           var itemKey = article.split("-")[0];
           var itemColor = article.split("-")[1];
           var itemSize = article.split("-")[2];
-          output += "<li><div class=\"sub-product__wrap\">\n                                  <div sub-product__img>\n                                      <img\n                                       class=\"details-page\"\n                                       data-art=\"".concat(itemKey, "\"\n                                       src=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].image, "\"\n                                       alt=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].description, "\"\n                                       title=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].name, "\"\n                                       width=\"100px\" height=\"100px\" style=\"cursor : pointer;\"\n                                       />\n                                      <button class=\"remove-from-basket\" data-art=\"").concat(article, "\"> - </button>\n                                      ").concat(myCart[article], " it. \n                                      <button class=\"add-to-basket\" data-art=\"").concat(article, "\"> + </button>\n                                  </div>\n                                  <div sub-product__details>\n                                     <button class=\"delete-product\" data-art=\"").concat(article, "\"> X </button>\n                                     <div class=\"sub-product__name\">").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].name, "</div>\n                                     <div class=\"sub-product__features\">\n                                        <div class=\"sub-product__size\">size: ").concat(itemSize, "</div>\n                                        <div class=\"sub-product__color\">color: ").concat(itemColor, "</div>\n                                     </div>\n                                     <div class=\"sub-product__price\">$ ").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].price, "</div>\n                                  </div>\n                               </div>\n                           </li>");
+          output += "<li><div class=\"sub-product__wrap\">\n                                  <div sub-product__img>\n                                      <img\n                                       class=\"details-page\"\n                                       data-art=\"".concat(itemKey, "\"\n                                       src=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].image, "\"\n                                       alt=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].description, "\"\n                                       title=\"").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].name, "\"\n                                       width=\"100px\" height=\"100px\"\n                                       />\n                                      <button class=\"remove-from-basket\" data-art=\"").concat(article, "\"> - </button>\n                                      ").concat(myCart[article], " it. \n                                      <button class=\"add-to-basket\" data-art=\"").concat(article, "\"> + </button>\n                                  </div>\n                                  <div sub-product__details>\n                                     <button class=\"delete-product\" data-art=\"").concat(article, "\"> X </button>\n                                     <div class=\"sub-product__name\">").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].name, "</div>\n                                     <div class=\"sub-product__features\">\n                                        <div class=\"sub-product__size\">size: ").concat(itemSize, "</div>\n                                        <div class=\"sub-product__color\">color: ").concat(itemColor, "</div>\n                                     </div>\n                                     <div class=\"sub-product__price\">$ ").concat(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][itemKey].price, "</div>\n                                  </div>\n                               </div>\n                           </li>");
         }
 
-        output += "<li>\n                       <div class=\"sub-mini-total\"><span>Total price: </span><i>$ ".concat(this.totalPrice, "</i></div>\n                       </li>");
+        output += "<li>\n                       <div class=\"sub-mini-total\"><span>Total price: </span><i>$ ".concat(this.totalPrice, "</i></div>\n                       </li>\n                       <li>\n                       <div class=\"sub-mini-reset\"><button class=\"reset-basket\">delete all goods</button></div>\n                       </li>\n                       ");
       } else {
         output = "<li><h3>shopping cart empty</h3><a href=\"\"></a></li>\n                      <li><p>if items in your wishlit are missing, <a href=\"\" class=\"contactUs-page\">contact us</a> to view them</p></li>";
       }
@@ -550,12 +551,16 @@ function () {
       if ($('.delete-product')) {
         $('.delete-product').on('click', this.deleteAllItemsFromTheBasket);
       }
+
+      if ($('.reset-basket')) {
+        $('.reset-basket').on('click', this.resetTheBasket);
+      }
     }
   }, {
     key: "addProductToCart",
     value: function addProductToCart() {
       event.preventDefault();
-      var productArticle = $('.add-to-cart').children(['data-art']).attr('data-art'); //10001
+      var productArticle = $('.add-to-cart').children(['data-art']).attr('data-art'); // 10001
 
       var productColor = "".concat($("select.color-select").children("option:selected").val()); // "black"                  
 
@@ -566,9 +571,9 @@ function () {
       this.totalPrice = this.totalPrice + _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][productArticle].price;
 
       if (this.basket[newItemArticle] == undefined) {
-        this.basket[newItemArticle] = 1; // if there are not any such goods in the basket => set quantity to 1
+        this.basket[newItemArticle] = 1; // if there are no same goods in the basket => set quantity to 1
       } else {
-        this.basket[newItemArticle]++; // if there are already such goods in the basket => set quantity +1
+        this.basket[newItemArticle]++; // if there are already same goods in the basket => set quantity +1
       }
 
       this.refreshBasketState();
@@ -576,18 +581,14 @@ function () {
   }, {
     key: "removeItemFromTheBasket",
     value: function removeItemFromTheBasket() {
-      event.preventDefault();
-      var myCart = this.basket;
       var key = $(event.target).attr('data-art');
       var article = key.split("-")[0];
-      console.log(this.totalPrice, " - ", _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price);
       this.totalPrice = this.totalPrice - _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price;
-      console.log(this.totalPrice);
 
-      if (myCart[key] > 1) {
-        myCart[key]--;
+      if (this.basket[key] > 1) {
+        this.basket[key]--;
       } else {
-        delete myCart[key];
+        delete this.basket[key];
       }
 
       this.refreshBasketState();
@@ -595,27 +596,26 @@ function () {
   }, {
     key: "plusItemToTheBasket",
     value: function plusItemToTheBasket() {
-      event.preventDefault();
-      var myCart = this.basket;
       var key = $(event.target).attr('data-art');
       var article = key.split("-")[0];
-      console.log(_goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price, " + ", this.totalPrice);
       this.totalPrice = this.totalPrice + _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price;
-      myCart[key]++;
-      console.log(this.totalPrice);
+      this.basket[key]++;
       this.refreshBasketState();
     }
   }, {
     key: "deleteAllItemsFromTheBasket",
     value: function deleteAllItemsFromTheBasket() {
-      event.preventDefault();
-      var myCart = this.basket;
       var key = $(event.target).attr('data-art');
       var article = key.split("-")[0];
-      console.log(this.totalPrice, " -all ", _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price);
-      this.totalPrice = this.totalPrice - _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price * myCart[key];
-      console.log(this.totalPrice);
-      delete myCart[key];
+      this.totalPrice = this.totalPrice - _goods_goods_js__WEBPACK_IMPORTED_MODULE_0__["goods"][article].price * this.basket[key];
+      delete this.basket[key];
+      this.refreshBasketState();
+    }
+  }, {
+    key: "resetTheBasket",
+    value: function resetTheBasket() {
+      this.totalPrice = 0;
+      this.basket = {};
       this.refreshBasketState();
     }
   }, {
