@@ -26,12 +26,6 @@ export class RenderHTML {
             this.depictMainPage();
         } else if (this.pageState.currPage === 'sale-page') {
             this.depictSalePage();
-        } else if (this.pageState.currPage === 'handbags-page') {
-            this.depictHandbagsPage();
-        } else if (this.pageState.currPage === 'accessories-page') {
-            this.depictAccessoriesPage();
-        } else if (this.pageState.currPage === 'wallets-page') {
-            this.depictWalletsPage();
         } else if (this.pageState.currPage === 'shoes-page') {
             this.depictShoesPage();
         } else if (this.pageState.currPage === 'services-page') {
@@ -99,15 +93,6 @@ export class RenderHTML {
             filterList.init();
         });
     }
-    depictHandbagsPage() {
-        this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.HANDBAGS_PAGE_FULL);
-    }
-    depictAccessoriesPage() {
-        this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.ACCESSORIES_PAGE_FULL);
-    }
-    depictWalletsPage() {
-        this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.WALLETS_PAGE_FULL);
-    }
     depictShoesPage() {
         this.selectedHtmlElement.insertAdjacentHTML("afterbegin", DOM_STATE_HTML.SHOES_PAGE_FULL);
         goodsState.renderShoesCategoryShoesPage();
@@ -138,15 +123,6 @@ export class RenderHTML {
                 break;
             case element.contains('sale-page'):
                 this.handleDepictPageEvent('sale-page');
-                break;
-            case element.contains('handbags-page'):
-                this.handleDepictPageEvent('handbags-page');
-                break;
-            case element.contains('accessories-page'):
-                this.handleDepictPageEvent('accessories-page');
-                break;
-            case element.contains('wallets-page'):
-                this.handleDepictPageEvent('wallets-page');
                 break;
             case element.contains('shoes-page'):
                 this.handleDepictPageEvent('shoes-page');

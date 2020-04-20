@@ -23,4 +23,3 @@ import { activateResponsiveMenu } from './Components/src/responsive.menu.js'
 window.onload = new RenderHTML(document.body);
 window.onload = activateResponsiveMenu();
 window.StateDOMHTML = StateDOMHTML;
-
